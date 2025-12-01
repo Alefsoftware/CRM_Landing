@@ -1,0 +1,38 @@
+<div class="app-ever-area ptb-100">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="app-ever-image">
+                    <img [src]="bestappData.image" alt="image">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="app-ever-content">
+                    <h2>{{ currentLang === 'ar' ? bestappData?.title_ar : bestappData?.title_en }}</h2>
+                    <p [innerHTML]="currentLang === 'ar' ? bestappData?.description_ar : bestappData?.description_en">
+                    </p>
+                    <ul class="list">
+                        <li *ngFor="let app of bestapps">
+                            <div class="icon">
+                                <!-- <i [class]="app.icon"></i> -->
+                                <img [src]="app.icon" alt="icon" style="width: 30px; height: 30px;">
+
+                            </div>
+                            <h3>{{ currentLang === 'ar' ? app.title_ar : app.title_en }}</h3>
+                            <p>{{ currentLang === 'ar' ? app.description_ar : app.description_en }}</p>
+                        </li>
+                    </ul>
+                    <div class="btn-box">
+                        <a (click)="goToSignUp()" class="default-btn">
+                            {{ currentLang === 'ar' ? 'ابدأ النسخة التجريبية' : 'Request a Demo' }}
+                        </a>
+                        <!-- <a routerLink="/features-1" class="link-btn">READ MORE</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="app-ever-shape-1">
+        <img src="img/more-home/app-ever/shape-1.png" alt="shape">
+    </div> -->
+</div>

@@ -1,0 +1,38 @@
+<div class="coming-soon-area">
+    <div class="container-fluid p-0">
+        <div class="row m-0">
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="coming-soon-content">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <a routerLink="/" class="logo">
+                                <img style="width:220px;" src="/img/logo.png" style="width: 220px;" alt="image">
+                            </a>
+                            <h2>We Are Launching Soon</h2>
+                            <div id="timer" class="flex-wrap justify-content-center d-flex">
+                                <div id="days" class="align-items-center flex-column d-flex justify-content-center">
+                                    {{countdown.days}} <span>Days</span></div>
+                                <div id="hours" class="align-items-center flex-column d-flex justify-content-center">
+                                    {{countdown.hours}} <span>Hours</span></div>
+                                <div id="minutes" class="align-items-center flex-column d-flex justify-content-center">
+                                    {{countdown.minutes}} <span>Minutes</span></div>
+                                <div id="seconds" class="align-items-center flex-column d-flex justify-content-center">
+                                    {{countdown.seconds}} <span>Seconds</span></div>
+                            </div>
+                            <form class="newsletter-form">
+                                <input type="email" class="input-newsletter" placeholder="Enter your email" name="EMAIL"
+                                    required autocomplete="off">
+                                <button type="submit" class="default-btn">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="coming-soon-image" style="background-image: url(img/coming-soon.jpg);">
+                    <img src="img/coming-soon.jpg" alt="coming-soon">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

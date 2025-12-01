@@ -1,0 +1,52 @@
+<div class="app-about-area pb-100" *ngIf="aboutData">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="app-about-image">
+                    <img src="/img/more-home/about/d_4.png" alt="About image">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="app-about-content">
+                    <div class="big-text">{{ currentLang === 'ar' ? 'من نحن' : 'About Us' }}</div>
+                    <span class="sub-title">{{ currentLang === 'ar' ? 'من نحن' : 'ABOUT US' }}</span>
+
+                    <h2>{{ getTitle(aboutData.details) }}</h2>
+                    <p>{{ getDescription(aboutData.details) }}</p>
+
+                    <ul class="list">
+                        <li *ngFor="let item of aboutItems">
+                            <div class="icon">
+                                <img [src]="item.icon" alt="icon" style="width: 40px; height: 40px;">
+                            </div>
+                            <h3>{{ getItemTitle(item) }}</h3>
+                            <p>{{ getItemDescription(item) }}</p>
+                        </li>
+                    </ul>
+
+                    <div class="btn-box">
+                        <!-- ✅ Navigates with TypeScript function -->
+                        <a (click)="goToSignUp()" class="default-btn">
+                            {{ currentLang === 'ar' ? 'ابدأ النسخة التجريبية' : 'Get started' }}
+                        </a>
+
+                        <!-- Example of another link (optional)
+            <a routerLink="/features-1" class="link-btn">
+              {{ currentLang === 'ar' ? 'شاهد جميع المميزات' : 'See All Features' }}
+            </a>
+            -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-about-shape-1" [ngStyle]="{'text-align': currentLang === 'ar' ? 'left' : 'left'}">
+        <img style="width: 115px;" src="img/more-home/about/asset-14.png" alt="shape" />
+    </div>
+
+    <div style="float: right;" class="app-about-shape-2">
+        <img style="float: right; width: 115px;" src="img/more-home/about/asset-21.png" alt="shape">
+    </div>
+</div>

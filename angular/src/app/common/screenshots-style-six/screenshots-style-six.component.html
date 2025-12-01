@@ -1,0 +1,46 @@
+<div class="screenshots-area bg-black-color ptb-100">
+    <div class="container">
+        <div class="section-title color-white">
+            <span class="sub-title">SCREENSHOTS</span>
+            <h2>Easily Customize in One Minute</h2>
+        </div>
+        <div class="screenshots-tabs">
+            <ul class="nav-tabset">
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab1'}">
+                    <span (click)="switchTab($event, 'tab1')">
+                        Budget Overview
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
+                    <span (click)="switchTab($event, 'tab2')">
+                        Create & Adjust
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
+                    <span (click)="switchTab($event, 'tab3')">
+                        View Reports
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab4'}">
+                    <span (click)="switchTab($event, 'tab4')">
+                        Integrations
+                    </span>
+                </li>
+            </ul>
+            <div class="tabs-container">
+                <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
+                    <img src="img/screenshots/screen5.jpg" alt="screenshots">
+                </div>
+                <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
+                    <img src="img/screenshots/screen6.jpg" alt="screenshots">
+                </div>
+                <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
+                    <img src="img/screenshots/screen7.jpg" alt="screenshots">
+                </div>
+                <div class="pane" id="tab4" *ngIf="currentTab === 'tab4'">
+                    <img src="img/screenshots/screen8.jpg" alt="screenshots">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

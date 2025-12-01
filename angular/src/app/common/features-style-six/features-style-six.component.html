@@ -1,0 +1,33 @@
+<div style="background-color: #039be5;" class="key-features-area pt-100 pb-75" *ngIf="features.length">
+    <div class="container">
+        <div class="section-title title-with-bg-text">
+            <div style="color:#020e3c;" class="big-title">{{ currentLang === 'ar' ? 'المميزات' : 'Features' }}</div>
+            <!-- <div class="big-title">Features</div> -->
+            <span class="sub-title">
+                {{ currentLang === 'ar' ? 'مميزات جديدة كليًا' : 'Completely New Features' }}
+            </span>
+            <h2>{{ getTitle(featuresData) }}</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6" *ngFor="let feature of features; let i = index">
+                <div style="height: 300px" class="features-card">
+                    <div class="icon">
+                        <!-- <i [class]="feature.icon"></i> -->
+
+  <img [src]="feature.icon" alt="icon" style="width: 40px; height: 40px;">
+                    </div>
+                    <h3>{{ getTitle(feature) }}</h3>
+                    <p>{{ getDescription(feature) }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+    <div class="key-features-shape-1">
+        <img src="img/more-home/features/shape-1.png" alt="shape" />
+    </div>
+    <div class="key-features-shape-2">
+        <img src="img/more-home/features/shape-2.png" alt="shape" />
+    </div> -->
+</div>

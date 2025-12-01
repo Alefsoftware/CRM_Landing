@@ -1,0 +1,50 @@
+<div style="display: none;" class="new-feedback-area pb-100">
+    <div class="container">
+        <div class="section-title title-with-bg-text">
+            <div class="big-title">Reviews</div>
+            <span class="sub-title">Our happy customers</span>
+            <h2>Souq Leader Through Our Clients’ Eyes</h2>
+        </div>
+
+        <div class="new-feedback-slides" *ngIf="!loading && clientReviews.length">
+            <owl-carousel-o [options]="clientReviewsSlides">
+                <ng-container *ngFor="let review of clientReviews">
+                    <ng-template carouselSlide>
+                        <div class="single-feedback-card">
+                            <div class="client-info">
+                                <div class="d-flex align-items-center">
+                                    <img [src]="'https://admin.realstatecrm-development.dev.alefsoftware.com/' + review.image"
+                                        alt="user" />
+                                    <div class="title">
+                                        <h3>{{ review.name_en }}</h3>
+                                        <span>{{ review.position_en }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>"{{ review.opinion_en }}"</p>
+
+                            <div class="rating d-flex align-items-center justify-content-between">
+                                <h5>{{ review.title_en || 'Client Feedback' }}</h5>
+                                <div>
+                                    <i *ngFor="let star of [1,2,3,4,5]; let i = index" [ngClass]="{
+                      'ri-star-fill': i < (review.rating || 5),
+                      'ri-star-line': i >= (review.rating || 5)
+                    }"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+
+        <div *ngIf="!loading && !clientReviews.length">
+            <p>No client reviews available.</p>
+        </div>
+    </div>
+
+    <div class="new-feedback-shape">
+        <img src="img/more-home/feedback/shape.png" alt="image" />
+    </div>
+</div>

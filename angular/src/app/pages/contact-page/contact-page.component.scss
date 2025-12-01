@@ -1,0 +1,110 @@
+.contact-form {
+    max-width: 950px;
+    text-align: center;
+
+    margin: {
+        left: auto;
+        right: auto;
+    }
+
+    ;
+
+    .form-group {
+        margin-bottom: 25px;
+
+        .form-control {
+            border: 1px solid #eeeeee !important;
+
+            &:focus {
+                border-color: var(--mainColor) !important;
+            }
+        }
+    }
+
+    .form-check {
+        margin-top: 5px;
+        padding-left: 0;
+
+        .form-check-label {
+            color: var(--paragraphColor);
+
+            strong {
+                font-weight: 600;
+                color: var(--blackColor);
+            }
+        }
+
+        .form-check-input {
+            float: unset;
+
+            margin: {
+                left: 0;
+                right: 5px;
+            }
+
+            ;
+        }
+
+        .form-check-input[type=checkbox] {
+            border-radius: 0;
+            box-shadow: unset !important;
+
+            &:checked {
+                background-color: var(--mainColor);
+                border-color: var(--mainColor);
+            }
+        }
+    }
+}
+
+.maps {
+    margin-top: 100px;
+    width: 100%;
+    border: none;
+    height: 500px;
+    margin-bottom: -5px;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+    height: 500px;
+    margin-bottom: -5px;
+
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .contact-form {
+        .form-group {
+            margin-bottom: 20px;
+        }
+    }
+
+    .maps {
+        margin-top: 60px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .maps {
+        margin-top: 80px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {}

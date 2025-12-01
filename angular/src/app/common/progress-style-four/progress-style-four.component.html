@@ -1,0 +1,43 @@
+<div class="new-app-progress-area ptb-100" *ngIf="appProgress">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="new-app-progress-content">
+                    <div [ngStyle]="{
+    'left': currentLang === 'en' ? '-5px' : 'unset'
+  }" class="big-text">{{ currentLang === 'ar' ? 'التقدم' : 'Performance' }}</div>
+                    <span class="sub-title">{{ currentLang === 'ar' ? 'الأداء': 'App in Action' }}</span>
+
+                    <h2>{{ getTitle() }}</h2>
+                    <p>{{ getDescription() }}</p>
+
+                    <!-- Optional extra static paragraphs -->
+                    <!-- <p *ngIf="currentLang === 'en'">
+                        Cloud based storage for your data backup just log in with your mail account from play store and
+                        using whatever you want for your business purpose orem ipsum dummy text. never miss your chance
+                        it's just began. backup just log in with your mail account from.
+                    </p>
+                    <p *ngIf="currentLang === 'en'">
+                        Most probably best for your data backup just log in with your mail account from play store and
+                        using whatever you want for your business purpose orem ipsum dummy backup just log in with your
+                        mail account from.
+                    </p> -->
+
+                    <a (click)="goToSignUp()" class="default-btn">
+                        {{ currentLang === 'ar' ? 'ابدأ الآن': 'Talk to Our Team' }}
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="new-app-progress-image text-center">
+                    <img [src]="appProgress.image" alt="app-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="new-app-progress-shape">
+        <img src="img/more-home/progress/shape-1.png" alt="image">
+    </div> -->
+</div>

@@ -1,0 +1,286 @@
+.app-video-box {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(34, 36, 50, 0.52);
+        opacity: 0.6;
+        z-index: 1;
+        transition: var(--transition);
+    }
+    .video-btn {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        font-size: 60px;
+        text-align: center;
+        line-height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        border: none;
+        transform: translateY(-50%) translateX(-50%);
+        background: linear-gradient(44.44deg, #ED2775 7.79%, #FF7448 94.18%);
+        border-radius: 50%;
+        color: var(--whiteColor);
+        box-shadow: 15px 25px 35px rgba(38, 42, 55, 0.2);
+    
+        &::after, &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            border: 1px solid var(--whiteColor);
+        }
+        &::before {
+            animation: ripple 2s linear infinite;
+        }
+        &::after {
+            animation: ripple 2s linear 1s infinite;
+        }
+    }
+    &:hover {
+        &::before {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    .shape {
+        .shape-1 {
+            position: absolute;
+            left: -60px;
+            top: -35px;
+            z-index: 1;
+            animation: movebounce 5s linear infinite;
+        }
+        .shape-2 {
+            position: absolute;
+            right: -60px;
+            bottom: -35px;
+            z-index: 1;
+            animation: movebounce 5s linear infinite;
+        }
+    }
+}
+.app-intro-video-box {
+    position: relative;
+    border-radius: 10px;
+    
+    &::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        content: '';
+        opacity: 0.4;
+        position: absolute;
+        border-radius: 30px;
+        transition: var(--transition);
+        background: rgba(34, 36, 50, 0.52);
+    }
+    img {
+        border-radius: 30px;
+    }
+    .video-btn {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        font-size: 60px;
+        text-align: center;
+        line-height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        border: none;
+        transform: translateY(-50%) translateX(-50%);
+        background: linear-gradient(44.44deg, #ED2775 7.79%, #FF7448 94.18%);
+        border-radius: 50%;
+        color: var(--whiteColor);
+        box-shadow: 15px 25px 35px rgba(38, 42, 55, 0.2);
+    
+        &::after, &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            border: 1px solid var(--whiteColor);
+        }
+        &::before {
+            animation: ripple 2s linear infinite;
+        }
+        &::after {
+            animation: ripple 2s linear 1s infinite;
+        }
+    }
+    &:hover {
+        &::before {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    .intro-video-shape {
+        position: absolute;
+        left: -55px;
+        top: -20px;
+        animation: movebounce 5s linear infinite;
+    }
+}
+.app-intro-video-content {
+    padding-left: 35px;
+
+    .sub-title {
+        font-size: 14px;
+        display: inline-block;
+        background: var(--gradientColor);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+    h2 {
+        line-height: 1.4;
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+    .default-btn {
+        margin-top: 10px;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .app-video-box {
+        .video-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 45px;
+            line-height: 70px;
+        }
+        .shape {
+            .shape-1 {
+                display: none;
+            }
+            .shape-2 {
+                display: none;
+            }
+        }
+    }
+    .app-intro-video-content {
+        padding-left: 0;
+        margin-top: 30px;
+
+        h2 {
+            font-size: 22px;
+        }
+    }
+    .app-intro-video-box {
+        .video-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 45px;
+            line-height: 70px;
+        }
+        .intro-video-shape {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .app-intro-video-content {
+        padding-left: 0;
+        margin-top: 30px;
+
+        h2 {
+            font-size: 28px;
+        }
+    }
+    .app-intro-video-box {
+        .video-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 45px;
+            line-height: 70px;
+        }
+        .intro-video-shape {
+            display: none;
+        }
+    }
+    .app-video-box {
+        .video-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 45px;
+            line-height: 70px;
+        }
+        .shape {
+            .shape-1 {
+                display: none;
+            }
+            .shape-2 {
+                display: none;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .app-video-box {
+        .shape {
+            .shape-1 {
+                left: 0;
+            }
+            .shape-1 {
+                right: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .app-video-box {
+        .shape {
+            .shape-1 {
+                left: 0;
+            }
+            .shape-2 {
+                right: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {}

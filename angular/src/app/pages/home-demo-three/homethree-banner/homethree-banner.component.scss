@@ -1,0 +1,203 @@
+.banner-wrapper-area {
+    z-index: 1;
+    padding-top: 150px;
+    position: relative;
+    border-bottom: 1px solid #eeeeee;
+
+    .shape13 {
+        right: 51%;
+        top: 33%;
+    }
+}
+.banner-wrapper-content {
+    padding-right: 15px;
+
+    .sub-title {
+        display: block;
+        margin-bottom: 12px;
+        background: var(--gradientColor);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-left: 2px solid var(--mainColor);
+        padding-left: 10px;
+        font-weight: 600;
+    }
+    h1 {
+        font-size: 48px;
+        line-height: 1.4;
+        margin-bottom: 18px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .default-btn {
+        margin-top: 10px;
+    }
+}
+.banner-wrapper-image {
+    text-align: end;
+    margin-left: 15px;
+    position: relative;
+
+    img {
+        &:nth-child(2) {
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .banner-wrapper-area {
+        padding-top: 140px;
+    }
+    .banner-wrapper-content {
+        padding-right: 0;
+        text-align: center;
+
+        .sub-title {
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .default-btn {
+            margin-top: 5px;
+        }
+        p {
+            font-size: 13px;
+        }
+    }
+    .banner-wrapper-image {
+        text-align: center;
+        margin: {
+            left: 0;
+            top: 20px;
+        };
+        img {
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .banner-wrapper-image {
+        text-align: end;
+
+        img {
+            &:nth-child(1) {
+                max-width: 320px;
+            }
+            &:nth-child(2) {
+                display: inline-block;
+                max-width: 320px;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .banner-wrapper-content {
+        padding-right: 0;
+        text-align: center;
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        p {
+            max-width: 540px;
+            font-size: 15px;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+        .sub-title {
+            font-size: 13px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .default-btn {
+            margin-top: 5px;
+        }
+    }
+    .banner-wrapper-image {
+        margin: {
+            left: 0;
+            top: 20px;
+        };
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .banner-wrapper-content {
+        padding-right: 0;
+
+        h1 {
+            font-size: 39px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 14px;
+        }
+        .default-btn {
+            margin-top: 5px;
+        }
+    }
+    .banner-wrapper-image {
+        margin-left: 0;
+
+        img {
+            &:nth-child(1) {
+                max-width: 330px;
+            }
+            &:nth-child(2) {
+                max-width: 330px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .banner-wrapper-area {
+        padding-top: 130px;
+    }
+    .banner-wrapper-content {
+        padding-right: 0;
+
+        h1 {
+            font-size: 45px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+    .banner-wrapper-image {
+        margin-left: 0;
+    }
+
+}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {}

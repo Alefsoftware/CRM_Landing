@@ -1,0 +1,137 @@
+<div class="navbar-area navbar-style-two" [ngClass]="{ sticky: isSticky }">
+        <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" [class.active]="classApplied">
+                        <!-- ✅ Logo -->
+                        <a class="navbar-brand" [routerLink]="['/', currentLang]">
+                                <img style="width: 220px" [src]="isSticky ? '/img/darklogo.png' : '/img/logo.png'"
+                                        alt="logo" />
+                        </a>
+
+                        <!-- Toggler -->
+                        <button class="navbar-toggler" type="button" (click)="toggleClass()">
+                                <span class="burger-menu">
+                                        <span class="top-bar"></span>
+                                        <span class="middle-bar"></span>
+                                        <span class="bottom-bar"></span>
+                                </span>
+                        </button>
+
+                        <!-- Navbar Links -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                                <a [routerLink]="['/', currentLang]" class="nav-link"
+                                                        routerLinkActive="active"
+                                                        [routerLinkActiveOptions]="{ exact: true }"> {{
+                                                        translate.t('Home') }}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a [routerLink]="['/', currentLang, 'about-simple']" class="nav-link">{{
+                                                        translate.t('About Us') }}</a>
+                                        </li>
+
+                                        <!-- Pages Mega Menu -->
+                                        <li class="nav-item megamenu">
+                                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                                        {{ translate.t('Resources') }}
+                                                </a>
+                                                <ul style="left: unset;width: auto;" class="dropdown-menu">
+                                                        <li class="nav-item">
+                                                                <div class="container">
+                                                                        <!-- <div class="row">
+                                                                                <div class="col"> -->
+                                                                        <!-- <h6 class="submenu-title">{{
+                                                                                                translate.t('Pages')}}
+                                                                                                I</h6> -->
+                                                                        <ul class="megamenu-submenu">
+                                                                                <li>
+                                                                                        <a [routerLink]="['/', currentLang, 'features-2']"
+                                                                                                routerLinkActive="active">{{
+                                                                                                translate.t
+                                                                                                ('Services &
+                                                                                                Features')}}</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <a [routerLink]="['/', currentLang, 'how-it-works']"
+                                                                                                routerLinkActive="active">
+
+                                                                                                {{
+                                                                                                translate.t
+                                                                                                ('How to Get Started')
+                                                                                                }}
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <a [routerLink]="['/', currentLang, 'sign-up']"
+                                                                                                routerLinkActive="active">{{
+                                                                                                translate.t('Request a
+                                                                                                Demo')
+                                                                                                }}</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <a [routerLink]="['/', currentLang, 'app-download']"
+                                                                                                routerLinkActive="active">{{
+                                                                                                translate.t('App
+                                                                                                Download')
+                                                                                                }}</a>
+                                                                                </li>
+
+                                                                                <hr>
+                                                                                <li>
+                                                                                        <a [routerLink]="['/', currentLang, 'privacy-policy']"
+                                                                                                routerLinkActive="active">{{
+                                                                                                translate.t('Privacy
+                                                                                                Policy')
+                                                                                                }}</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <a [routerLink]="['/', currentLang, 'terms-conditions']"
+                                                                                                routerLinkActive="active">{{
+                                                                                                translate.t('Terms &
+                                                                                                Conditions')
+                                                                                                }}</a>
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+
+
+
+
+
+
+
+                                                        </li>
+                                                </ul>
+                                        </li>
+
+                                        <li class="nav-item">
+                                                <a [routerLink]="['/', currentLang, 'blog-grid']" class="nav-link"
+                                                        routerLinkActive="active">{{ translate.t('Blog')}}</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                                <a [routerLink]="['/', currentLang, 'contact']" class="nav-link"
+                                                        routerLinkActive="active">{{ translate.t('Contact Us')}}</a>
+                                        </li>
+                                </ul>
+
+                                <!-- CTA + Lang Switcher -->
+                                <div class="others-option d-flex align-items-center gap-3">
+                                        <a [routerLink]="['/', currentLang, 'sign-up']" class="default-btn">{{
+                                                translate.t('Request a demo')}}</a>
+
+                                        <!-- ✅ Language Switcher -->
+                                        <div class="lang-switcher">
+                                                <a [href]="currentLang === 'ar' ? '/en' : '/ar'">
+                                                        <img [src]="currentLang === 'ar'
+      ? 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg'
+      : 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg'" alt="Language Flag" width="20" />
+                                                </a>
+
+                                        </div>
+
+                                </div>
+                        </div>
+                </nav>
+        </div>
+</div>

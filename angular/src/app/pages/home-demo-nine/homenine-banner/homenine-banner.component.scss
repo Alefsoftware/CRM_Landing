@@ -1,0 +1,137 @@
+.new-app-main-banner-gradient-area {
+    overflow: hidden;
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+    padding: {
+        top: 120px;
+        bottom: 80px;
+    };
+}
+.new-app-main-banner-gradient-content {
+    max-width: 635px;
+    margin-left: auto;
+
+    .sub-title {
+        padding: 10px 25px;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        background: #A97DEE;
+        display: inline-block;
+        color: var(--whiteColor);
+        font: {
+            size: 12px;
+            weight: 500;
+        };
+    }
+    h1 {
+        font-size: 48px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        color: var(--whiteColor);
+    }
+    p {
+        color: var(--whiteColor);
+        margin-bottom: 0;
+    }
+    .banner-btn {
+        margin-top: 30px;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .new-app-main-banner-gradient-area {
+        padding: {
+            top: 145px;
+            bottom: 50px;
+        };
+    }
+    .new-app-main-banner-gradient-content {
+        h1 {
+            font-size: 25px;
+        }
+    }
+    .new-app-main-banner-gradient-image {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .new-app-main-banner-gradient-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .new-app-main-banner-gradient-area {
+        padding: {
+            top: 145px;
+            bottom: 50px;
+        };
+        .container-fluid {
+            max-width: 720px;
+        }
+    }
+    .new-app-main-banner-gradient-content {
+        max-width: 695px;
+
+        h1 {
+            font-size: 45px;
+        }
+    }
+    .new-app-main-banner-gradient-image {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .new-app-main-banner-gradient-area {
+        padding: {
+            top: 145px;
+            bottom: 100px;
+        };
+        .container-fluid {
+            max-width: 960px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .new-app-main-banner-gradient-area {
+        .container-fluid {
+            max-width: 1140px;
+        }
+    }
+
+}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {
+
+    .new-app-main-banner-gradient-area {
+        .container-fluid {
+            max-width: 2000px;
+        }
+    }
+
+}

@@ -1,0 +1,28 @@
+<div class="features-area pt-100 pb-75">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-sm-6 col-md-6" *ngFor="let service of services; let i = index">
+                <div style="min-height: 350px !important;" class="features-card">
+                    <div class="icon">
+  <img [src]="service.icon" alt="icon" style="width: 40px; height: 40px;">
+                        <div  class="number">{{ i + 1 }}</div>
+                    </div>
+                    <h3>{{ getTitle(service) }}</h3>
+                    <p>{{ getDescription(service) }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* On hover — make number, h3, and p black */
+.features-card:hover .number,
+.features-card:hover h3,
+.features-card:hover p {
+  color: #000 !important;
+}
+.features-card:hover .number{
+    background-color: #0289ee;
+}
+
+    </style>
+</div>

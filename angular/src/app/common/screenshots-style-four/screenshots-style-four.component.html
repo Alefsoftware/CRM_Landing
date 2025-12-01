@@ -1,0 +1,30 @@
+<div class="screenshots-area bg-black ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">APP SCREENS</span>
+            <h2>Beautifully Crafted All App Screenshots</h2>
+        </div>
+        <div class="screen-swiper-slides">
+            <owl-carousel-o [options]="screenSwiperSlides">
+                <ng-template carouselSlide>
+                    <div class="swiper-slide">
+                        <img src="img/screenshots/screen2.jpg" alt="screen">
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="swiper-slide">
+                        <img src="img/screenshots/screen3.jpg" alt="screen">
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="swiper-slide">
+                        <img src="img/screenshots/screen4.jpg" alt="screen">
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+        <div class="free-trial-btn">
+            <a routerLink="/sign-in" class="default-btn">Start Free Trial</a>
+        </div>
+    </div>
+</div>

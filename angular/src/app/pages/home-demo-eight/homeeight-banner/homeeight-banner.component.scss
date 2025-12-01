@@ -1,0 +1,391 @@
+.new-app-main-banner-wrap-area {
+    background-color: #F6F9FB;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: {
+        top: 150px;
+    };
+}
+.new-app-main-banner-wrap-content {
+    max-width: 635px;
+    margin-left: auto;
+    margin-top: -90px;
+
+    .sub-title {
+        font-size: 14px;
+        display: inline-block;
+        background: var(--gradientColor);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+    h1 {
+        color: var(--blackColor);
+        font-size: 62px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    p {
+        color: var(--blackColor);
+        margin-bottom: 0;
+    }
+    .user-info {
+        padding: 0;
+        margin-top: 25px;
+        margin-bottom: 0;
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin-right: -20px;
+
+            img {
+                max-width: 50px;
+                border: 4px solid var(--whiteColor);
+                border-radius: 50px;
+            }
+            &.title {
+                margin-left: 30px;
+                margin-right: 0;
+                font-size: 14px;
+                font-weight: 500;
+                vertical-align: middle;
+                color: var(--blackColor);
+            }
+        }
+    }
+    .app-btn-box {
+        margin-top: 30px;
+        
+        .applestore-btn {
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            border-radius: 50px;
+            margin-right: 15px;
+            display: inline-block;
+            color: var(--whiteColor);
+            background: var(--gradientColor);
+            font: {
+                size: 12px;
+                weight: 500;
+            };
+            padding: {
+                top: 12px;
+                left: 65px;
+                right: 25px;
+                bottom: 12px;
+            };
+            span {
+                display: block;
+                margin-top: 5px;
+                color: var(--whiteColor);
+                transition: var(--transition);
+                font: {
+                    size: 15.5px;
+                    weight: 500;
+                };
+            }
+            img {
+                transform: translateY(-50%);
+                position: absolute;
+                left: 20px;
+                top: 50%;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                border-radius: 5px;
+                z-index: -1;
+                background: var(--mainColor);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            &:hover {
+                transform: translateY(-3px);
+                color: var(--whiteColor);
+
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                span {
+                    color: var(--whiteColor);
+                }
+            }
+        }
+        .playstore-btn {
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            border-radius: 50px;
+            display: inline-block;
+            color: var(--whiteColor);
+            background: var(--blackColor);
+            box-shadow: 0 7px 18px 0 rgba(107, 124, 147, .15);
+            font: {
+                size: 12px;
+                weight: 500;
+            };
+            padding: {
+                top: 12px;
+                left: 70px;
+                right: 25px;
+                bottom: 12px;
+            };
+            span {
+                display: block;
+                margin-top: 5px;
+                color: var(--whiteColor);
+                transition: var(--transition);
+                font: {
+                    size: 15.5px;
+                    weight: 500;
+                };
+            }
+            img {
+                transform: translateY(-50%);
+                position: absolute;
+                left: 30px;
+                top: 50%;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                border-radius: 5px;
+                z-index: -1;
+                background: var(--gradientColor);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            &:hover {
+                transform: translateY(-3px);
+                color: var(--whiteColor);
+
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                span {
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+}
+.new-app-main-banner-wrap-image {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    .wrap-image-shape-1 {
+        position: absolute;
+        left: 145px;
+        top: 70px;
+        animation: movebounce 2s linear infinite;
+    }
+    .wrap-image-shape-2 {
+        position: absolute;
+        right: 115px;
+        bottom: 160px;
+        animation: movebounce 2s linear infinite;
+    }
+    .banner-circle {
+        position: absolute;
+        top: 45%;
+        transform: translateY(-45%);
+        left: 0;
+        right: 80px;
+        margin: auto;
+        z-index: -1;
+        max-width: 575px;
+
+        img {
+            animation-name: rotateme;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+}
+.new-app-main-banner-wrap-shape {
+    position: absolute;
+    left: -170px;
+    top: -185px;
+    z-index: -1;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .new-app-main-banner-wrap-area {
+        padding: {
+            top: 110px;
+            bottom: 50px;
+        };
+    }
+    .new-app-main-banner-wrap-content {
+        margin-top: 0;
+
+        h1 {
+            font-size: 25px;
+        }
+        .app-btn-box {
+            .applestore-btn {
+                font-size: 10px;
+
+                span {
+                    font-size: 12.5px;
+                }
+            }
+            .playstore-btn {
+                font-size: 10px;
+
+                span {
+                    font-size: 12.5px;
+                }
+            }
+        }
+    }
+    .new-app-main-banner-wrap-image {
+        margin-top: 30px;
+
+        .wrap-image-shape-1 {
+            display: none;
+        }
+        .wrap-image-shape-2 {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .new-app-main-banner-wrap-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .new-app-main-banner-wrap-area {
+        padding-bottom: 50px;
+
+        .container-fluid {
+            max-width: 720px;
+        }
+    }
+    .new-app-main-banner-wrap-content {
+        margin-top: 0;
+        max-width: 695px;
+
+        h1 {
+            font-size: 35px;
+        }
+    }
+    .new-app-main-banner-wrap-image {
+        margin-top: 30px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .new-app-main-banner-wrap-area {
+        padding-bottom: 80px;
+
+        .container-fluid {
+            max-width: 960px;
+        }
+    }
+    .new-app-main-banner-wrap-content {
+        margin-top: 0;
+
+        h1 {
+            font-size: 45px;
+        }
+    }
+    .new-app-main-banner-wrap-image {
+        .wrap-image-shape-1 {
+            left: 45px;
+            top: 0;
+        }
+        .wrap-image-shape-2 {
+            right: 35px;
+            bottom: 110px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .new-app-main-banner-wrap-area {
+        padding-bottom: 80px;
+
+        .container-fluid {
+            max-width: 1140px;
+        }
+    }
+    .new-app-main-banner-wrap-content {
+        margin-top: 0;
+
+        h1 {
+            font-size: 45px;
+        }
+    }
+    .new-app-main-banner-wrap-image {
+        .wrap-image-shape-1 {
+            left: 45px;
+            top: 0;
+        }
+        .wrap-image-shape-2 {
+            right: 35px;
+            bottom: 110px;
+        }
+    }
+
+}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {
+
+    .new-app-main-banner-wrap-image {
+        .wrap-image-shape-1 {
+            left: 210px;
+            top: 140px;
+        }
+        .wrap-image-shape-2 {
+            right: 190px;
+            bottom: 210px;
+        }
+        .banner-circle {
+            max-width: 100%;
+        }
+    }
+    .new-app-main-banner-wrap-shape {
+        left: -100px;
+        top: -100px;
+    }
+
+}

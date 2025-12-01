@@ -1,0 +1,98 @@
+<div class="new-app-main-banner-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="new-app-main-banner-content">
+                    <div class="content" *ngIf="sectionOneData">
+                        <!-- <div class="name-big-text">SouqLeader</div> -->
+                        <span
+                            style="color: #0289ee;font-size: 14px;display: inline-block;margin-bottom: 10px;font-weight: 600;">{{
+                            translate.t('Efficiency Drives Growth')}}</span>
+                        <h1 style="color: #fff;">
+                            {{ currentLang === 'ar' ? sectionOneData?.title_ar : sectionOneData?.title_en }}
+                        </h1>
+                        <p style="color: #0289ee;">
+                            {{ currentLang === 'ar' ? sectionOneData?.description_ar : sectionOneData?.description_en }}
+                        </p>
+
+
+                        <div class="app-btn-box">
+                            <a href="#" class="applestore-btn" target="_blank">
+                                <img src="img/apple-store.png" alt="image">
+                                Download on the
+                                <span>Apple Store</span>
+                            </a>
+                            <a href="#" class="playstore-btn" target="_blank">
+                                <img src="img/play-store.png" alt="image">
+                                Get It On
+                                <span>Google Play</span>
+                            </a>
+                        </div>
+
+                        <!-- <div class="content-shape">
+                            <img src="img/more-home/banner/content-shape.png" alt="image">
+                        </div> -->
+                    </div>
+
+                    <!-- Trusted by section -->
+                    <div style="display: none;" class="new-app-trusted-by" *ngIf="clientsLogos.length">
+                        <div class="row align-items-center">
+                            <div class="col-lg-2 col-md-12">
+                                <span class="title">Trusted by:</span>
+                            </div>
+                            <div class="col-lg-10 col-md-12">
+                                <div dir="ltr" class="new-app-trusted-by-slides">
+                                    <owl-carousel-o [options]="trustedBySlides">
+                                        <ng-template carouselSlide *ngFor="let logo of clientsLogos">
+                                            <div class="item">
+                                                <img [src]="logo.image" alt="partner logo" />
+                                            </div>
+                                        </ng-template>
+                                    </owl-carousel-o>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-6 col-md-12" *ngIf="sectionOneData">
+                <div class="new-app-main-banner-image">
+                    <!-- <img [src]="sectionOneData.image" alt="image"> -->
+                    <img src="img/more-home/banner/asset-18.png" alt="image">
+
+                    <div class="wrap-shape-1">
+                        <img src="img/more-home/banner/asset-19.png" alt="image">
+                    </div>
+                    <!-- <div class="wrap-shape-2">
+                        <img src="img/more-home/banner/5.png" alt="image">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-app-banner-bg-shape">
+        <img src="img/more-home/banner/banner-shape.png" alt="image">
+    </div>
+    <!-- <div class="new-app-banner-strock-shape">
+        <img src="img/more-home/banner/strock.png" alt="image">
+    </div> -->
+    <style>
+        .new-app-main-banner-area {
+            background-size: cover;
+            background-position: center;
+            height: 950px;
+            /* Default height for large screens */
+        }
+
+        /* 📱 Mobile: remove the fixed height */
+        @media (max-width: 767px) {
+            .new-app-main-banner-area {
+                height: auto;
+            }
+        }
+    </style>
+</div>

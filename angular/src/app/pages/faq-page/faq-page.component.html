@@ -1,0 +1,215 @@
+<app-navbar-style-two />
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Frequently Asked Questions</h2>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
+</div>
+
+<div class="faq-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="faq-sidebar">
+                    <ul>
+                        <li><a routerLink="/faq"><span>Startup Business Idea</span></a></li>
+                        <li><a routerLink="/faq"><span>Digital Marketing</span></a></li>
+                        <li><a routerLink="/faq" class="active"><span>Design and Development</span></a></li>
+                        <li><a routerLink="/faq"><span>IT and Startup Consulting</span></a></li>
+                        <li><a routerLink="/faq"><span>Design and Development</span></a></li>
+                        <li><a routerLink="/faq"><span>Startup Landing Page</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="faq-accordion accordion">
+                    <div class="accordion">
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(0)"
+                                [ngClass]="{ 'open': isSectionOpen(0) }">
+                                Why are consultants important?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(0) }">
+                                <p><strong>Apzel</strong> is always looking for talented <a
+                                        routerLink=".">information</a> security and IT risk management professionals who
+                                    are dedicated, hard working and looking for a challenge. If you are interested in
+                                    employment with <strong>Apzel</strong>, a company who values you and your family,
+                                    visit our careers page.</p>
+                                <ul>
+                                    <li>a console</li>
+                                    <li>Two Joy-Con controllers that are detachable</li>
+                                    <li>A grip that enables you to combine them into a single gamepad for play on the TV
+                                    </li>
+                                    <li>Two straps for turning the Joy-Cons into individual controllers</li>
+                                    <li>A dock which you can use to connect your console to the television for
+                                        traditional gameplay</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(1)"
+                                [ngClass]="{ 'open': isSectionOpen(1) }">
+                                What is the purpose of a consultant?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(1) }">
+                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                    bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                                    keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                                    proident. Ad vegan excepteur butcher vice lomo.</p>
+                                <ul>
+                                    <li>a console</li>
+                                    <li>Two Joy-Con controllers that are <a routerLink=".">detachable</a></li>
+                                    <li>A grip that enables you to combine them into a single gamepad for play on the TV
+                                    </li>
+                                    <li>Two straps for turning the Joy-Cons into <strong>individual</strong> controllers
+                                    </li>
+                                    <li>A dock which you can use to connect your console to the television for
+                                        traditional gameplay</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(2)"
+                                [ngClass]="{ 'open': isSectionOpen(2) }">
+                                What attracts you to the role of a consultant?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(2) }">
+                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.</p>
+                                <p>Tunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
+                                    et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                                    sapiente ea proident. Ad vegan excepteur butcher vice lomo.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(3)"
+                                [ngClass]="{ 'open': isSectionOpen(3) }">
+                                What are the advantages of being a consultant?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(3) }">
+                                <ul>
+                                    <li>a console</li>
+                                    <li>Two Joy-Con controllers that are detachable</li>
+                                    <li>A grip that enables you to combine them into a single gamepad for play on the TV
+                                    </li>
+                                    <li>Two straps for turning the Joy-Cons into individual controllers</li>
+                                    <li>A dock which you can use to connect your console to the television for
+                                        traditional gameplay</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(4)"
+                                [ngClass]="{ 'open': isSectionOpen(4) }">
+                                Is consulting a good career?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(4) }">
+                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                    bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                                    keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                                    proident. Ad vegan excepteur butcher vice lomo.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(5)"
+                                [ngClass]="{ 'open': isSectionOpen(5) }">
+                                How is working in consulting?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(5) }">
+                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                    bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                                    keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                                    proident. Ad vegan excepteur butcher vice lomo.</p>
+                                <ul>
+                                    <li>a console</li>
+                                    <li>Two Joy-Con controllers that are <a routerLink=".">detachable</a></li>
+                                    <li>A grip that enables you to combine them into a single gamepad for play on the TV
+                                    </li>
+                                    <li>Two straps for turning the Joy-Cons into <strong>individual</strong> controllers
+                                    </li>
+                                    <li>A dock which you can use to connect your console to the television for
+                                        traditional gameplay</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(6)"
+                                [ngClass]="{ 'open': isSectionOpen(6) }">
+                                Startup business idea?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(6) }">
+                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                    bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                                    keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                                    proident. Ad vegan excepteur butcher vice lomo.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(7)"
+                                [ngClass]="{ 'open': isSectionOpen(7) }">
+                                Digital marketing?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(7) }">
+
+                            </div>
+                        </div>
+                        <div class="accordion-section">
+                            <div class="accordion-header" (click)="toggleSection(8)"
+                                [ngClass]="{ 'open': isSectionOpen(8) }">
+                                Design and development?
+                            </div>
+                            <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(8) }">
+                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                    bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                                    keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                                    proident. Ad vegan excepteur butcher vice lomo.</p>
+                                <ul>
+                                    <li>a console</li>
+                                    <li>Two Joy-Con controllers that are <a routerLink=".">detachable</a></li>
+                                    <li>A grip that enables you to combine them into a single gamepad for play on the TV
+                                    </li>
+                                    <li>Two straps for turning the Joy-Cons into <strong>individual</strong> controllers
+                                    </li>
+                                    <li>A dock which you can use to connect your console to the television for
+                                        traditional gameplay</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-contact-info />
+
+<app-footer-style-four />
+
+<app-back-to-top />

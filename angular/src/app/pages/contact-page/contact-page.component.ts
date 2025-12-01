@@ -1,0 +1,92 @@
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
+import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+    selector: 'app-contact-page',
+    standalone: true,
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterLink,
+        HttpClientModule,
+        NavbarStyleTwoComponent,
+        ContactInfoComponent,
+        FooterStyleFourComponent,
+        BackToTopComponent
+    ],
+    templateUrl: './contact-page.component.html',
+    styleUrls: ['./contact-page.component.scss']
+})
+export class ContactPageComponent implements OnInit {
+    contactData: any = null;
+    safeMapHtml: SafeHtml | null = null;
+
+    // Form model
+    contactForm = {
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+    };
+
+    // Form status
+    successMessage: string = '';
+    errorMessage: string = '';
+    loading: boolean = false;
+
+    constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
+
+    ngOnInit(): void {
+        this.http.get('https://admin.realstatecrm-development.dev.alefsoftware.com/site/contactus')
+            .subscribe((res: any) => {
+                if (res.status && res.data) {
+                    this.contactData = res.data;
+                    this.safeMapHtml = this.sanitizer.bypassSecurityTrustHtml(this.contactData.contact_map);
+                }
+            });
+    }
+
+    submitForm(formRef: any) {
+        this.successMessage = '';
+        this.errorMessage = '';
+
+        // Check form validity
+        if (!formRef.valid) {
+            this.errorMessage = 'Please fill in all required fields with valid data.';
+            return;
+        }
+
+        this.loading = true;
+
+        const payload = {
+            name: this.contactForm.name,
+            email: this.contactForm.email,
+            phone: this.contactForm.phone,
+            subject: this.contactForm.subject,
+            message: this.contactForm.message
+        };
+
+        this.http.post('https://admin.realstatecrm-development.dev.alefsoftware.com/site/sendmessage', payload)
+            .subscribe({
+                next: (res: any) => {
+                    this.loading = false;
+                    this.successMessage = 'Message sent successfully!';
+                    this.contactForm = { name: '', email: '', phone: '', subject: '', message: '' };
+                    formRef.resetForm(); // reset Angular form state
+                },
+                error: (err) => {
+                    this.loading = false;
+                    this.errorMessage = 'Failed to send message. Please try again.';
+                }
+            });
+    }
+}

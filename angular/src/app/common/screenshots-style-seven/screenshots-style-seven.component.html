@@ -1,0 +1,24 @@
+<div style="display:none;" class="app-screenshots-area bg-color pb-100">
+    <div class="container">
+        <div class="section-title title-with-bg-text">
+            <div class="big-title">{{translate.t('App Screen')}}</div>
+            <span class="sub-title">{{translate.t('APP Seamless user experience')}}</span>
+            <h2>{{translate.t('User-friendly and business-ready')}}</h2>
+        </div>
+        <div dir="ltr" class="app-screenshots-slides">
+            <owl-carousel-o [options]="screenshotsSlides">
+                <ng-template carouselSlide *ngFor="let screen of screens">
+                    <div class="single-screenshot-card">
+                        <img [src]="screen.image" alt="screenshots">
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+    <!-- <div class="app-screenshots-shape-1">
+        <img src="img/more-home/screenshots/shape-1.png" alt="image">
+    </div>
+    <div class="app-screenshots-shape-2">
+        <img src="img/more-home/screenshots/shape-2.png" alt="image">
+    </div> -->
+</div>

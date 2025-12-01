@@ -1,0 +1,96 @@
+<app-navbar-style-two />
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Blog Grid</h2>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li>Blog Grid</li>
+            </ul>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="banner-shape1">
+        <img src="img/shape/shape9.png" alt="image">
+    </div>
+</div>
+
+<div class="blog-area ptb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs">
+                <div class="single-blog-post">
+                    <div class="image">
+                        <a [routerLink]="['/blog-details', blog.slug_en]" class="d-block">
+                            <img [src]="blog.image ? 'https://admin.realstatecrm-development.dev.alefsoftware.com/' + blog.image : 'assets/img/default.jpg'"
+                                alt="blog">
+                        </a>
+                        <a routerLink="/blog-grid" class="tag">Blog</a>
+                    </div>
+                    <div class="content">
+                        <ul class="meta">
+                            <li><i class="ri-time-line"></i> {{ blog.created_at | date:'MMMM d, y' }}</li>
+                            <li><i class="ri-message-2-line"></i> <a [routerLink]="['/blog-details', blog.slug_en]">(0)
+                                    Comment</a></li>
+                        </ul>
+                        <h3><a [routerLink]="['/blog-details', blog.slug_en]">{{ blog.title_en }}</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-lg-12 col-md-12" *ngIf="paginationLinks.length > 1">
+                <div class="pagination-area">
+                    <div class="nav-links">
+                        <ng-container *ngFor="let link of paginationLinks">
+                            <span *ngIf="!link.url" class="page-numbers disabled" [innerHTML]="link.label">
+                            </span>
+
+                            <span *ngIf="link.url && link.active" class="page-numbers current" [innerHTML]="link.label">
+                            </span>
+
+                            <a *ngIf="link.url && !link.active" href="javascript:void(0)" class="page-numbers"
+                                (click)="goToPage(link)" [innerHTML]="link.label">
+                            </a>
+                        </ng-container>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-lg-12 col-md-12" *ngIf="paginationLinks.length > 1">
+                <div class="pagination-area">
+                    <div class="nav-links">
+                        <ng-container *ngFor="let link of paginationLinks">
+                            <!-- Skip 'Previous' and 'Next' labels -->
+                            <ng-container *ngIf="!link.label.includes('Previous') && !link.label.includes('Next')">
+
+                                <!-- Current page -->
+                                <span *ngIf="link.active" class="page-numbers current" [innerHTML]="link.label">
+                                </span>
+
+                                <!-- Other pages -->
+                                <a *ngIf="!link.active" href="javascript:void(0)" class="page-numbers"
+                                    (click)="goToPage(link)" [innerHTML]="link.label">
+                                </a>
+
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<app-footer-style-four />
+<app-back-to-top />

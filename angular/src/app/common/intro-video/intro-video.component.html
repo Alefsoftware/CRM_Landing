@@ -1,0 +1,42 @@
+<div class="video-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="intro-video-content">
+                    <span class="sub-title">INTRO VIDEO</span>
+                    <h2>Watch Our Most Watched Souqloader App Video</h2>
+                    <p>Cloud based storage for your data backup just log in with your mail account from play store and
+                        using whatever you want for your business purpose orem ipsum dummy text. Never missyour chance
+                        its just began. Cloud based storage for your data backup just log in with your mail account from
+                        play store and using whatever you want for your business purpose orem ipsum dummy text.Never
+                        missyour chance its just began.</p>
+                    <a routerLink="/contact" class="default-btn">Get Started</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="intro-video-box">
+                    <img src="img/video/video-img1.jpg" alt="video-img">
+                    <button class="video-btn popup-video" (click)="openPopup()"><i class="ri-play-line"></i></button>
+                    <div class="shape">
+                        <img src="img/shape/shape13.png" class="shape10" alt="image">
+                        <img src="img/shape/shape14.png" class="shape11" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Popup -->
+<div class="video-popup" *ngIf="isOpen">
+    <div class="popup-inner">
+        <iframe src="https://www.youtube.com/embed/XNQk1qt__Vw"
+            title="Setup and Local Installation - React Nextjs Online Yoga Coaching &amp; Training Courses System"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <button (click)="closePopup()" type="button" class="close-btn">
+            <i class="ri-close-line"></i>
+        </button>
+    </div>
+</div>

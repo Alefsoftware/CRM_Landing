@@ -1,0 +1,251 @@
+<app-navbar-style-two />
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Products Details</h2>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li>Products Details</li>
+            </ul>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
+</div>
+
+<div class="products-details-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-12">
+                <div class="products-details-image">
+                    <img src="img/products/products-img1.jpg" alt="image">
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <div class="products-details-desc">
+                    <h3>Laptop Blue Background</h3>
+                    <div class="price">
+                        <span class="new-price">$200</span>
+                        <span class="old-price">$210</span>
+                    </div>
+                    <div class="products-review">
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-line"></i>
+                        </div>
+                        <a routerLink="/product-details" class="rating-count">3 reviews</a>
+                    </div>
+                    <p>Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure
+                        buried near the Pyramids. Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                        incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor.</p>
+                    <div class="products-meta">
+                        <span>SKU: <span class="sku">10</span></span>
+                        <span>Availability: <span class="in-stock">In Stock</span></span>
+                        <span>Category: <a routerLink="/products">Business</a></span>
+                        <span>Tag: <a routerLink="/products">Book</a></span>
+                    </div>
+                    <div class="products-add-to-cart">
+                        <div class="input-counter">
+                            <input type="number" value="1">
+                        </div>
+                        <button type="submit" class="default-btn">Add to Cart</button>
+                    </div>
+                    <div class="products-share">
+                        <ul class="social">
+                            <li><span>Share:</span></li>
+                            <li><a href="#" class="facebook" target="_blank"><i class="ri-facebook-fill"></i></a></li>
+                            <li><a href="#" class="twitter" target="_blank"><i class="ri-twitter-fill"></i></a></li>
+                            <li><a href="#" class="linkedin" target="_blank"><i class="ri-linkedin-fill"></i></a></li>
+                            <li><a href="#" class="instagram" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="products-details-tabs">
+                    <ul class="nav-tabset">
+                        <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab1'}">
+                            <span (click)="switchTab($event, 'tab1')">
+                                Description
+                            </span>
+                        </li>
+                        <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
+                            <span (click)="switchTab($event, 'tab2')">
+                                Reviews (2)
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="tabs-container">
+                        <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
+                            <p>This story, dazzling in its powerful simplicity and soul-stirring wisdom, is about an
+                                Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the
+                                Egyptian desert in search of a treasure buried near the Pyramids. Lorem ipsum dolor sit.
+                                Very well built theme, couldn't be happier with it. Can't wait for future updates to see
+                                what.</p>
+                            <ul>
+                                <li>Instant <strong>Apzel</strong> bestseller</li>
+                                <li>Translated into 18 languages</li>
+                                <li>#1 Most Recommended Book of the year.</li>
+                                <li>A neglected project, widely dismissed, its champion written off as unhinged.</li>
+                                <li>Yields a negative result in an experiment because of a flaw in the design of the
+                                    experiment.</li>
+                                <li>An Amazon, Bloomberg, Financial Times, Forbes, Inc., Newsweek, Strategy + Business,
+                                    Tech Crunch, Washington Post Best Business Book of the year</li>
+                            </ul>
+                        </div>
+                        <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
+                            <div class="products-reviews">
+                                <h3>Products Rating</h3>
+                                <div class="rating">
+                                    <span class="ri-star-fill checked"></span>
+                                    <span class="ri-star-fill checked"></span>
+                                    <span class="ri-star-fill checked"></span>
+                                    <span class="ri-star-fill checked"></span>
+                                    <span class="ri-star-fill"></span>
+                                </div>
+                                <div class="rating-count">
+                                    <span>4.1 average based on 4 reviews.</span>
+                                </div>
+                            </div>
+                            <div class="products-review-comments">
+                                <h3>3 Reviews</h3>
+                                <div class="user-review">
+                                    <img src="img/user/user1.jpg" alt="image">
+                                    <div class="review-rating">
+                                        <div class="review-stars">
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                        </div>
+                                    </div>
+                                    <span class="d-block sub-comment">James Anderson</span>
+                                    <p>Very well built theme, couldn't be happier with it. Can't wait for future updates
+                                        to see what else they add in. Very well built theme, couldn't be happier with
+                                        it. Can't wait for future updates to see what.</p>
+                                </div>
+                                <div class="user-review">
+                                    <img src="img/user/user2.jpg" alt="image">
+                                    <div class="review-rating">
+                                        <div class="review-stars">
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill'></i>
+                                            <i class='ri-star-fill'></i>
+                                        </div>
+                                    </div>
+                                    <span class="d-block sub-comment">Sarah Taylor</span>
+                                    <p>Was really easy to implement and they quickly answer my additional questions!
+                                        Very well built theme, couldn't be happier with it.</p>
+                                </div>
+                                <div class="user-review">
+                                    <img src="img/user/user3.jpg" alt="image">
+                                    <div class="review-rating">
+                                        <div class="review-stars">
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                        </div>
+                                    </div>
+                                    <span class="d-block sub-comment">David Warner</span>
+                                    <p>Was really easy to implement and they quickly answer my additional questions!
+                                        Very well built theme, couldn't be happier with it.</p>
+                                </div>
+                                <div class="user-review">
+                                    <img src="img/user/user4.jpg" alt="image">
+                                    <div class="review-rating">
+                                        <div class="review-stars">
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill checked'></i>
+                                            <i class='ri-star-fill'></i>
+                                        </div>
+                                    </div>
+                                    <span class="d-block sub-comment">King Kong</span>
+                                    <p>Was really easy to implement and they quickly answer my additional questions!
+                                        Very well built theme, couldn't be happier with it.</p>
+                                </div>
+                            </div>
+                            <div class="review-form-wrapper">
+                                <h3>Add a review</h3>
+                                <p class="comment-notes">Your email address will not be published. Required fields are
+                                    marked <span>*</span></p>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="rating">
+                                                <input type="radio" id="star5" name="rating" value="5" /><label
+                                                    for="star5"></label>
+                                                <input type="radio" id="star4" name="rating" value="4" /><label
+                                                    for="star4"></label>
+                                                <input type="radio" id="star3" name="rating" value="3" /><label
+                                                    for="star3"></label>
+                                                <input type="radio" id="star2" name="rating" value="2" /><label
+                                                    for="star2"></label>
+                                                <input type="radio" id="star1" name="rating" value="1" /><label
+                                                    for="star1"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Name *">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Email *">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="form-group">
+                                                <textarea placeholder="Your review" class="form-control" cols="30"
+                                                    rows="6"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <p class="comment-form-cookies-consent">
+                                                <input type="checkbox" id="test1">
+                                                <label for="test1">Save my name, email, and website in this browser for
+                                                    the next time I comment.</label>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <button type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-related-products />
+
+<div class="app-download-area pb-100">
+    <app-download-app-style-one />
+</div>
+
+<app-footer-style-four />
+
+<app-back-to-top />

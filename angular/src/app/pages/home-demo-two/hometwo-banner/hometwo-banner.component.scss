@@ -1,0 +1,227 @@
+.banner-area {
+    position: relative;
+    z-index: 1;
+    padding: {
+        top: 120px;
+        bottom: 10px;
+    };
+    .container-fluid {
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+    &::before {
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        content: '';
+        height: 90%;
+        position: absolute;
+        background: {
+            image: url(../../../../../public/img/banner/banner-shape1.png);
+            position: center center;
+            repeat: no-repeat;
+            size: cover;
+        };
+    }
+    .banner-shape3 {
+        top: 130px;
+        left: auto;
+        right: 105px;
+        bottom: auto;
+    }
+    .shape13 {
+        left: 43%;
+        bottom: 20%;
+        right: auto;
+        top: auto;
+    }
+}
+.banner-content {
+    max-width: 648px;
+    margin-left: auto;
+    padding-right: 15px;
+    
+    .sub-title {
+        color: var(--mainColor);
+        margin-bottom: 20px;
+        font-weight: 600;
+        display: block;
+    }
+    h1 {
+        font-size: 48px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 16px;
+        max-width: 540px;
+    }
+    .default-btn {
+        margin-top: 10px;
+    }
+}
+.banner-image {
+    padding-left: 15px;
+    text-align: center;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .banner-area {
+        padding: {
+            top: 135px;
+            bottom: 40px;
+        };
+        .container-fluid {
+            padding: {
+                left: var(--bs-gutter-x,.75rem);
+                right: var(--bs-gutter-x,.75rem);
+            };
+        }
+        &::before {
+            height: 100%;
+        }
+    }
+    .banner-content {
+        max-width: 100%;
+        padding-right: 0;
+        text-align: center;
+        
+        .sub-title {
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .default-btn {
+            margin-top: 5px;
+        }
+        p {
+            font-size: 13px;
+            max-width: 100%;
+        }
+    }
+    .banner-image {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .banner-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .banner-area {
+        padding: {
+            bottom: 15px;
+            top: 150px;
+        };
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: var(--bs-gutter-x,.75rem);
+                right: var(--bs-gutter-x,.75rem);
+            };
+        }
+    }
+    .banner-content {
+        max-width: 100%;
+        text-align: center;
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 15px;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+        .sub-title {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        .default-btn {
+            margin-top: 5px;
+        }
+    }
+    .banner-image {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .banner-area {
+        padding-bottom: 40px;
+
+        &::before {
+            height: 80%;
+        }
+        .shape13 {
+            left: 46%;
+            bottom: 10%;
+        }
+    }
+    .banner-content {
+        max-width: 465px;
+        padding-right: 0;
+
+        .sub-title {
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        p {
+            max-width: 100%;
+            font-size: 15px;
+        }
+        .default-btn {
+            margin-top: 5px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .banner-content {
+        max-width: 560px;
+    }
+
+}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {
+
+    .banner-area {
+        &::before {
+            height: 55%;
+        }
+    }
+
+}

@@ -1,0 +1,178 @@
+<!-- Free Trial -->
+<div style="background-color: #FFF;" class="new-free-trial-area" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
+    <div class="container">
+        <div class="new-free-trial-inner-box"
+            style="background: linear-gradient(221.69deg,#039BE5 0%,#020E3C 101.01%);">
+            <div class="row align-items-center">
+                <div class="col-lg-9 col-md-9">
+                    <div class="new-free-trial-content">
+
+                        <!-- Title -->
+                        <span class="sub-title">
+                            {{ currentLang === 'ar' ? 'تحدث إلى فريقنا' : 'Talk to our Team' }}
+                        </span>
+
+                        <!-- Main heading -->
+                        <h2 style="margin-bottom: unset;">
+                            {{ currentLang === 'ar' ? 'ابدأ رحلتك نحو النمو الآن' : 'Your next level of growth starts
+                            here' }}
+                        </h2>
+
+                        <!-- Description -->
+                        <span style="color:white;">
+                            {{
+                            currentLang === 'ar'
+                            ? 'اكتشف قوة نظام CRM الخاص بنا بمشاركة بيانات التواصل الخاصة بك، وسيتواصل معك فريقنا ليشرح
+                            لك تفاصيل النظام بالكامل وكذلك تطبيق الهاتف المحمول.'
+                            : 'Unlock the Power of Our CRM by sharing your contact details, and our team will reach out
+                            to walk you through the CRM and its mobile app.'
+                            }}
+                        </span>
+
+                        <!-- Form -->
+                        <form style="margin-top: 30px;" class="free-trial-form">
+                            <input type="text" class="input-newsletter"
+                                [placeholder]="currentLang === 'ar' ? 'أدخل بريدك الإلكتروني' : 'Enter Your Email Address'"
+                                name="email" [style.textAlign]="currentLang === 'ar' ? 'right' : 'left'" />
+                            <button type="submit" class="default-btn" [ngStyle]="{
+                                                'right': currentLang === 'ar' ? 'auto' : '5px',
+                                                'left': currentLang === 'ar' ? '5px' : 'auto'
+                                            }"> {{ currentLang==='ar' ? 'ابدأ الآن' : 'Get Started' }} </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer-area-style-with-black-color" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
+    <div class="container">
+        <div class="row">
+
+            <!-- Logo + Intro -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <a routerLink="/" class="logo">
+                        <img style="width: 220px;" src="/img/logo.png" alt="logo">
+                    </a>
+                    <p>
+                        {{
+                        currentLang === 'ar'
+                        ? 'حلول CRM ذكية مصممة خصيصًا لنجاح العقارات. اعمل بذكاء وسرعة وابقَ متصلاً.'
+                        : 'Smart CRM solutions tailored for real estate success. Work smarter, faster, and stay
+                        connected.'
+                        }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Company -->
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="single-footer-widget pl-2">
+                    <h3>{{ currentLang === 'ar' ? 'الشركة' : 'Company' }}</h3>
+                    <ul class="links-list" [ngStyle]="{'padding-right': currentLang === 'ar' ? '0' : 'auto'}">
+                        <li><a routerLink="/about-simple">{{ currentLang === 'ar' ? 'من نحن' : 'About Us' }}</a></li>
+                        <li><a routerLink="/privacy-policy">{{ currentLang === 'ar' ? 'سياسة الخصوصية' : 'Privacy
+                                Policy' }}</a></li>
+                        <li><a routerLink="/terms-conditions">{{ currentLang === 'ar' ? 'الشروط والأحكام' : 'Terms &
+                                Conditions' }}</a></li>
+                        <li><a routerLink="/contact">{{ currentLang === 'ar' ? 'اتصل بنا' : 'Contact Us' }}</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social -->
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>{{ currentLang === 'ar' ? 'وسائل التواصل الاجتماعي' : 'Social Media' }}</h3>
+                    <ul class="social-links text-center" [ngStyle]="{
+  'padding-right': currentLang === 'ar' ? '0' : 'auto',
+  'padding-left': currentLang === 'en' ? '0' : 'auto'
+}">
+                        <li class="col-md-3"><a href="#" target="_blank"><i class="ri-facebook-fill"></i></a></li>
+                        <li class="col-md-3"><a href="#" target="_blank"><i class="ri-twitter-fill"></i></a></li>
+                        <li class="col-md-3"><a href="#" target="_blank"><i class="ri-linkedin-fill"></i></a></li>
+                        <li class="col-md-3"><a href="#" target="_blank"><i class="ri-messenger-fill"></i></a></li>
+                        <li class="col-md-3"><a href="#" target="_blank"><i class="ri-github-fill"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>{{ currentLang === 'ar' ? 'تواصل معنا' : 'Contact Us' }}</h3>
+                    <ul [dir]="currentLang === 'ar' ? 'ltr' : 'ltr'" class="links-list"
+                        [ngStyle]="{'padding-right': currentLang === 'ar' ? '0' : 'auto','padding-left': currentLang === 'ar' ? 'auto' : '0'}">
+                        <li>
+                            <i class="ri-phone-line text-white mr-2"></i>
+                            <a href="tel:+201234567890">+20-12-345-678-90</a>
+                        </li>
+                        <li>
+                            <i class="ri-mail-line text-white mr-2"></i>
+                            <a href="mailto:info&#64;souqleader.com">info&#64;souqleader.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>{{ currentLang === 'ar' ? 'النشرة البريدية' : 'Newsletter' }}</h3>
+                    <p>
+                        {{
+                        currentLang === 'ar'
+                        ? 'ابقَ على اطلاع بأحدث نصائح CRM وآخر التحديثات في الصناعة والمنتجات مباشرة إلى بريدك
+                        الإلكتروني.'
+                        : 'Stay updated with the latest CRM tips, industry insights, and product updates straight to
+                        your inbox.'
+                        }}
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="text" class="input-newsletter"
+                            [placeholder]="currentLang === 'ar' ? 'بريدك الإلكتروني' : 'Your Email'" name="EMAIL"
+                            required autocomplete="off" [style.textAlign]="currentLang === 'ar' ? 'right' : 'left'">
+                        <button type="submit" [ngStyle]="{
+                                                'right': currentLang === 'ar' ? 'auto' : '4.45px',
+                                                'left': currentLang === 'ar' ? '4.45px' : 'auto'
+                                            }">
+                            <i class="ri-send-plane-2-line"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright-area">
+            <p>
+                {{
+                currentLang === 'ar'
+                ? '© سوق ليدر مملوكة بفخر لشركة '
+                : '© Souq Loader is Proudly Owned by '
+                }}
+                <a style="color: #0289ee;" href="https://AlefSoftware.com/" target="_blank">AlefSoftware</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-white-shape">
+        <img src="img/more-home/footer/footer-shape.png" alt="image">
+    </div>
+
+    <style>
+        li>a:hover {
+            color: #0289ee !important;
+            cursor: pointer;
+        }
+
+        .single-footer-widget .links-list {
+            padding-left: auto;
+        }
+    </style>
+</div>

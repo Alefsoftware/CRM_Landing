@@ -1,0 +1,320 @@
+.gradient-main-banner {
+    .container-fluid {
+        padding: {
+            left: 30px;
+            right: 30px;
+        }
+
+        ;
+    }
+}
+
+.gradient-main-banner-inner {
+    z-index: 1;
+    position: relative;
+    background: var(--gradientColor);
+
+    padding: {
+        top: 100px;
+        left: 60px;
+        right: 60px;
+    }
+
+    ;
+
+    .content {
+        padding-right: 15px;
+        position: relative;
+        top: 100px;
+
+        .sub-title {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--whiteColor);
+            display: inline-block;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            padding: 7px 20px;
+        }
+
+        h1 {
+            color: var(--whiteColor);
+            margin-bottom: 20px;
+            line-height: 1.4;
+            font-size: 48px;
+        }
+
+        p {
+            color: var(--whiteColor);
+            max-width: 560px;
+            font-size: 16px;
+            opacity: .9;
+        }
+
+        .default-btn {
+            margin-top: 10px;
+            color: var(--whiteColor);
+            background-color: var(--mainColor);
+
+            &::before {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &:hover {
+                color: var(--blackColor);
+                background-color: var(--whiteColor);
+            }
+        }
+    }
+
+    .image {
+        text-align: center;
+    }
+
+    .banner-shape3 {
+        bottom: 30%;
+        left: auto;
+        right: .5%;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .gradient-main-banner {
+        .container-fluid {
+            padding: {
+                left: var(--bs-gutter-x, .75rem);
+                right: var(--bs-gutter-x, .75rem);
+            }
+
+            ;
+        }
+    }
+
+    .gradient-main-banner-inner {
+        padding: {
+            top: 60px;
+            left: 15px;
+            right: 15px;
+        }
+
+        ;
+
+        .content {
+            text-align: center;
+            padding-right: 0;
+            top: 0;
+
+            .sub-title {
+                margin-bottom: 15px;
+                padding: 5px 15px;
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .default-btn {
+                margin-top: 5px;
+            }
+
+            p {
+                max-width: 100%;
+                font-size: 13px;
+            }
+        }
+
+        .image {
+            margin-top: 30px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .gradient-main-banner-inner {
+        padding: {
+            left: 25px;
+            right: 25px;
+        }
+
+        ;
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .gradient-main-banner {
+        .container-fluid {
+            max-width: 720px;
+
+            padding: {
+                left: var(--bs-gutter-x, .75rem);
+                right: var(--bs-gutter-x, .75rem);
+            }
+
+            ;
+        }
+    }
+
+    .gradient-main-banner-inner {
+        padding: {
+            left: 25px;
+            right: 25px;
+            top: 80px;
+        }
+
+        ;
+
+        .content {
+            text-align: center;
+            padding-right: 0;
+            top: 0;
+
+            h1 {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            .sub-title {
+                font-size: 13px;
+                padding: 6px 20px;
+            }
+
+            p {
+                font-size: 14px;
+                max-width: 500px;
+
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+
+                ;
+            }
+
+            .default-btn {
+                margin-top: 8px;
+            }
+        }
+
+        .image {
+            margin-top: 30px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .gradient-main-banner {
+        .container-fluid {
+            padding: {
+                left: var(--bs-gutter-x, .75rem);
+                right: var(--bs-gutter-x, .75rem);
+            }
+
+            ;
+        }
+    }
+
+    .gradient-main-banner-inner {
+        padding: {
+            left: 30px;
+            right: 30px;
+        }
+
+        ;
+
+        .content {
+            padding-right: 0;
+            top: 0;
+
+            h1 {
+                font-size: 38px;
+            }
+
+            p {
+                max-width: 100%;
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .gradient-main-banner {
+        .container-fluid {
+            padding: {
+                left: 30px;
+                right: 30px;
+            }
+
+            ;
+        }
+    }
+
+    .gradient-main-banner-inner {
+        padding: {
+            left: 40px;
+            right: 40px;
+        }
+
+        ;
+
+        .content {
+            padding-right: 0;
+            top: 30px;
+
+            p {
+                max-width: 100%;
+                font-size: 15px;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {
+
+    .gradient-main-banner {
+        .container-fluid {
+            padding: {
+                left: 100px;
+                right: 100px;
+            }
+
+            ;
+        }
+    }
+
+    .gradient-main-banner-inner {
+        padding: {
+            left: 100px;
+            right: 100px;
+        }
+
+        ;
+
+        .banner-shape3 {
+            right: 4%;
+        }
+    }
+
+}

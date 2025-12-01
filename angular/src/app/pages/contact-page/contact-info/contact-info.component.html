@@ -1,0 +1,51 @@
+<div class="contact-info-area pb-100" *ngIf="contactData">
+    <div class="container">
+        <div class="contact-info-inner">
+            <h2>{{ contactData.contact_title_en }}</h2>
+
+            <div class="row justify-content-center">
+                <!-- Phone -->
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-contact-info-box">
+                        <div class="icon bg1">
+                            <i class="ri-customer-service-2-line"></i>
+                        </div>
+                        <h3>
+                            <a [href]="'tel:' + contactData.contact_phone">{{ contactData.contact_phone }}</a>
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-contact-info-box">
+                        <div class="icon">
+                            <i class="ri-earth-line"></i>
+                        </div>
+                        <h3>
+                            <a [href]="'mailto:' + contactData.contact_email">{{ contactData.contact_email }}</a>
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-contact-info-box">
+                        <div class="icon bg2">
+                            <i class="ri-map-pin-line"></i>
+                        </div>
+                        <h3>{{ contactData.contact_address_en }}</h3>
+                        <!-- <h3>{{ contactData.contact_address2_en }}</h3> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="contact-map mt-4" [innerHTML]="contactData.contact_map"></div>
+
+            <div class="lines mt-4">
+                <div class="line" *ngFor="let l of lines"></div>
+            </div>
+        </div>
+    </div>
+</div>
