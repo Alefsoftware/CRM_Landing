@@ -1,0 +1,10 @@
+name: development
+on:
+  push:
+    branches: [ development ]
+jobs:
+  update:
+    runs-on: self-hosted
+    steps:
+      - name: Update
+        run: /mnt/data/CRM_Landing-dev/update.sh
