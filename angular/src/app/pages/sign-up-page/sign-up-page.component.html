@@ -2,10 +2,10 @@
     <div class="logo">
         <a href="/" class="d-inline-block"><img style="width:250px;" src="img/darklogo.png" alt="logo"></a>
     </div>
-    <div style="background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);" class="d-table">
+    <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
-                <div class="signup-form">
+                <div style="background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);" class="signup-form">
                     <h2>{{ translate.t('Request a demo')}}</h2>
 
                     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
