@@ -9,8 +9,14 @@
                     <div class="col-md-6">
                         <img src="img/signup-image.png" alt="image">
                     </div>
-                    <div class="col-md-6" style="background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);"
-                        class="signup-form">
+                    <div class="col-md-6" style="background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+                     display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;       
+    padding: 60px 40px;
+    text-align: center;
+    min-height: 100%;" class="signup-form">
                         <h2 style="color: white;">{{ translate.t('Request a demo')}}</h2>
 
                         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
