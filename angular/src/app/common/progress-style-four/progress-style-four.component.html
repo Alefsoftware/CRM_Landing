@@ -1,43 +1,55 @@
 <div class="new-app-progress-area ptb-100" *ngIf="appProgress">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12">
-                <div class="new-app-progress-content">
-                    <div [ngStyle]="{
-    'left': currentLang === 'en' ? '-5px' : 'unset'
-  }" class="big-text">{{ currentLang === 'ar' ? 'التقدم' : 'Performance' }}</div>
-                    <span class="sub-title">{{ currentLang === 'ar' ? 'الأداء': 'App in Action' }}</span>
-
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12">
+                <div class="new-app-progress-content text-center">
+                    <span class="sub-title">{{ currentLang === 'ar' ? 'أطلق إمكانات فريقك' : 'Unlock your team\'s potentials' }}</span>
+                    
                     <h2>{{ getTitle() }}</h2>
-                    <p>{{ getDescription() }}</p>
+                    
+                    <div class="section-description">
+                        <p>
+                            {{ currentLang === 'ar' ? 'تتبع سير العمل والأداء لتقديم الدعم والتشجيع واتخاذ القرارات، مما يمكن الفرق الموهوبة من تحقيق أقصى إمكاناتها بناءً على احتياجات كل عضو.' : 'Track workflow and performance to provide support, encouragement, and make decisions, enabling talented teams to reach their full potential based on each member\'s needs.' }}
+                        </p>
+                    </div>
 
-                    <!-- Optional extra static paragraphs -->
-                    <!-- <p *ngIf="currentLang === 'en'">
-                        Cloud based storage for your data backup just log in with your mail account from play store and
-                        using whatever you want for your business purpose orem ipsum dummy text. never miss your chance
-                        it's just began. backup just log in with your mail account from.
-                    </p>
-                    <p *ngIf="currentLang === 'en'">
-                        Most probably best for your data backup just log in with your mail account from play store and
-                        using whatever you want for your business purpose orem ipsum dummy backup just log in with your
-                        mail account from.
-                    </p> -->
+                    <div class="features-grid mt-5">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="feature-box">
+                                    <div class="icon">
+                                        <i class="bx bx-check-circle"></i>
+                                    </div>
+                                    <h3>{{ currentLang === 'ar' ? 'بدون فوضى' : 'No Chaos' }}</h3>
+                                    <p>{{ currentLang === 'ar' ? 'مكان واحد لتخزين بيانات عملائك وتتبع رحلتهم معك.' : 'One place to store your client data and track their journey with you.' }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6 col-md-6">
+                                <div class="feature-box">
+                                    <div class="icon">
+                                        <i class="bx bx-check-circle"></i>
+                                    </div>
+                                    <h3>{{ currentLang === 'ar' ? 'بدون مشكلات' : 'No Issues' }}</h3>
+                                    <p>{{ currentLang === 'ar' ? 'إدارة سلسة وتتبع واضح لتجنب المشكلات قبل حدوثها.' : 'Smooth management and clear tracking to avoid issues before they occur.' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <a (click)="goToSignUp()" class="default-btn">
-                        {{ currentLang === 'ar' ? 'ابدأ الآن': 'Talk to Our Team' }}
+                    <a (click)="goToSignUp()" class="default-btn mt-4">
+                        {{ currentLang === 'ar' ? 'ابدأ الآن' : 'Talk to Our Team' }}
                     </a>
                 </div>
             </div>
+        </div>
 
-            <div class="col-lg-6 col-md-12">
+        <div class="row mt-5">
+            <div class="col-lg-12">
                 <div class="new-app-progress-image text-center">
-                    <img [src]="appProgress.image" alt="app-img">
+                    <img [src]="appProgress.image" alt="app-img" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- <div class="new-app-progress-shape">
-        <img src="img/more-home/progress/shape-1.png" alt="image">
-    </div> -->
 </div>
