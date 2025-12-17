@@ -2,54 +2,67 @@
     h6 {
         font-size: 20px;
         margin-bottom: 15px;
+        color: #0ca0e7;
 
         &:not(:first-child) {
             margin-top: 25px;
         }
     }
+
     h5 {
         font-size: 22px;
         margin-bottom: 15px;
+        color: #0ca0e7;
 
         &:not(:first-child) {
             margin-top: 25px;
         }
     }
+
     h4 {
         font-size: 24px;
         margin-bottom: 15px;
+        color: #0ca0e7;
 
         &:not(:first-child) {
             margin-top: 25px;
         }
     }
+
     h3 {
         font-size: 26px;
         margin-bottom: 15px;
+        color: #0ca0e7;
 
         &:not(:first-child) {
             margin-top: 25px;
         }
     }
+
     h2 {
         font-size: 28px;
         margin-bottom: 15px;
+        color: #0ca0e7;
 
         &:not(:first-child) {
             margin-top: 25px;
         }
     }
+
     h1 {
         font-size: 30px;
         margin-bottom: 15px;
+        color: #0ca0e7;
 
         &:not(:first-child) {
             margin-top: 25px;
         }
     }
+
     strong {
         color: var(--blackColor) !important;
     }
+
     p {
         a {
             color: var(--mainColor);
@@ -59,6 +72,7 @@
             }
         }
     }
+
     ul {
         li {
             color: var(--paragraphColor);
@@ -66,16 +80,18 @@
 
             a {
                 color: var(--mainColor);
-    
+
                 &:hover {
                     text-decoration: underline;
                 }
             }
+
             &:last-child {
                 margin-bottom: 0;
             }
         }
     }
+
     ol {
         li {
             color: var(--paragraphColor);
@@ -83,11 +99,12 @@
 
             a {
                 color: var(--mainColor);
-    
+
                 &:hover {
                     text-decoration: underline;
                 }
             }
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -102,18 +119,23 @@
         h6 {
             font-size: 16px;
         }
+
         h5 {
             font-size: 17px;
         }
+
         h4 {
             font-size: 18px;
         }
+
         h3 {
             font-size: 19px;
         }
+
         h2 {
             font-size: 20px;
         }
+
         h1 {
             font-size: 21px;
         }
@@ -131,18 +153,23 @@
         h6 {
             font-size: 18px;
         }
+
         h5 {
             font-size: 19px;
         }
+
         h4 {
             font-size: 20px;
         }
+
         h3 {
             font-size: 21px;
         }
+
         h2 {
             font-size: 22px;
         }
+
         h1 {
             font-size: 23px;
         }
