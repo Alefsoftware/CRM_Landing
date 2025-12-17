@@ -783,3 +783,49 @@
 
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
+
+.app-download {
+    background: #fff;
+    padding-top: 80px;
+    position: relative;
+}
+
+.app-download .sub-title {
+    color: #1da1f2;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.app-download h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.app-download p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.app-img {
+    max-width: 420px;
+}
+
+/* Bottom Bar */
+.download-bar {
+    background: linear-gradient(90deg, #081b4b, #0d5fa6);
+    color: #fff;
+    text-align: center;
+    padding: 40px 15px;
+    margin-top: 60px;
+}
+
+.download-bar h3 {
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.store-buttons a img {
+    height: 55px;
+    margin: 0 10px;
+}
