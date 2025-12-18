@@ -795,6 +795,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
 .app-section h2 {
@@ -821,6 +822,7 @@
     background: linear-gradient(90deg, #081b4b, #0d5fa6);
     padding: 50px 0;
     color: #fff;
+    text-align: center;
 }
 
 .download-section h3 {
@@ -829,9 +831,18 @@
     font-weight: 600;
 }
 
+.store-buttons a {
+    display: inline-block;
+    margin: 0 12px;
+    transition: transform 0.3s ease;
+}
+
+.store-buttons a:hover {
+    transform: translateY(-5px);
+}
+
 .store-buttons img {
     height: 55px;
-    margin: 0 12px;
 }
 
 /* Responsive */
@@ -842,5 +853,28 @@
 
     .app-section h2 {
         font-size: 32px;
+    }
+
+    .app-section {
+        padding: 60px 0 30px;
+    }
+
+    .download-section h3 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+    .app-section h2 {
+        font-size: 28px;
+    }
+
+    .store-buttons img {
+        height: 45px;
+        margin: 10px 8px;
+    }
+
+    .download-section h3 {
+        font-size: 24px;
     }
 }
