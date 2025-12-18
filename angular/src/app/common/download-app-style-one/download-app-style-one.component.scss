@@ -784,48 +784,63 @@
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
 
-.app-download {
+/* Section 1 */
+.app-section {
+    padding: 90px 0 60px;
     background: #fff;
-    padding-top: 80px;
-    position: relative;
 }
 
-.app-download .sub-title {
+.download-label {
     color: #1da1f2;
     font-weight: 600;
     letter-spacing: 1px;
+    font-size: 14px;
 }
 
-.app-download h2 {
-    font-size: 40px;
+.app-section h2 {
+    font-size: 42px;
     font-weight: 700;
-    margin: 15px 0;
+    margin: 15px 0 20px;
+    color: #000;
 }
 
-.app-download p {
+.app-section p {
+    font-size: 16px;
+    line-height: 1.8;
     color: #555;
-    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
-.app-img {
+.phone-image {
     max-width: 420px;
+    width: 100%;
 }
 
-/* Bottom Bar */
-.download-bar {
+/* Section 2 */
+.download-section {
     background: linear-gradient(90deg, #081b4b, #0d5fa6);
+    padding: 50px 0;
     color: #fff;
-    text-align: center;
-    padding: 40px 15px;
-    margin-top: 60px;
 }
 
-.download-bar h3 {
+.download-section h3 {
+    font-size: 34px;
     margin-bottom: 25px;
-    font-size: 32px;
+    font-weight: 600;
 }
 
-.store-buttons a img {
+.store-buttons img {
     height: 55px;
-    margin: 0 10px;
+    margin: 0 12px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .phone-image {
+        margin-top: 40px;
+    }
+
+    .app-section h2 {
+        font-size: 32px;
+    }
 }
