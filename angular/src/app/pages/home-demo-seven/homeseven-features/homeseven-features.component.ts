@@ -34,21 +34,32 @@ export class HomesevenFeaturesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.http.get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site').subscribe({
-            next: (res) => {
-                if (res.status && res.data?.services) {
-                    this.serviceTitle = this.currentLang === 'ar'
-                        ? res.data.details.title_ar
-                        : res.data.details.title_en;
-                    this.services = res.data.services.rows;
-                }
+        this.http.get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site')
+            .subscribe({
+                next: (res) => {
+                    if (res?.status) {
 
-            },
-            error: (err) => {
-                console.error('Failed to load services:', err);
-            }
-        });
+                        // ✅ SAFE title handling
+                        if (res.data?.details) {
+                            this.serviceTitle = this.currentLang === 'ar'
+                                ? res.data.details.title_ar
+                                : res.data.details.title_en;
+                        } else {
+                            this.serviceTitle = '';
+                        }
+
+                        // ✅ SAFE services handling
+                        if (res.data?.services?.rows) {
+                            this.services = res.data.services.rows;
+                        }
+                    }
+                },
+                error: (err) => {
+                    console.error('Failed to load services:', err);
+                }
+            });
     }
+
 
     // helper to return localized field
     getTitle(service: any): string {
