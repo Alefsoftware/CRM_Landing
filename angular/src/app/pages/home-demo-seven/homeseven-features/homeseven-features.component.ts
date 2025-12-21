@@ -34,24 +34,22 @@ export class HomesevenFeaturesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.http.get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site')
+        this.http
+            .get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site')
             .subscribe({
                 next: (res) => {
-                    if (res?.status) {
+                    if (res?.status && res.data?.services) {
 
-                        // ✅ SAFE title handling
-                        if (res.data?.details) {
+                        // ✅ FIXED TITLE PATH
+                        const details = res.data.services.details;
+                        if (details) {
                             this.serviceTitle = this.currentLang === 'ar'
-                                ? res.data.details.title_ar
-                                : res.data.details.title_en;
-                        } else {
-                            this.serviceTitle = '';
+                                ? details.title_ar
+                                : details.title_en;
                         }
 
-                        // ✅ SAFE services handling
-                        if (res.data?.services?.rows) {
-                            this.services = res.data.services.rows;
-                        }
+                        // ✅ FIXED ROWS PATH
+                        this.services = res.data.services.rows ?? [];
                     }
                 },
                 error: (err) => {
@@ -59,6 +57,7 @@ export class HomesevenFeaturesComponent implements OnInit {
                 }
             });
     }
+
 
 
     // helper to return localized field
