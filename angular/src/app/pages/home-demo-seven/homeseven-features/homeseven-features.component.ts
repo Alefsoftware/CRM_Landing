@@ -15,6 +15,7 @@ import { TranslateService } from '../../../translate.service'; // adjust path
 })
 export class HomesevenFeaturesComponent implements OnInit {
     services: any[] = [];
+    serviceTitle: string = '';
     currentLang: 'en' | 'ar' = 'en';
 
     constructor(
@@ -36,6 +37,7 @@ export class HomesevenFeaturesComponent implements OnInit {
         this.http.get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site').subscribe({
             next: (res) => {
                 if (res.status && res.data?.services) {
+                    this.serviceTitle = this.currentLang === 'ar' ? res.data.details.title_ar : res.data.details.title_en;
                     this.services = res.data.services.rows;
                 }
             },
