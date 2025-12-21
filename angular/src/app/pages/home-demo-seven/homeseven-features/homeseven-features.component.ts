@@ -1,3 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { TranslateService } from '../../../translate.service'; // adjust path
+
+@Component({
+    selector: 'app-homeseven-features',
+    standalone: true,
+    imports: [CommonModule, HttpClientModule],
+    templateUrl: './homeseven-features.component.html',
+    styleUrls: [
+        './homeseven-features.component.scss',
+    ]
+})
 export class HomesevenFeaturesComponent implements OnInit {
     services: any[] = [];
     sectionDetails: any = null; // <-- add this
@@ -38,3 +53,4 @@ export class HomesevenFeaturesComponent implements OnInit {
         return this.currentLang === 'ar' ? item.description_ar : item.description_en;
     }
 }
+
