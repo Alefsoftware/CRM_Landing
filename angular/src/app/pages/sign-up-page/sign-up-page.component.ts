@@ -7,7 +7,7 @@ import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-st
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
 import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
 import { RouterLink } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -15,7 +15,8 @@ import { RouterLink } from '@angular/router';
     templateUrl: './sign-up-page.component.html',
     styleUrls: ['./sign-up-page.component.scss'],
     standalone: true, // ✅ mark it standalone
-    imports: [ReactiveFormsModule, HttpClientModule, NavbarStyleTwoComponent, FooterStyleFourComponent, BackToTopComponent, RouterLink], // ✅ add required modules
+    imports: [ReactiveFormsModule, HttpClientModule, NavbarStyleTwoComponent, FooterStyleFourComponent, BackToTopComponent, RouterLink, CommonModule,          // ✅ REQUIRED for *ngIf, *ngFor
+    ], // ✅ add required modules
 })
 export class SignUpPageComponent implements OnInit {
     signupForm!: FormGroup;

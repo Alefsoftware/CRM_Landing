@@ -36,11 +36,10 @@
     justify-content: center;  
     text-align: center;
     min-height: 100%;" class="signup-form">
-                        <div class="alert alert-danger mt-3">
+                        <div *ngIf="backendErrors.general" class="alert alert-danger mt-3">
                             {{ backendErrors.general }}
-                            ddhdtyftdty
                         </div>
-                        gfthftyftydttyt
+
                         <h2 style="color: white; font-weight: bold;">{{ translate.t('Request A Demo')}}</h2>
 
                         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
