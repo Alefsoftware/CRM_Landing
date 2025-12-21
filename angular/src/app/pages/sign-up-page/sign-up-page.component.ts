@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateService } from '../../translate.service'; // adjust path
+import { TranslateService } from '../../translate.service';
 import { Router, RouterLink } from '@angular/router';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./sign-up-page.component.scss'],
     standalone: true,
     imports: [
-        CommonModule,            // ✅ Required for *ngIf
+        CommonModule,
         ReactiveFormsModule,
         HttpClientModule,
         NavbarStyleTwoComponent,
@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
 export class SignUpPageComponent implements OnInit {
     signupForm!: FormGroup;
     successMessage: string | null = null;
-    backendErrors: any = {};
+    backendErrors: string[] = [];
     currentLang: 'en' | 'ar' = 'en';
     loading: boolean = false;
 
@@ -40,7 +40,6 @@ export class SignUpPageComponent implements OnInit {
         this.currentLang = urlLang === 'ar' ? 'ar' : 'en';
         this.translate.switchLang(this.currentLang);
 
-        // set html attributes
         document.documentElement.lang = this.currentLang;
         document.documentElement.dir = this.currentLang === 'ar' ? 'rtl' : 'ltr';
     }
@@ -60,38 +59,34 @@ export class SignUpPageComponent implements OnInit {
         }
 
         this.loading = true;
-        this.backendErrors = {};
+        this.backendErrors = [];
         this.successMessage = null;
 
         this.http.post<any>(
             'https://admin.realstatecrm-development.dev.alefsoftware.com/site/request-demo',
             this.signupForm.value
-        )
-            .subscribe({
-                next: (res) => {
-                    this.loading = false;
-                    if (res.status === true) {
-                        this.successMessage = '✅ Company registered successfully!';
-                        this.signupForm.reset();
-                        setTimeout(() => this.successMessage = null, 5000);
-                    } else {
-                        this.backendErrors = { general: res.message || 'Something went wrong' };
-                    }
-                },
-                error: (err) => {
-                    this.loading = false;
-                    console.log('ERROR RESPONSE:', err);
-
-                    if (err.error?.message) {
-                        this.backendErrors = { general: err.error.message };
-                    } else if (err.error?.errors) {
-                        // Laravel-style validation errors
-                        const firstKey = Object.keys(err.error.errors)[0];
-                        this.backendErrors = { general: err.error.errors[firstKey][0] };
-                    } else {
-                        this.backendErrors = { general: 'Something went wrong' };
-                    }
+        ).subscribe({
+            next: (res) => {
+                this.loading = false;
+                if (res.status === true) {
+                    this.successMessage = '✅ Company registered successfully!';
+                    this.signupForm.reset();
+                    setTimeout(() => this.successMessage = null, 5000);
+                } else if (res.message) {
+                    // Split comma-separated message into array
+                    this.backendErrors = res.message.split(',').map((m: string) => m.trim());
                 }
-            });
+            },
+            error: (err) => {
+                this.loading = false;
+                console.log('ERROR RESPONSE:', err);
+
+                if (err.error?.message) {
+                    this.backendErrors = err.error.message.split(',').map((m: string) => m.trim());
+                } else {
+                    this.backendErrors = ['Something went wrong'];
+                }
+            }
+        });
     }
 }
