@@ -1,13 +1,14 @@
 // app-section.component.scss
 .app-section-container {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    color: #333;
-    padding: 60px 20px;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 40px 20px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
 }
 
 .content-wrapper {
@@ -17,107 +18,104 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 40px;
 }
 
 .text-section {
     flex: 1;
-    min-width: 300px;
-    max-width: 550px;
+    min-width: 320px;
+    max-width: 520px;
 }
 
 .image-section {
     flex: 1;
-    min-width: 300px;
-    max-width: 500px;
+    min-width: 320px;
+    max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .main-heading {
-    font-size: 2.5rem;
+    font-size: 28px;
     font-weight: 800;
     margin-bottom: 20px;
-    color: #1a237e;
-    letter-spacing: 1px;
+    color: #000000;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
 }
 
 .subheading {
-    font-size: 2rem;
+    font-size: 24px;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     line-height: 1.3;
-    color: #283593;
+    color: #000000;
 }
 
 .description {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333333;
 }
 
 .highlight-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 40px;
-    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #333333;
     padding-left: 15px;
-    border-left: 3px solid #3949ab;
+    border-left: 3px solid #007AFF;
 }
 
 .download-section {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .download-title {
-    font-size: 1.4rem;
-    margin-bottom: 25px;
+    font-size: 18px;
+    margin-bottom: 20px;
     font-weight: 600;
-    color: #333;
+    color: #000000;
 }
 
 .download-buttons {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
     margin-bottom: 40px;
+    max-width: 300px;
 }
 
 .app-button {
     display: flex;
     align-items: center;
-    padding: 15px 25px;
-    border-radius: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    min-width: 200px;
+    font-weight: 500;
+    transition: all 0.2s ease;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
 
     &.google-play {
-        background-color: #fff;
-        border: 2px solid #ddd;
-        color: #333;
+        background-color: #ffffff;
+        border: 1.5px solid #dadce0;
+        color: #3c4043;
 
         &:hover {
             background-color: #f8f9fa;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
+            border-color: #bdc1c6;
         }
     }
 
     &.app-store {
-        background-color: #000;
-        color: #fff;
+        background-color: #000000;
+        color: #ffffff;
 
         &:hover {
-            background-color: #333;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-            transform: translateY(-2px);
+            background-color: #333333;
         }
     }
 }
@@ -127,6 +125,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 24px;
+    height: 24px;
 }
 
 .button-text {
@@ -134,61 +134,62 @@
     flex-direction: column;
 
     .button-label {
-        font-size: 0.8rem;
-        font-weight: 500;
-        opacity: 0.8;
+        font-size: 11px;
+        font-weight: 400;
+        opacity: 0.9;
+        line-height: 1.2;
     }
 
     .button-store {
-        font-size: 1.2rem;
-        font-weight: 700;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.2;
     }
 }
 
 .footer-brand {
-    margin-top: 50px;
+    margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #e0e0e0;
 }
 
 .brand-name {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #1a237e;
-    letter-spacing: 0.5px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 0.3px;
 }
 
-// Mobile Mockup Styles
+// Mobile Mockup Styles - EXACTLY like in the image
 .mobile-mockup {
-    width: 320px;
-    height: 640px;
-    background: linear-gradient(145deg, #f0f0f0, #ffffff);
-    border-radius: 40px;
+    width: 280px;
+    height: 560px;
+    background: #f0f0f0;
+    border-radius: 28px;
     position: relative;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15),
-        0 0 0 1px rgba(0, 0, 0, 0.05),
-        inset 0 0 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border: 1px solid #e0e0e0;
 }
 
 .mobile-screen {
-    width: 290px;
-    height: 610px;
-    background: #fff;
-    border-radius: 32px;
+    width: 256px;
+    height: 524px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 22px;
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 18px;
+    left: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
 .mobile-notch {
-    width: 200px;
-    height: 30px;
-    background-color: #000;
-    border-radius: 0 0 20px 20px;
+    width: 140px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 0 0 12px 12px;
     position: absolute;
     top: 0;
     left: 50%;
@@ -197,47 +198,57 @@
 }
 
 .screen-content {
-    padding: 50px 25px;
-    color: #333;
+    padding: 30px 20px;
+    color: #ffffff;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
+.screen-header {
+    margin-bottom: 30px;
+}
+
 .screen-app-logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #1a237e;
-    margin-bottom: 40px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
     text-align: center;
 }
 
-.screen-section {
-    margin-bottom: 30px;
+.screen-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-section {
+    margin-bottom: 25px;
 
     &:last-child {
         margin-bottom: 0;
     }
 }
 
-.screen-title {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-    color: #283593;
+.feature-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
-.screen-text {
-    font-size: 0.95rem;
+.feature-text {
+    font-size: 14px;
     line-height: 1.5;
     margin-bottom: 15px;
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.cloud-illustration {
+.cloud-visual {
     display: flex;
     justify-content: center;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .cloud-icon {
@@ -246,110 +257,118 @@
     justify-content: center;
     width: 80px;
     height: 80px;
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.2);
+    backdrop-filter: blur(10px);
 }
 
-.store-badges {
+.app-store-badges {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     margin-top: 15px;
 }
 
 .store-badge {
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
-    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
 
     &.google-badge {
-        background-color: #f8f9fa;
-        border: 1px solid #ddd;
-        color: #333;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        backdrop-filter: blur(10px);
     }
 
     &.apple-badge {
-        background-color: #000;
-        color: #fff;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+        backdrop-filter: blur(10px);
     }
+}
+
+.badge-icon {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-text {
+    font-weight: 500;
 }
 
 // Responsive styles
 @media (max-width: 992px) {
     .content-wrapper {
         justify-content: center;
-        gap: 40px;
     }
 
     .text-section,
     .image-section {
         max-width: 100%;
     }
-
-    .main-heading {
-        font-size: 2.2rem;
-    }
-
-    .subheading {
-        font-size: 1.8rem;
-    }
 }
 
 @media (max-width: 768px) {
     .app-section-container {
-        padding: 40px 20px;
+        padding: 30px 15px;
     }
 
     .content-wrapper {
         flex-direction: column;
-    }
-
-    .mobile-mockup {
-        width: 300px;
-        height: 600px;
-    }
-
-    .mobile-screen {
-        width: 270px;
-        height: 570px;
+        gap: 30px;
     }
 
     .main-heading {
-        font-size: 2rem;
+        font-size: 24px;
     }
 
     .subheading {
-        font-size: 1.6rem;
+        font-size: 20px;
+    }
+
+    .mobile-mockup {
+        width: 260px;
+        height: 520px;
+    }
+
+    .mobile-screen {
+        width: 236px;
+        height: 484px;
     }
 }
 
 @media (max-width: 480px) {
     .main-heading {
-        font-size: 1.8rem;
+        font-size: 22px;
     }
 
     .subheading {
-        font-size: 1.4rem;
+        font-size: 18px;
     }
 
-    .app-button {
-        min-width: 100%;
+    .description,
+    .highlight-text {
+        font-size: 15px;
     }
 
     .mobile-mockup {
-        width: 280px;
-        height: 560px;
+        width: 240px;
+        height: 480px;
     }
 
     .mobile-screen {
-        width: 250px;
-        height: 530px;
+        width: 216px;
+        height: 444px;
+        top: 16px;
+        left: 12px;
     }
 
     .screen-content {
-        padding: 40px 20px;
+        padding: 25px 15px;
     }
 }
