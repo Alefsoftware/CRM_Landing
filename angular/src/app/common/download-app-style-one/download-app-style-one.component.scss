@@ -17,9 +17,10 @@
 /* Phone Image */
 .phone-wrapper {
     position: absolute;
-    right: 100px;
-    top: 80px;
-    z-index: 5;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 .phone-wrapper img {
