@@ -3,13 +3,15 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateService } from '../../translate.service'; // adjust path
 import { Router } from '@angular/router';
+import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
+
 
 @Component({
     selector: 'app-signup',
     templateUrl: './sign-up-page.component.html',
     styleUrls: ['./sign-up-page.component.scss'],
     standalone: true, // ✅ mark it standalone
-    imports: [ReactiveFormsModule, HttpClientModule], // ✅ add required modules
+    imports: [ReactiveFormsModule, HttpClientModule, NavbarStyleTwoComponent], // ✅ add required modules
 })
 export class SignUpPageComponent implements OnInit {
     signupForm!: FormGroup;
