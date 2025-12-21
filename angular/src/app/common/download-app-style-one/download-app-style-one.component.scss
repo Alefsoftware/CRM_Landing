@@ -1,259 +1,304 @@
-/* Main container */
-.main-container {
-    position: relative;
-    padding-top: 40px;
+// app-section.component.scss
+.app-section-container {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+    color: #fff;
+    padding: 40px 20px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Phone image positioned above both sections */
-.floating-phone-image {
-    position: relative;
-    z-index: 10;
-    margin: 0 auto 30px;
-    display: block;
+.content-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
 
-/* Section 1 - White background */
-.app-info-section {
-    background: #fff;
-    padding: 120px 0 60px;
-    margin-top: -80px;
-    position: relative;
-    z-index: 1;
+.text-section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
 }
 
-.download-label {
-    color: #1da1f2;
-    font-weight: 600;
+.image-section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    background: linear-gradient(90deg, #ffcc80, #ffab40);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     letter-spacing: 1px;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: block;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #bbdefb;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.subheading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #e8eaf6;
+}
+
+.highlight {
+    background-color: rgba(255, 204, 128, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 4px solid #ffab40;
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    i {
+        color: #ffab40;
+        margin-right: 10px;
+    }
+}
+
+.download-section {
+    margin-top: 30px;
+}
+
+.download-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    cursor: pointer;
+
+    &-google {
+        background-color: #1a237e;
+        color: white;
+        border: 2px solid #3949ab;
+
+        &:hover {
+            background-color: #3949ab;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &-apple {
+        background-color: #283593;
+        color: white;
+        border: 2px solid #3949ab;
+
+        &:hover {
+            background-color: #3949ab;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    i {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+
+    span:first-child {
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    span:last-child {
+        font-size: 1.1rem;
+    }
+}
+
+.mobile-mockup {
+    width: 300px;
+    height: 600px;
+    background: linear-gradient(145deg, #1c1f3b, #25294a);
+    border-radius: 40px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.mobile-screen {
+    width: 270px;
+    height: 570px;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    border-radius: 30px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    overflow: hidden;
+}
+
+.mobile-notch {
+    width: 180px;
+    height: 25px;
+    background-color: #1c1f3b;
+    border-radius: 0 0 15px 15px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.screen-content {
+    padding: 40px 25px;
+    color: white;
+}
+
+.app-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ffcc80, #ffab40);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.screen-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #ffcc80;
+}
+
+.screen-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.cloud-icon {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px;
+
+    i {
+        font-size: 3rem;
+        color: #64b5f6;
+    }
+}
+
+.status {
+    display: inline-block;
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #81c784;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
     margin-bottom: 15px;
 }
 
-.app-info-section h2 {
-    font-size: 42px;
-    font-weight: 700;
-    margin: 0 0 25px;
-    color: #000;
-    line-height: 1.3;
-}
-
-.app-info-section p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Section 2 - Blue gradient background */
-.download-section {
-    background: linear-gradient(90deg, #081b4b, #0d5fa6);
-    padding: 70px 0 50px;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-.download-section h3 {
-    font-size: 34px;
-    margin-bottom: 30px;
-    font-weight: 600;
-}
-
-.store-buttons {
+.mobile-buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.store-btn {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    padding: 15px 25px;
-    text-decoration: none;
+.mobile-btn {
+    background-color: #3949ab;
     color: white;
-    transition: all 0.3s ease;
-    min-width: 200px;
-}
-
-.store-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: white;
-    transform: translateY(-3px);
-    color: white;
-    text-decoration: none;
-}
-
-.store-icon {
-    width: 36px;
-    height: 36px;
-    margin-right: 15px;
-}
-
-.store-text {
-    text-align: left;
-}
-
-.store-text small {
-    display: block;
-    font-size: 12px;
-    opacity: 0.9;
-}
-
-.store-text strong {
-    display: block;
-    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
     font-weight: 600;
+    text-align: center;
 }
 
-/* Responsive adjustments */
-@media (max-width: 991px) {
-    .floating-phone-image {
-        max-width: 280px;
-    }
-
-    .app-info-section {
-        padding: 100px 0 50px;
-        margin-top: -60px;
-    }
-
-    .app-info-section h2 {
-        font-size: 32px;
-    }
-
-    .download-section h3 {
-        font-size: 28px;
-    }
-
-    .store-btn {
-        min-width: 180px;
-        padding: 12px 20px;
-    }
-}
-
-@media (max-width: 767px) {
-    .floating-phone-image {
-        max-width: 240px;
-        margin-bottom: 20px;
-    }
-
-    .app-info-section {
-        padding: 80px 0 40px;
-        margin-top: -40px;
-    }
-
-    .app-info-section h2 {
-        font-size: 28px;
-    }
-
-    .app-info-section p {
-        font-size: 15px;
-    }
-
-    .download-section {
-        padding: 50px 0 40px;
-    }
-
-    .download-section h3 {
-        font-size: 24px;
-        margin-bottom: 25px;
-    }
-
-    .store-buttons {
+// Responsive styles
+@media (max-width: 768px) {
+    .content-wrapper {
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
     }
 
-    .store-btn {
-        width: 100%;
-        max-width: 250px;
-        justify-content: center;
+    .text-section,
+    .image-section {
+        max-width: 100%;
     }
 
-    .store-text {
-        text-align: center;
+    .mobile-mockup {
+        width: 280px;
+        height: 560px;
+    }
+
+    .mobile-screen {
+        width: 250px;
+        height: 530px;
+    }
+
+    .subheading {
+        font-size: 1.8rem;
     }
 }
 
 @media (max-width: 480px) {
-    .floating-phone-image {
-        max-width: 200px;
+    .logo {
+        font-size: 2.2rem;
     }
 
-    .app-info-section h2 {
-        font-size: 24px;
+    .btn {
+        min-width: 100%;
     }
 
-    .app-info-section p {
-        font-size: 14px;
+    .mobile-mockup {
+        width: 260px;
+        height: 520px;
     }
-}
 
-/* Section 1 */
-.app-wrapper {
-    padding: 100px 0 140px;
-    background: #fff;
-    position: relative;
-    overflow: hidden;
-}
-
-.download-label {
-    color: #1da1f2;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 14px;
-}
-
-.app-wrapper h2 {
-    font-size: 42px;
-    font-weight: 700;
-    margin: 15px 0 20px;
-}
-
-.app-wrapper p {
-    color: #555;
-    line-height: 1.8;
-}
-
-/* Phone image */
-.phone-mockup {
-    max-width: 420px;
-    position: absolute;
-    right: 0;
-    top: -60px;
-    z-index: 2;
-}
-
-/* Section 2 */
-.download-bar {
-    background: linear-gradient(90deg, #081b4b, #0d5fa6);
-    padding: 70px 0 50px;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-}
-
-.download-bar h3 {
-    font-size: 34px;
-    margin-bottom: 25px;
-}
-
-.store-buttons img {
-    height: 55px;
-    margin: 0 12px;
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-    .phone-mockup {
-        position: static;
-        margin-top: 40px;
+    .mobile-screen {
+        width: 230px;
+        height: 490px;
     }
 }

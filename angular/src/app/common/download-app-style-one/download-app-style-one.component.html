@@ -1,62 +1,75 @@
-<div class="main-container">
-    <!-- Floating phone image above both sections -->
-    <img src="img/app/app-asset1.png" class="floating-phone-image" alt="Souq Leader App">
+<!-- app-section.component.html -->
+<div class="app-section-container">
+    <div class="content-wrapper">
+        <!-- Text Section -->
+        <div class="text-section">
+            <h1 class="logo">Soug Leader</h1>
+            <p class="tagline">Download APP</p>
 
-    <!-- Section 1 - App Information -->
-    <section class="app-info-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-8">
-                    <span class="download-label">DOWNLOAD APP</span>
-                    <h2>Enjoy your Experience with Souq Leader for free</h2>
+            <h2 class="subheading">Enjoy your Experience with Soug Leader for free</h2>
 
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8">
-                            <p>
-                                Log in from the Apple App Store or Google Play Store on any device,
-                                anytime, and access all your account data with complete, secure
-                                storage for everything inside.
-                            </p>
+            <p class="description">
+                Log in from the Apple App Store or Google Play Store on any device, anytime, and access all your account
+                data with complete, secure storage for everything inside.
+            </p>
 
-                            <p>
-                                With cloud storage for all your account data, you can access it
-                                from any device and continue your work instantly.
-                            </p>
+            <div class="highlight">
+                <p><i class="fas fa-cloud"></i> With cloud storage for all your account data, you can access it from any
+                    device and continue your work instantly.</p>
+            </div>
+
+            <div class="download-section">
+                <h3 class="download-title">Download the app</h3>
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-google">
+                        <i class="fab fa-google-play"></i>
+                        <div class="btn-text">
+                            <span>Active on</span>
+                            <span>Google Play</span>
+                        </div>
+                    </a>
+                    <a href="#" class="btn btn-apple">
+                        <i class="fab fa-apple"></i>
+                        <div class="btn-text">
+                            <span>Available on the</span>
+                            <span>App Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Section with Mobile Mockup -->
+        <div class="image-section">
+            <div class="mobile-mockup">
+                <div class="mobile-notch"></div>
+                <div class="mobile-screen">
+                    <div class="screen-content">
+                        <div class="app-logo">Soug Leader</div>
+
+                        <h3 class="screen-title">Cloud Storage</h3>
+                        <p class="screen-text">Access all your data from any device with secure cloud storage.</p>
+
+                        <div class="cloud-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+
+                        <h3 class="screen-title">Download Now</h3>
+                        <p class="screen-text">Get the app from your preferred store:</p>
+
+                        <div class="status">Active</div>
+
+                        <div class="mobile-buttons">
+                            <div class="mobile-btn">
+                                <i class="fab fa-google-play"></i> Google Play
+                            </div>
+                            <div class="mobile-btn">
+                                <i class="fab fa-apple"></i> App Store
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Section 2 - Download Section -->
-    <section class="download-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h3>Download the app</h3>
-
-                    <div class="store-buttons">
-                        <a href="#" class="store-btn">
-                            <img src="img/play-store.png" class="store-icon" alt="Google Play">
-                            <div class="store-text">
-                                <small>Get it on</small>
-                                <strong>Google Play</strong>
-                            </div>
-                        </a>
-
-                        <a href="#" class="store-btn">
-                            <img src="img/apple-store.png" class="store-icon" alt="Apple Store">
-                            <div class="store-text">
-                                <small>Download on the</small>
-                                <strong>App Store</strong>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
