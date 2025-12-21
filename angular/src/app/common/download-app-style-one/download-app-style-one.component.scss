@@ -106,7 +106,9 @@
     }
 
     .phone-wrapper img {
-        max-width: 260px;
+        max-width: 90vw;
+        /* only on small screens */
+        height: auto;
     }
 
     .content-top {
