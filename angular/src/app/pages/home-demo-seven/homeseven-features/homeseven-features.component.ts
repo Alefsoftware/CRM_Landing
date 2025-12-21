@@ -37,9 +37,12 @@ export class HomesevenFeaturesComponent implements OnInit {
         this.http.get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site').subscribe({
             next: (res) => {
                 if (res.status && res.data?.services) {
-                    this.serviceTitle = this.currentLang === 'ar' ? res.data.details.title_ar : res.data.details.title_en;
+                    this.serviceTitle = this.currentLang === 'ar'
+                        ? res.data.details.title_ar
+                        : res.data.details.title_en;
                     this.services = res.data.services.rows;
                 }
+
             },
             error: (err) => {
                 console.error('Failed to load services:', err);
