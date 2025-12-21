@@ -54,7 +54,7 @@ export class SignUpPageComponent implements OnInit {
         }
 
         this.http.post<any>(
-            'https://admin.realstatecrm-development.dev.alefsoftware.com/site/addCompany',
+            'https://admin.realstatecrm-development.dev.alefsoftware.com/site/request-demo',
             this.signupForm.value
         )
             .subscribe({
