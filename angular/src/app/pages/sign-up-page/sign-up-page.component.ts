@@ -4,6 +4,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateService } from '../../translate.service'; // adjust path
 import { Router } from '@angular/router';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
+import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
+import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
+
 
 
 @Component({
@@ -11,7 +14,7 @@ import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-st
     templateUrl: './sign-up-page.component.html',
     styleUrls: ['./sign-up-page.component.scss'],
     standalone: true, // ✅ mark it standalone
-    imports: [ReactiveFormsModule, HttpClientModule, NavbarStyleTwoComponent], // ✅ add required modules
+    imports: [ReactiveFormsModule, HttpClientModule, NavbarStyleTwoComponent, FooterStyleFourComponent, BackToTopComponent], // ✅ add required modules
 })
 export class SignUpPageComponent implements OnInit {
     signupForm!: FormGroup;
