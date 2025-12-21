@@ -15,7 +15,6 @@ import { TranslateService } from '../../../translate.service'; // adjust path
 })
 export class HomesevenFeaturesComponent implements OnInit {
     services: any[] = [];
-    sectionDetails: any = null; // <-- add this
     currentLang: 'en' | 'ar' = 'en';
 
     constructor(
@@ -23,10 +22,12 @@ export class HomesevenFeaturesComponent implements OnInit {
         private router: Router,
         public translate: TranslateService
     ) {
+        // detect lang from URL
         const urlLang = this.router.url.split('/')[1] as 'en' | 'ar';
         this.currentLang = urlLang === 'ar' ? 'ar' : 'en';
         this.translate.switchLang(this.currentLang);
 
+        // set html attributes
         document.documentElement.lang = this.currentLang;
         document.documentElement.dir = this.currentLang === 'ar' ? 'rtl' : 'ltr';
     }
@@ -34,9 +35,8 @@ export class HomesevenFeaturesComponent implements OnInit {
     ngOnInit(): void {
         this.http.get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site').subscribe({
             next: (res) => {
-                if (res.status && res.data) {
-                    this.services = res.data.rows || [];
-                    this.sectionDetails = res.data.details || null; // <-- assign details
+                if (res.status && res.data?.services) {
+                    this.services = res.data.services.rows;
                 }
             },
             error: (err) => {
@@ -45,12 +45,12 @@ export class HomesevenFeaturesComponent implements OnInit {
         });
     }
 
-    getTitle(item: any): string {
-        return this.currentLang === 'ar' ? item.title_ar : item.title_en;
+    // helper to return localized field
+    getTitle(service: any): string {
+        return this.currentLang === 'ar' ? service.title_ar : service.title_en;
     }
 
-    getDescription(item: any): string {
-        return this.currentLang === 'ar' ? item.description_ar : item.description_en;
+    getDescription(service: any): string {
+        return this.currentLang === 'ar' ? service.description_ar : service.description_en;
     }
 }
-
