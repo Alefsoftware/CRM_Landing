@@ -9,6 +9,9 @@
     max-width: 1200px;
     margin: auto;
     padding: 120px 20px 80px;
+    padding-right: 520px;
+    /* space for phone image */
+
     display: grid;
     grid-template-columns: 1fr 420px;
     gap: 60px;
