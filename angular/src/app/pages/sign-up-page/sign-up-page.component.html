@@ -1,37 +1,80 @@
-<div class="col-md-6 signup-form"
-    style="background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101%); display:flex; flex-direction:column; justify-content:center; text-align:center; min-height:100%;">
+<app-navbar-style-two></app-navbar-style-two>
 
-    <!-- Display all backend errors -->
-    <div *ngFor="let err of backendErrors" class="alert alert-danger mt-2">
-        {{ err }}
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Request a Demo</h2>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li>Request a Demo</li>
+            </ul>
+        </div>
     </div>
-
-    <!-- Display success message -->
-    <div *ngIf="successMessage" class="alert alert-success mt-2">
-        {{ successMessage }}
+    <div class="divider"></div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
     </div>
-
-    <h2 style="color: white; font-weight: bold;">{{ translate.t('Request A Demo') }}</h2>
-
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <input type="text" class="form-control" style="font-weight:bold;"
-                placeholder="{{ translate.t('Company Name') }}" formControlName="company_name">
-        </div>
-
-        <div class="form-group">
-            <input type="text" class="form-control" style="font-weight:bold;"
-                placeholder="{{ translate.t('Contact Name') }}" formControlName="contact_name">
-        </div>
-
-        <div class="form-group">
-            <input type="email" class="form-control" style="font-weight:bold;"
-                placeholder="{{ translate.t('Email Address') }}" formControlName="email">
-        </div>
-
-        <button type="submit" class="btn btn-light" style="font-weight:bold;" [disabled]="loading">
-            {{ loading ? 'Submitting...' : translate.t('Request a demo') }}
-        </button>
-    </form>
-
+    <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
 </div>
+
+<div class="profile-authentication-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/signup-image.png" alt="image">
+                    </div>
+
+                    <div class="col-md-6 signup-form"
+                        style="background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101%); display:flex; flex-direction:column; justify-content:center; text-align:center; min-height:100%;">
+
+                        <!-- Display backend error -->
+                        <div *ngFor="let err of backendErrors" class="alert alert-danger mt-2">
+                            {{ err }}
+                        </div>
+
+
+                        <!-- Display success message -->
+                        <div *ngIf="successMessage" class="alert alert-success mt-3">
+                            {{ successMessage }}
+                        </div>
+
+                        <h2 style="color: white; font-weight: bold;">{{ translate.t('Request A Demo') }}</h2>
+
+                        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <input type="text" class="form-control" style="font-weight:bold;"
+                                    placeholder="{{ translate.t('Company Name') }}" formControlName="company_name"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" style="font-weight:bold;"
+                                    placeholder="{{ translate.t('Contact Name') }}" formControlName="contact_name"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-control" style="font-weight:bold;"
+                                    placeholder="{{ translate.t('Email Address') }}" formControlName="email" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-light" style="font-weight:bold;" [disabled]="loading">
+                                {{ loading ? 'Submitting...' : translate.t('Request a demo') }}
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer-style-four></app-footer-style-four>
+<app-back-to-top></app-back-to-top>
