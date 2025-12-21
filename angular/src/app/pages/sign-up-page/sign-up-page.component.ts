@@ -65,25 +65,10 @@ export class SignUpPageComponent implements OnInit {
                         this.signupForm.reset();
                         setTimeout(() => this.successMessage = null, 5000);
                     } else {
-                        this.backendErrors = res.message;
+                        // backend sends: { status:false, message:"..." }
+                        this.backendErrors = { general: res.message };
                     }
                 },
-                error: (err) => {
-                    console.error('Backend error:', err); // 👈 shows raw response in console
-
-                    if (err.error?.errors) {
-                        // Laravel-style validation errors: { field: [ "msg1", "msg2" ] }
-                        this.backendErrors = err.error.errors;
-                    } else if (err.error?.message) {
-                        // Custom backend error: { "message": "Email already exists" }
-                        this.backendErrors = { general: err.error.message };
-                    } else if (typeof err.error === 'string') {
-                        // Sometimes backend sends plain text
-                        this.backendErrors = { general: err.error };
-                    } else {
-                        this.backendErrors = { general: 'Something went wrong' };
-                    }
-                }
 
             });
     }
