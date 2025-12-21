@@ -1,149 +1,49 @@
-<section class="app-wrapper">
+<section class="app-download-section">
 
-    <!-- Shared Phone Image -->
-    <div class="phone-wrapper">
-        <img src="img/app/app-asset1.png" alt="Souq Leader App">
+    <div class="container-custom">
+
+        <!-- Shared Phone Image -->
+        <div class="phone-wrapper">
+            <img src="assets/img/app/app-asset1.png" alt="Souq Leader App">
+        </div>
+
+        <!-- Top Content -->
+        <div class="content content-top">
+            <span class="badge">DOWNLOAD APP</span>
+
+            <h2>
+                Enjoy your Experience with Souq <br>
+                Leader for free
+            </h2>
+
+            <p>
+                Log in from the Apple App Store or Google Play Store on any device,
+                anytime, and access all your account data with complete, secure
+                storage for everything inside.
+            </p>
+
+            <p>
+                With cloud storage for all your account data, you can access it
+                from any device and continue your work instantly.
+            </p>
+        </div>
+
     </div>
 
-    <!-- Section One -->
-    <div class="app-section section-one">
-        <span class="badge">DOWNLOAD APP</span>
-        <h2>Enjoy your Experience with Souq Leader <br> for free</h2>
-        <p>
-            Log in from the App Store or Google Play Store on any device,
-            anytime, and access all your account data with complete,
-            secure storage for everything inside.
-        </p>
-        <p>
-            With cloud storage for all your account data, you can access
-            it from any device and continue your work instantly.
-        </p>
-    </div>
+    <!-- Bottom Blue Section -->
+    <div class="download-bar">
+        <div class="download-content">
+            <h3>Download the app</h3>
 
-    <!-- Section Two -->
-    <div class="app-section section-two">
-        <h3>Download the app</h3>
-
-        <div class="store-buttons">
-            <a href="#">
-                <img src="img/app/google-play.png" alt="Google Play">
-            </a>
-            <a href="#">
-                <img src="img/app/app-store.png" alt="App Store">
-            </a>
+            <div class="store-buttons">
+                <a href="#">
+                    <img src="assets/img/app/google-play.png" alt="Google Play">
+                </a>
+                <a href="#">
+                    <img src="assets/img/app/app-store.png" alt="App Store">
+                </a>
+            </div>
         </div>
     </div>
 
 </section>
-
-<style>
-    /* Wrapper holding both sections + image */
-.app-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 60px;
-    padding: 100px 20px;
-}
-
-/* Shared phone image */
-.phone-wrapper {
-    position: sticky;
-    top: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.phone-wrapper img {
-    width: 100%;
-    max-width: 350px;
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
-}
-
-/* Sections */
-.app-section {
-    padding: 80px 0;
-}
-
-.section-one h2 {
-    font-size: 36px;
-    line-height: 1.3;
-    margin-bottom: 20px;
-}
-
-.section-one p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #5a6475;
-    margin-bottom: 16px;
-    max-width: 520px;
-}
-
-.badge {
-    display: inline-block;
-    color: #2563eb;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 14px;
-}
-
-/* Section two */
-.section-two {
-    background: linear-gradient(180deg, #0a2c5e, #063469);
-    border-radius: 24px;
-    padding: 60px;
-    color: #fff;
-}
-
-.section-two h3 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-.store-buttons {
-    display: flex;
-    gap: 16px;
-}
-
-.store-buttons img {
-    height: 52px;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 992px) {
-    .app-wrapper {
-        grid-template-columns: 1fr;
-        padding: 60px 20px;
-    }
-
-    .phone-wrapper {
-        position: relative;
-        top: 0;
-        margin-bottom: 40px;
-    }
-
-    .phone-wrapper img {
-        max-width: 260px;
-    }
-
-    .app-section {
-        padding: 40px 0;
-        text-align: center;
-    }
-
-    .section-one p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .store-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-</style>
