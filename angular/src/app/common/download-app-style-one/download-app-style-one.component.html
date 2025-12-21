@@ -1,62 +1,149 @@
-<div class="main-container">
-    <!-- Floating phone image above both sections -->
-    <img src="img/app/app-asset1.png" class="floating-phone-image" alt="Souq Leader App">
+<section class="app-wrapper">
 
-    <!-- Section 1 - App Information -->
-    <section class="app-info-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-8">
-                    <span class="download-label">DOWNLOAD APP</span>
-                    <h2>Enjoy your Experience with Souq Leader for free</h2>
+    <!-- Shared Phone Image -->
+    <div class="phone-wrapper">
+        <img src="img/app/app-asset1.png" alt="Souq Leader App">
+    </div>
 
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8">
-                            <p>
-                                Log in from the Apple App Store or Google Play Store on any device,
-                                anytime, and access all your account data with complete, secure
-                                storage for everything inside.
-                            </p>
+    <!-- Section One -->
+    <div class="app-section section-one">
+        <span class="badge">DOWNLOAD APP</span>
+        <h2>Enjoy your Experience with Souq Leader <br> for free</h2>
+        <p>
+            Log in from the App Store or Google Play Store on any device,
+            anytime, and access all your account data with complete,
+            secure storage for everything inside.
+        </p>
+        <p>
+            With cloud storage for all your account data, you can access
+            it from any device and continue your work instantly.
+        </p>
+    </div>
 
-                            <p>
-                                With cloud storage for all your account data, you can access it
-                                from any device and continue your work instantly.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Section Two -->
+    <div class="app-section section-two">
+        <h3>Download the app</h3>
+
+        <div class="store-buttons">
+            <a href="#">
+                <img src="img/app/google-play.png" alt="Google Play">
+            </a>
+            <a href="#">
+                <img src="img/app/app-store.png" alt="App Store">
+            </a>
         </div>
-    </section>
+    </div>
 
-    <!-- Section 2 - Download Section -->
-    <section class="download-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h3>Download the app</h3>
+</section>
 
-                    <div class="store-buttons">
-                        <a href="#" class="store-btn">
-                            <img src="img/play-store.png" class="store-icon" alt="Google Play">
-                            <div class="store-text">
-                                <small>Get it on</small>
-                                <strong>Google Play</strong>
-                            </div>
-                        </a>
+<style>
+    /* Wrapper holding both sections + image */
+.app-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    padding: 100px 20px;
+}
 
-                        <a href="#" class="store-btn">
-                            <img src="img/apple-store.png" class="store-icon" alt="Apple Store">
-                            <div class="store-text">
-                                <small>Download on the</small>
-                                <strong>App Store</strong>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+/* Shared phone image */
+.phone-wrapper {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 
-        </div>
-    </section>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+.phone-wrapper img {
+    width: 100%;
+    max-width: 350px;
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
+}
+
+/* Sections */
+.app-section {
+    padding: 80px 0;
+}
+
+.section-one h2 {
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.section-one p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #5a6475;
+    margin-bottom: 16px;
+    max-width: 520px;
+}
+
+.badge {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+/* Section two */
+.section-two {
+    background: linear-gradient(180deg, #0a2c5e, #063469);
+    border-radius: 24px;
+    padding: 60px;
+    color: #fff;
+}
+
+.section-two h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.store-buttons img {
+    height: 52px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+    .app-wrapper {
+        grid-template-columns: 1fr;
+        padding: 60px 20px;
+    }
+
+    .phone-wrapper {
+        position: relative;
+        top: 0;
+        margin-bottom: 40px;
+    }
+
+    .phone-wrapper img {
+        max-width: 260px;
+    }
+
+    .app-section {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .section-one p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .store-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+</style>
