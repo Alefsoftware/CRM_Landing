@@ -1,46 +1,12 @@
 <style>
     .main-container {
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        overflow: hidden;
+        display: flex;
+        min-height: calc(100vh - 180px);
     }
 
-    /* Floating phone image */
-    .floating-phone-image {
-        position: absolute;
-        right: 50px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 280px;
-        z-index: 10;
-        max-width: 30%;
-        animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-
-        0%,
-        100% {
-            transform: translateY(-50%) translateY(0px);
-        }
-
-        50% {
-            transform: translateY(-50%) translateY(-15px);
-        }
-    }
-
-    /* App info section */
-    .app-info-section {
-        background-color: var(--light-bg);
-        border-radius: 20px;
-        padding: 60px 40px;
-        margin-bottom: 30px;
-        position: relative;
-        z-index: 5;
-        width: 65%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* App Download Section */
+    .app-download-section {
+        margin-bottom: 80px;
     }
 
     .download-label {
@@ -55,39 +21,34 @@
         letter-spacing: 1px;
     }
 
-    .app-info-section h2 {
+    .app-download-section h1 {
         font-weight: 700;
         margin-bottom: 25px;
-        color: #1a1a1a;
-        font-size: 2.5rem;
+        color: var(--secondary-color);
+        font-size: 2.8rem;
+        line-height: 1.2;
     }
 
-    .app-info-section p {
+    .app-download-section p {
         font-size: 1.1rem;
         margin-bottom: 20px;
         color: #555;
+        max-width: 90%;
     }
 
-    /* Download section */
+    /* Download Section */
     .download-section {
-        background-color: white;
-        border-radius: 20px;
-        padding: 40px;
-        width: 65%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        border: 1px solid #eee;
-        position: relative;
-        z-index: 5;
+        margin-bottom: 80px;
     }
 
-    .download-section h3 {
+    .download-section h2 {
         font-weight: 700;
         margin-bottom: 30px;
-        color: #1a1a1a;
-        font-size: 2rem;
+        color: var(--secondary-color);
+        font-size: 2.2rem;
     }
 
-    /* Store buttons */
+    /* Store Buttons */
     .store-buttons {
         display: flex;
         flex-wrap: wrap;
@@ -97,13 +58,13 @@
     .store-btn {
         display: flex;
         align-items: center;
-        background-color: #1a1a1a;
+        background-color: var(--secondary-color);
         color: white;
-        padding: 12px 25px;
+        padding: 15px 30px;
         border-radius: 12px;
         text-decoration: none;
         transition: all 0.3s ease;
-        width: 220px;
+        width: 240px;
     }
 
     .store-btn:hover {
@@ -114,8 +75,8 @@
     }
 
     .store-icon {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
         margin-right: 15px;
     }
 
@@ -130,146 +91,285 @@
     }
 
     .store-text strong {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 600;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 992px) {
-        .floating-phone-image {
-            position: relative;
-            right: 0;
-            top: 0;
-            transform: none;
-            display: block;
-            margin: 0 auto 40px;
-            width: 250px;
-            max-width: 80%;
-            animation: none;
+    /* Contact Form Section */
+    .contact-section {
+        background-color: var(--light-bg);
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        max-width: 90%;
+    }
+
+    .contact-section h3 {
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--secondary-color);
+        font-size: 1.8rem;
+    }
+
+    .contact-section p {
+        margin-bottom: 25px;
+        color: #666;
+    }
+
+    .email-form {
+        display: flex;
+        gap: 10px;
+    }
+
+    .email-input {
+        flex: 1;
+        padding: 15px 20px;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .submit-btn {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+        background-color: #1e4abf;
+    }
+
+    /* Right Image Section */
+    .image-right {
+        flex: 1;
+        max-width: 40%;
+        position: relative;
+        background: linear-gradient(135deg, #f5f7ff 0%, #e8edff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    .phone-image {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0px);
         }
 
-        .app-info-section,
-        .download-section {
-            width: 100%;
-        }
-
-        .main-container {
-            text-align: center;
-        }
-
-        .store-buttons {
-            justify-content: center;
+        50% {
+            transform: translateY(-15px);
         }
     }
 
-    @media (max-width: 576px) {
+    /* Footer */
+    .footer {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 60px 0 30px;
+    }
 
-        .app-info-section,
-        .download-section {
-            padding: 30px 20px;
+    .footer-logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .footer p {
+        color: #aaa;
+        margin-bottom: 30px;
+        max-width: 300px;
+    }
+
+    .footer h4 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links a {
+        color: #aaa;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+
+    .contact-info {
+        color: #aaa;
+    }
+
+    .contact-info div {
+        margin-bottom: 10px;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        font-size: 14px;
+    }
+
+    .newsletter-btn {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 30px;
+        margin-top: 30px;
+        border-top: 1px solid #444;
+        color: #aaa;
+        font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .main-container {
+            flex-direction: column;
         }
 
-        .app-info-section h2 {
-            font-size: 1.8rem;
+        .content-left,
+        .image-right {
+            max-width: 100%;
         }
 
-        .download-section h3 {
-            font-size: 1.5rem;
+        .content-left {
+            padding: 40px 20px;
+        }
+
+        .image-right {
+            padding: 40px 20px;
+            min-height: 500px;
         }
 
         .store-btn {
             width: 100%;
-            justify-content: center;
         }
 
         .store-buttons {
             flex-direction: column;
         }
     }
+
+    @media (max-width: 576px) {
+        .app-download-section h1 {
+            font-size: 2rem;
+        }
+
+        .download-section h2 {
+            font-size: 1.8rem;
+        }
+
+        .contact-section {
+            padding: 30px 20px;
+        }
+
+        .email-form {
+            flex-direction: column;
+        }
+
+        .nav-links {
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .phone-image {
+            max-width: 280px;
+        }
+    }
 </style>
 
-    <div class="main-container">
-        <!-- Floating phone image on the right -->
-        <img src="img/app/app-asset1.png" class="floating-phone-image" alt="Souq Leader App">
+<!-- Main Content -->
+<div class="main-container">
+    <!-- Left Content -->
+    <div class="content-left">
+        <!-- App Download Section -->
+        <section class="app-download-section">
+            <span class="download-label">DOWNLOAD APP</span>
+            <h1>Enjoy your Experience with Souq Leader for free</h1>
+            <p>Log in from the Apple App Store or Google Play Store on any device, anytime, and access all your account
+                data with complete, secure storage for everything inside.</p>
+            <p>With cloud storage for all your account data, you can access it from any device and continue your work
+                instantly.</p>
+        </section>
 
-        <!-- Section 1 - App Information -->
-        <section class="app-info-section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <span class="download-label">DOWNLOAD APP</span>
-                        <h2>Enjoy your Experience with Souq Leader for free</h2>
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p>
-                                    Log in from the Apple App Store or Google Play Store on any device,
-                                    anytime, and access all your account data with complete, secure
-                                    storage for everything inside.
-                                </p>
-
-                                <p>
-                                    With cloud storage for all your account data, you can access it
-                                    from any device and continue your work instantly.
-                                </p>
-                            </div>
-                        </div>
+        <!-- Download Section -->
+        <section class="download-section">
+            <h2>Download the app</h2>
+            <div class="store-buttons">
+                <a href="#" class="store-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/300/300218.png" class="store-icon"
+                        alt="Google Play">
+                    <div class="store-text">
+                        <small>Get it on</small>
+                        <strong>Google Play</strong>
                     </div>
-                </div>
+                </a>
+
+                <a href="#" class="store-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" class="store-icon" alt="Apple Store">
+                    <div class="store-text">
+                        <small>Download on the</small>
+                        <strong>App Store</strong>
+                    </div>
+                </a>
             </div>
         </section>
 
-        <!-- Section 2 - Download Section -->
-        <section class="download-section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3>Download the app</h3>
-
-                        <div class="store-buttons">
-                            <a href="#" class="store-btn">
-                                <img src="https://cdn-icons-png.flaticon.com/512/300/300218.png" class="store-icon"
-                                    alt="Google Play">
-                                <div class="store-text">
-                                    <small>Get it on</small>
-                                    <strong>Google Play</strong>
-                                </div>
-                            </a>
-
-                            <a href="#" class="store-btn">
-                                <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" class="store-icon"
-                                    alt="Apple Store">
-                                <div class="store-text">
-                                    <small>Download on the</small>
-                                    <strong>App Store</strong>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <!-- Contact Form Section -->
+        <section class="contact-section">
+            <h3>Talk to our Team</h3>
+            <p>Your next level of growth starts here. Unlock the Power of Our platform by entering your contact details,
+                and our team will reach out to walk you through the platform and mobile app.</p>
+            <div class="email-form">
+                <input type="email" class="email-input" placeholder="Enter Your Email Address">
+                <button type="submit" class="submit-btn">Get Started</button>
             </div>
         </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Optional: Add some interactive effect to the phone image
-        document.addEventListener('DOMContentLoaded', function () {
-            const phoneImage = document.querySelector('.floating-phone-image');
-
-            phoneImage.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-50%) scale(1.05)';
-            });
-
-            phoneImage.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(-50%) scale(1)';
-            });
-
-            // For mobile devices, remove the translateY effect
-            if (window.innerWidth <= 992) {
-                phoneImage.style.transform = 'none';
-                phoneImage.removeEventListener('mouseenter', () => { });
-                phoneImage.removeEventListener('mouseleave', () => { });
-            }
-        });
-    </script>
+    <!-- Right Image -->
+    <div class="image-right">
+        <img src="https://cdn.pixabay.com/photo/2021/02/08/16/03/phone-5994625_1280.png" class="phone-image"
+            alt="Souq Leader App">
+    </div>
+</div>
