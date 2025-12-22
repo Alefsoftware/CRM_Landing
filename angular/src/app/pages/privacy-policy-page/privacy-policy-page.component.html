@@ -3,12 +3,22 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h2>Privacy Policy</h2>
+            <h2>
+                {{ currentLang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy' }}
+            </h2>
+
             <ul>
-                <li><a routerLink="/">Home</a></li>
-                <li>Privacy Policy</li>
+                <li>
+                    <a routerLink="/">
+                        {{ currentLang === 'ar' ? 'الرئيسية' : 'Home' }}
+                    </a>
+                </li>
+                <li>
+                    {{ currentLang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy' }}
+                </li>
             </ul>
         </div>
+
     </div>
     <div class="divider"></div>
     <div class="lines">
@@ -24,7 +34,7 @@
 <div class="privacy-policy-area ptb-100">
     <div class="container">
         <div class="privacy-policy-content">
-                     <div [innerHTML]="content"></div>
+            <div [innerHTML]="content"></div>
 
         </div>
     </div>
