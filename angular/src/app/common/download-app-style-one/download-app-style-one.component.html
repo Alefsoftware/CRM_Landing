@@ -1,7 +1,9 @@
 <style>
     .main-container {
         position: relative;
+        max-width: 1200px;
         margin: 0 auto;
+        padding: 40px 20px;
         overflow: hidden;
     }
 
@@ -12,6 +14,7 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 10;
+        animation: float 6s ease-in-out infinite;
     }
 
     @keyframes float {
@@ -29,11 +32,12 @@
     /* App info section */
     .app-info-section {
         background-color: var(--light-bg);
+        border-radius: 20px;
         padding: 60px 40px;
         margin-bottom: 30px;
         position: relative;
         z-index: 5;
-
+        width: 65%;
     }
 
     .download-label {
