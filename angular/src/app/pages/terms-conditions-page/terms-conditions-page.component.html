@@ -1,26 +1,38 @@
-<app-navbar-style-two>
+<app-navbar-style-two />
 
-    <div class="page-title-area bg-color">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>{{ currentLang === 'ar' ? 'الشروط والأحكام' : 'Terms & Conditions' }}</h2>
-                <ul>
-                    <li><a routerLink="/">{{ currentLang === 'ar' ? 'الرئيسية' : 'Home' }}</a></li>
-                    <li>{{ currentLang === 'ar' ? 'الشروط والأحكام' : 'Terms & Conditions' }}</li>
-                </ul>
-            </div>
+<div class="page-title-area bg-color">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Terms & Conditions</h2>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li>Terms & Conditions</li>
+            </ul>
         </div>
     </div>
+    <div class="divider"></div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
+</div>
 
-    <div class="terms-conditions-area ptb-100">
-        <div class="container terms-conditions-content" [innerHTML]="contentHtml">
-            <!-- محتوى HTML من API سيتم عرضه هنا -->
+<div class="terms-conditions-area ptb-100">
+    <div class="container">
+        <div class="terms-conditions-content">
+            <div [innerHTML]="contentHtml"></div>
         </div>
     </div>
+</div>
 
-    <div class="app-download-area pb-100">
-        <app-download-app-style-two>
-    </div>
+<div class="app-download-area pb-100">
+    <app-download-app-style-two />
+</div>
 
-    <app-footer-style-four>
-        <app-back-to-top>
+<app-footer-style-four />
+
+<app-back-to-top />
