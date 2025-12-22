@@ -4,7 +4,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router, RouterLink } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { TranslateService } from '../../../translate.service';
+import { TranslateService } from '../../translate.service';
 
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { DownloadAppStyleTwoComponent } from '../../common/download-app-style-two/download-app-style-two.component';
