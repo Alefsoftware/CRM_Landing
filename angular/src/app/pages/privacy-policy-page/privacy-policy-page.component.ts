@@ -28,9 +28,16 @@ import { BackToTopComponent } from '../../common/back-to-top/back-to-top.compone
 })
 export class PrivacyPolicyPageComponent implements OnInit {
 
+    // 🌍 Language
     currentLang: 'en' | 'ar' = 'en';
+
+    // 📄 Content
     title = '';
     content!: SafeHtml;
+
+    // 🔄 States
+    loading = false;
+    errorMessage = '';
 
     constructor(
         private http: HttpClient,
@@ -38,10 +45,11 @@ export class PrivacyPolicyPageComponent implements OnInit {
         private sanitizer: DomSanitizer,
         public translate: TranslateService
     ) {
-        // 🔹 Detect language from URL
+        // 🔹 Detect language from URL (/en or /ar)
         const urlLang = this.router.url.split('/')[1] as 'en' | 'ar';
         this.currentLang = urlLang === 'ar' ? 'ar' : 'en';
 
+        // 🔹 Switch language
         this.translate.switchLang(this.currentLang);
 
         // 🔹 Set HTML attributes
@@ -53,29 +61,65 @@ export class PrivacyPolicyPageComponent implements OnInit {
         this.getPrivacyPolicy();
     }
 
+    // ==============================
+    // 📡 API CALL
+    // ==============================
     getPrivacyPolicy(): void {
+        this.loading = true;
+        this.errorMessage = '';
+
         this.http
             .get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site/privacy-policy')
             .subscribe({
                 next: (res) => {
-                    if (res?.status && res?.data) {
+                    console.log('Privacy policy API response:', res); // 🐞 DEBUG
 
-                        // ✅ Localized title
-                        this.title = this.currentLang === 'ar'
-                            ? res.data.title_ar
-                            : res.data.title_en;
-
-                        // ✅ Localized HTML content
-                        const description =
-                            this.currentLang === 'ar'
-                                ? res.data.description_ar
-                                : res.data.description_en;
-
-                        this.content = this.sanitizer.bypassSecurityTrustHtml(description);
+                    if (!res) {
+                        this.errorMessage = 'Empty response from server';
+                        return;
                     }
+
+                    if (res.status !== true) {
+                        this.errorMessage = res.message || 'Request failed';
+                        return;
+                    }
+
+                    if (!res.data) {
+                        this.errorMessage = 'No data returned from API';
+                        return;
+                    }
+
+                    // ✅ Localized title
+                    this.title = this.currentLang === 'ar'
+                        ? res.data.title_ar
+                        : res.data.title_en;
+
+                    // ✅ Localized description
+                    const description =
+                        this.currentLang === 'ar'
+                            ? res.data.description_ar
+                            : res.data.description_en;
+
+                    console.log('Current lang:', this.currentLang);
+                    console.log('Title:', this.title);
+                    console.log('Description exists:', !!description);
+
+                    if (!description || description === 'null') {
+                        this.errorMessage = 'Description is empty';
+                        return;
+                    }
+
+                    // ✅ Trust backend HTML
+                    this.content = this.sanitizer.bypassSecurityTrustHtml(description);
                 },
+
                 error: (err) => {
-                    console.error('Failed to load privacy policy:', err);
+                    console.error('HTTP error:', err);
+                    this.errorMessage = 'Server error. Please try again later.';
+                },
+
+                complete: () => {
+                    this.loading = false;
                 }
             });
     }
