@@ -1,252 +1,65 @@
-<style>
 
-        .main-container {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            overflow: hidden;
-        }
 
-        /* Floating phone image */
-        .floating-phone-image {
-            position: absolute;
-            right: 50px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 280px;
-            z-index: 10;
-            max-width: 30%;
-            animation: float 6s ease-in-out infinite;
-        }
+<div class="main-container">
+    <!-- Floating phone image on the right -->
 
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(-50%) translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-50%) translateY(-15px);
-            }
-        }
-
-        /* App info section */
-        .app-info-section {
-            background-color: var(--light-bg);
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 5;
-            width: 65%;
-=        }
-
-        .download-label {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .app-info-section h2 {
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: #1a1a1a;
-            font-size: 2.5rem;
-        }
-
-        .app-info-section p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        /* Download section */
-        .download-section {
-            background-color: white;
-            border-radius: 20px;
-            padding: 40px;
-            width: 65%;
-            border: 1px solid #eee;
-            position: relative;
-            z-index: 5;
-        }
-
-        .download-section h3 {
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: #1a1a1a;
-            font-size: 2rem;
-        }
-
-        /* Store buttons */
-        .store-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .store-btn {
-            display: flex;
-            align-items: center;
-            background-color: #1a1a1a;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            width: 220px;
-        }
-
-        .store-btn:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-5px);
-            color: white;
-            box-shadow: 0 10px 20px rgba(42, 91, 215, 0.2);
-        }
-
-        .store-icon {
-            width: 36px;
-            height: 36px;
-            margin-right: 15px;
-        }
-
-        .store-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .store-text small {
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        .store-text strong {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .floating-phone-image {
-                position: relative;
-                right: 0;
-                top: 0;
-                transform: none;
-                display: block;
-                margin: 0 auto 40px;
-                width: 250px;
-                max-width: 80%;
-                animation: none;
-            }
-
-            .app-info-section,
-            .download-section {
-                width: 100%;
-            }
-
-            .main-container {
-                text-align: center;
-            }
-
-            .store-buttons {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-
-            .app-info-section,
-            .download-section {
-                padding: 30px 20px;
-            }
-
-            .app-info-section h2 {
-                font-size: 1.8rem;
-            }
-
-            .download-section h3 {
-                font-size: 1.5rem;
-            }
-
-            .store-btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .store-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
-
-    <div class="main-container">
-        <!-- Floating phone image on the right -->
-       
     <img src="img/app/app-asset1.png" class="floating-phone-image" alt="Souq Leader App">
 
-        <!-- Section 1 - App Information -->
-        <section class="app-info-section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <span class="download-label">DOWNLOAD APP</span>
-                        <h2>Enjoy your Experience with Souq Leader for free</h2>
+    <!-- Section 1 - App Information -->
+    <section class="app-info-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="download-label">DOWNLOAD APP</span>
+                    <h2>Enjoy your Experience with Souq Leader for free</h2>
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p>
-                                    Log in from the Apple App Store or Google Play Store on any device,
-                                    anytime, and access all your account data with complete, secure
-                                    storage for everything inside.
-                                </p>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>
+                                Log in from the Apple App Store or Google Play Store on any device,
+                                anytime, and access all your account data with complete, secure
+                                storage for everything inside.
+                            </p>
 
-                                <p>
-                                    With cloud storage for all your account data, you can access it
-                                    from any device and continue your work instantly.
-                                </p>
+                            <p>
+                                With cloud storage for all your account data, you can access it
+                                from any device and continue your work instantly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 - Download Section -->
+    <section class="download-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Download the app</h3>
+
+                    <div class="store-buttons">
+                        <a href="#" class="store-btn">
+                            <img src="https://cdn-icons-png.flaticon.com/512/300/300218.png" class="store-icon"
+                                alt="Google Play">
+                            <div class="store-text">
+                                <small>Get it on</small>
+                                <strong>Google Play</strong>
                             </div>
-                        </div>
+                        </a>
+
+                        <a href="#" class="store-btn">
+                            <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" class="store-icon"
+                                alt="Apple Store">
+                            <div class="store-text">
+                                <small>Download on the</small>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Section 2 - Download Section -->
-        <section class="download-section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3>Download the app</h3>
-
-                        <div class="store-buttons">
-                            <a href="#" class="store-btn">
-                                <img src="https://cdn-icons-png.flaticon.com/512/300/300218.png" class="store-icon"
-                                    alt="Google Play">
-                                <div class="store-text">
-                                    <small>Get it on</small>
-                                    <strong>Google Play</strong>
-                                </div>
-                            </a>
-
-                            <a href="#" class="store-btn">
-                                <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" class="store-icon"
-                                    alt="Apple Store">
-                                <div class="store-text">
-                                    <small>Download on the</small>
-                                    <strong>App Store</strong>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
