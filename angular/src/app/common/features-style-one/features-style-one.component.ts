@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-features-style-one',
     standalone: true,
-    imports: [CommonModule, HttpClientModule, RouterLink],
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        RouterModule   // ✅ بدل RouterLink
+    ],
     templateUrl: './features-style-one.component.html',
     styleUrls: ['./features-style-one.component.scss']
 })
