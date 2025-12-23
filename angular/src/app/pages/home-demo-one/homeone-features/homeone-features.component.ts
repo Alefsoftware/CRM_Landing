@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-homeone-features',
     standalone: true,
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        HttpClientModule   // ✅ الحل هنا
+    ],
     templateUrl: './homeone-features.component.html',
     styleUrls: ['./homeone-features.component.scss']
 })
@@ -19,7 +22,6 @@ export class HomeoneFeaturesComponent implements OnInit {
         private http: HttpClient,
         private router: Router
     ) {
-        // detect language from URL
         const urlLang = this.router.url.split('/')[1] as 'en' | 'ar';
         this.currentLang = urlLang === 'ar' ? 'ar' : 'en';
     }
@@ -27,14 +29,9 @@ export class HomeoneFeaturesComponent implements OnInit {
     ngOnInit(): void {
         this.http
             .get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site/features')
-            .subscribe({
-                next: (res) => {
-                    if (res?.status && res.data?.features) {
-                        this.features = res.data.features;
-                    }
-                },
-                error: (err) => {
-                    console.error('Failed to load features', err);
+            .subscribe(res => {
+                if (res?.status && res.data?.features) {
+                    this.features = res.data.features;
                 }
             });
     }
