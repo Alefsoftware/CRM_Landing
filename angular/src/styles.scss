@@ -117,10 +117,9 @@ p {
 }
 
 .bg-F7F7FF {
-    background-color: linear-gradient(
-      221.69deg,
-      #039BE5 0%,
-      #020E3C 101.01%);
+    background-color: linear-gradient(221.69deg,
+            #039BE5 0%,
+            #020E3C 101.01%);
 }
 
 .bg-F4F8FC {
@@ -674,7 +673,7 @@ textarea.form-control {
     }
 
     &.page-title-style-two {
-        background: #eef5fc;
+        background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
 
         &::before {
             background-color: var(--mainColor);
@@ -709,10 +708,10 @@ textarea.form-control {
 
     &.bg-color {
         padding-bottom: 90px;
-        background: linear-gradient(
-      221.69deg,
-      #039BE5 0%,
-      #020E3C 101.01%);
+        background: linear-gradient(221.69deg,
+                #039BE5 0%,
+                #020E3C 101.01%);
+
         &::before {
             display: none;
         }
@@ -1802,10 +1801,9 @@ textarea.form-control {
     }
 
     &.gradient-color {
-        background: linear-gradient(
-      221.69deg,
-      #039BE5 0%,
-      #020E3C 101.01%);
+        background: linear-gradient(221.69deg,
+                #039BE5 0%,
+                #020E3C 101.01%);
     }
 }
 
