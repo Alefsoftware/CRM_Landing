@@ -127,7 +127,8 @@ p {
 }
 
 .bg-f9f9f9 {
-    background-color: #f9f9f9;
+    background-color: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+    ;
 }
 
 /*default-btn*/
@@ -1151,7 +1152,8 @@ textarea.form-control {
                 }
 
                 &:hover {
-                    background-color: #f9f9f9;
+                    background-color: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+                    ;
                     color: var(--whiteColor);
                     border-radius: 50%;
 
@@ -1286,7 +1288,8 @@ textarea.form-control {
                 border-radius: 50%;
                 color: var(--mainColor);
                 transform: translateY(-50%);
-                background-color: #f9f9f9;
+                background-color: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+                ;
                 transition: var(--transition);
 
                 &::before {
@@ -1569,7 +1572,8 @@ textarea.form-control {
                 }
 
                 &:hover {
-                    background-color: #f9f9f9;
+                    background-color: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+                    ;
                     color: var(--whiteColor);
                     border-radius: 50%;
 
@@ -1695,7 +1699,8 @@ textarea.form-control {
                 }
 
                 &:hover {
-                    background-color: #f9f9f9;
+                    background-color: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+                    ;
                     color: var(--whiteColor);
                     border-radius: 50%;
 

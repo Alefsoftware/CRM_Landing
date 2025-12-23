@@ -1,34 +1,49 @@
 .coming-soon-area {
     height: 100vh;
 }
+
 .coming-soon-image {
     height: 100%;
+
     background: {
         position: center center;
         repeat: no-repeat;
         size: cover;
-    };
+    }
+
+    ;
+
     img {
         display: none;
     }
 }
+
 .coming-soon-content {
     height: 100vh;
     text-align: center;
+
     padding: {
         left: 30px;
         right: 30px;
-    };
+    }
+
+    ;
+
     .logo {
         display: inline-block;
     }
+
     h2 {
         font-size: 40px;
+
         margin: {
             top: 30px;
             bottom: 0;
-        };
+        }
+
+        ;
     }
+
     #timer {
         margin-top: 35px;
 
@@ -37,40 +52,58 @@
             height: 120px;
             border-radius: 5px;
             color: var(--mainColor);
-            background-color: #f9f9f9;
+            background-color: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+            ;
+
             font: {
                 size: 40px;
                 weight: 800;
-            };
+            }
+
+            ;
+
             margin: {
                 left: 10px;
                 right: 10px;
-            };
+            }
+
+            ;
+
             span {
                 display: block;
                 margin-top: -2px;
                 color: var(--blackColor);
+
                 font: {
                     size: var(--fontSize);
                     weight: 600;
-                };
+                }
+
+                ;
             }
+
             &:first-child {
                 margin-left: 0;
             }
+
             &:last-child {
                 margin-right: 0;
             }
         }
     }
+
     form {
         position: relative;
         max-width: 530px;
+
         margin: {
             left: auto;
             right: auto;
             top: 40px;
-        };
+        }
+
+        ;
+
         .input-newsletter {
             width: 100%;
             height: 60px;
@@ -87,7 +120,8 @@
                 color: var(--paragraphColor);
                 transition: var(--transition);
             }
-            &:focus {                  
+
+            &:focus {
                 border-color: #eeeeee;
 
                 &::placeholder {
@@ -95,6 +129,7 @@
                 }
             }
         }
+
         .default-btn {
             background-color: var(--mainColor);
             color: var(--whiteColor);
@@ -121,18 +156,24 @@
             display: inline-block;
         }
     }
+
     .coming-soon-content {
         height: auto;
+
         padding: {
             top: 60px;
             left: 15px;
             right: 15px;
             bottom: 60px;
-        };
+        }
+
+        ;
+
         h2 {
             font-size: 22px;
             margin-top: 25px;
         }
+
         #timer {
             margin-top: 10px;
 
@@ -146,14 +187,17 @@
                     font-size: 12px;
                     margin-top: 0;
                 }
+
                 &:first-child {
                     margin-left: 10px;
                 }
+
                 &:last-child {
                     margin-right: 10px;
                 }
             }
         }
+
         form {
             max-width: 420px;
             margin-top: 30px;
@@ -167,6 +211,7 @@
                 position: relative;
                 padding: 15px 20px 13px;
             }
+
             .input-newsletter {
                 padding: 0 0 0 15px;
                 font-size: 13px;
@@ -191,15 +236,21 @@
             display: inline-block;
         }
     }
+
     .coming-soon-content {
         height: auto;
+
         padding: {
             top: 80px;
             bottom: 80px;
-        };
+        }
+
+        ;
+
         h2 {
             font-size: 30px;
         }
+
         form {
             .default-btn {
                 bottom: 8px;
@@ -216,7 +267,10 @@
         padding: {
             left: 15px;
             right: 15px;
-        };
+        }
+
+        ;
+
         #timer {
             div {
                 width: 100px;
@@ -224,6 +278,7 @@
                 font-size: 30px;
             }
         }
+
         form {
             max-width: 465px;
             margin-top: 30px;
