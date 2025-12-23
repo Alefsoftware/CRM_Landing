@@ -22,17 +22,18 @@
                         <span style="color:white;">
                             {{
                             currentLang === 'ar'
-                            ? 'اكتشف قوة نظام CRM الخاص بنا بمشاركة بيانات التواصل الخاصة بك، وسيتواصل معك فريقنا ليشرح
-                            لك تفاصيل النظام بالكامل وكذلك تطبيق الهاتف المحمول.'
-                            : 'Unlock the Power of Our CRM by sharing your contact details, and our team will reach out
-                            to walk you through the CRM and its mobile app.'
+                            ? 'اﻛﺗﺷف ﻗوة ﻧظﺎم CRM اﻟﺧﺎص ﺑﻧﺎ ﺑﻣﺷﺎرﻛﺔ ﺑﯾﺎﻧﺎت اﻟﺗواﺻل اﻟﺧﺎﺻﺔ ﺑك، وﺳﯾﺗواﺻل ﻣﻌك ﻓرﯾﻘﻧﺎ ﻟﯾﺷرح
+                            ﻟك ﺗﻔﺎﺻﯾل اﻟﻧظﺎم ﺑﺎﻟﻛﺎﻣل وﻛذﻟك ﺗطﺑﯾق اﻟﮭﺎﺗف اﻟﻣﺣﻣﻣول.'
+                            : 'Unlock the Power of Our CRM by sharing your contact details, and our team will contact
+                            you to show how Souq Leader CRM helps you organize leads, automate follow-ups, and improve
+                            your entire sales process.'
                             }}
                         </span>
 
                         <!-- Form -->
                         <form style="margin-top: 30px;" class="free-trial-form">
                             <input type="text" class="input-newsletter"
-                                [placeholder]="currentLang === 'ar' ? 'أدخل بريدك الإلكتروني' : 'Enter Your Email Address'"
+                                [placeholder]="currentLang === 'ar' ? 'أدخل بريدك الإلكتروني' : 'Enter Your Email ...'"
                                 name="email" [style.textAlign]="currentLang === 'ar' ? 'right' : 'left'" />
                             <button type="submit" class="default-btn" [ngStyle]="{
                                                 'right': currentLang === 'ar' ? 'auto' : '5px',
