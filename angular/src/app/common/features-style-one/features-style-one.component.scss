@@ -178,6 +178,10 @@
         color: white;
     }
 
+    p {
+        color: white;
+    }
+
     &:hover {
         background-color: var(--whiteColor);
         box-shadow: 0 50px 100px -20px rgba(50, 50, 93, .10), 0 30px 60px -30px rgba(107, 124, 147, .15);
