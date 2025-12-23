@@ -1,9 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-homeone-features',
-    imports: [],
+    standalone: true,
+    imports: [CommonModule],
     templateUrl: './homeone-features.component.html',
     styleUrls: ['./homeone-features.component.scss']
 })
-export class HomeoneFeaturesComponent {}
+export class HomeoneFeaturesComponent implements OnInit {
+
+    features: any[] = [];
+    currentLang: 'en' | 'ar' = 'en';
+
+    constructor(
+        private http: HttpClient,
+        private router: Router
+    ) {
+        // detect language from URL
+        const urlLang = this.router.url.split('/')[1] as 'en' | 'ar';
+        this.currentLang = urlLang === 'ar' ? 'ar' : 'en';
+    }
+
+    ngOnInit(): void {
+        this.http
+            .get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site/features')
+            .subscribe({
+                next: (res) => {
+                    if (res?.status && res.data?.features) {
+                        this.features = res.data.features;
+                    }
+                },
+                error: (err) => {
+                    console.error('Failed to load features', err);
+                }
+            });
+    }
+
+    getTitle(feature: any): string {
+        return this.currentLang === 'ar'
+            ? feature.title_ar
+            : feature.title_en;
+    }
+
+    getDescription(feature: any): string {
+        return this.currentLang === 'ar'
+            ? feature.description_ar
+            : feature.description_en;
+    }
+}
