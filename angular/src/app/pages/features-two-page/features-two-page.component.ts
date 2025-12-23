@@ -12,10 +12,11 @@ import { FeaturesStyleFiveComponent } from '../../common/features-style-five/fea
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
 import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
 import { DownloadAppStyleFiveComponent } from "../../common/download-app-style-five/download-app-style-five.component";
+import { FooterStyleFourComponent_1 as FooterStyleFourComponent } from "../../common/footer-style-one/footer-style-one.component";
 
 @Component({
     selector: 'app-features-two-page',
-    imports: [RouterLink, NavbarStyleTwoComponent, HomeoneFeaturesComponent, FeaturesStyleOneComponent, HometwoFeaturesComponent, HometwoKeyFeaturesComponent, FeaturesStyleTwoComponent, FeaturesStyleThreeComponent, FeaturesStyleFourComponent, FeaturesStyleFiveComponent, FooterStyleFourComponent, BackToTopComponent, DownloadAppStyleFiveComponent],
+    imports: [RouterLink, NavbarStyleTwoComponent, HomeoneFeaturesComponent, FeaturesStyleOneComponent, HometwoFeaturesComponent, HometwoKeyFeaturesComponent, FeaturesStyleTwoComponent, FeaturesStyleThreeComponent, FeaturesStyleFourComponent, FeaturesStyleFiveComponent, FooterStyleFourComponent, BackToTopComponent, DownloadAppStyleFiveComponent, FooterStyleFourComponent_1],
     templateUrl: './features-two-page.component.html',
     styleUrls: ['./features-two-page.component.scss']
 })
