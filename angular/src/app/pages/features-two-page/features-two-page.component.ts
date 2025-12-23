@@ -15,10 +15,11 @@ import { DownloadAppStyleFiveComponent } from "../../common/download-app-style-f
 import { DownloadAppStyleTwoComponent } from "../../common/download-app-style-two/download-app-style-two.component";
 import { DownloadAppStyleOneComponent } from "../../common/download-app-style-one/download-app-style-one.component";
 import { DownloadAppStyleThreeComponent } from "../../common/download-app-style-three/download-app-style-three.component";
+import { DownloadAppStyleFourComponent } from "../../common/download-app-style-four/download-app-style-four.component";
 
 @Component({
     selector: 'app-features-two-page',
-    imports: [RouterLink, NavbarStyleTwoComponent, HomeoneFeaturesComponent, FeaturesStyleOneComponent, HometwoFeaturesComponent, HometwoKeyFeaturesComponent, FeaturesStyleTwoComponent, FeaturesStyleThreeComponent, FeaturesStyleFourComponent, FeaturesStyleFiveComponent, FooterStyleFourComponent, BackToTopComponent, DownloadAppStyleFiveComponent, DownloadAppStyleTwoComponent, DownloadAppStyleOneComponent, DownloadAppStyleThreeComponent],
+    imports: [RouterLink, NavbarStyleTwoComponent, HomeoneFeaturesComponent, FeaturesStyleOneComponent, HometwoFeaturesComponent, HometwoKeyFeaturesComponent, FeaturesStyleTwoComponent, FeaturesStyleThreeComponent, FeaturesStyleFourComponent, FeaturesStyleFiveComponent, FooterStyleFourComponent, BackToTopComponent, DownloadAppStyleFiveComponent, DownloadAppStyleTwoComponent, DownloadAppStyleOneComponent, DownloadAppStyleThreeComponent, DownloadAppStyleFourComponent],
     templateUrl: './features-two-page.component.html',
     styleUrls: ['./features-two-page.component.scss']
 })
