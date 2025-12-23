@@ -506,7 +506,7 @@
                 padding: 0 0 0 15px;
                 color: var(--blackColor);
                 font-size: var(--fontSize);
-                background-color: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+                background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
                 ;
 
                 &::placeholder {
@@ -614,7 +614,7 @@ blockquote,
     z-index: 1;
     overflow: hidden;
     position: relative;
-    background-color: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+    background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
     ;
     padding: 40px 50px !important;
 
