@@ -1,77 +1,26 @@
 <div class="container">
     <div class="section-title">
-        <span class="sub-title">Completely New Features</span>
-        <h2> Full Process Tracking</h2>
+        <span class="sub-title">
+            {{ currentLang === 'ar' ? 'مميزات جديدة بالكامل' : 'Completely New Features' }}
+        </span>
+        <h2>
+            {{ currentLang === 'ar' ? 'تتبع كامل للعمليات' : 'Full Process Tracking' }}
+        </h2>
     </div>
+
     <div class="row justify-content-center">
 
-
-        <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6">
+        <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6" *ngFor="let item of features">
             <div class="single-features-item">
-                <div class="icon bg4">
-                    <i class="ri-secure-payment-line"></i>
-                </div>
-                <h3>Perfect follow-up</h3>
-                <p>Never lose a lead again. Assign tasks, set reminders, and track every call, meeting, and follow-up in
-                    one place.</p>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6">
-            <div class="single-features-item">
-                <div class="icon bg2">
-                    <i class="ri-stack-line"></i>
-                </div>
-                <h3>Data Organization</h3>
-                <p>Capture and organize your client and project data clearly, ensuring your team fi nds the right
-                    information instantly.</p>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6">
-            <div class="single-features-item">
-                <div class="icon bg3">
-                    <i class="ri-leaf-line"></i>
-                </div>
-                <h3>Data Analysis</h3>
-                <p>Turn your real estate lead and sales data into clear, actionable insights with fl exible reports and
-                    dashboards that keep you in control of performance.</p>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6">
-            <div class="single-features-item" style="height: 235px;">
                 <div class="icon">
-                    <i class="ri-eye-line"></i>
+                    <i [class]="item.icon"></i>
                 </div>
-                <h3>Anywhere Access</h3>
-                <p>Access your accounts, leads, and tasks from the web or mobile app, with secure cloud storage for all
-                    your CRM data—so you can work from any device and keep sales moving without interruption.</p>
+
+                <h3>{{ getTitle(item) }}</h3>
+
+                <p>{{ getDescription(item) }}</p>
             </div>
         </div>
 
-        <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6">
-            <div class="single-features-item">
-                <div class="icon bg5">
-                    <i class="ri-cloud-line"></i>
-                </div>
-                <h3>Ready for Any Business Need</h3>
-                <p>Flexible fields, stages, and filters that adapt to your projects, teams, and sales cycles to ensure
-                    that your CRM fits the way your real estate business operates.</p>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6">
-            <div class="single-features-item">
-                <div class="icon bg6">
-                    <i class="ri-pie-chart-2-line"></i>
-                </div>
-                <h3>No More Lost Deals</h3>
-                <p> Souq Leader allows you to prioritize urgent clients and opportunities, ensuring that each deal
-                    receives the attention it deserves.</p>
-            </div>
-        </div>
-        <!-- <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12">
-            <div class="view-more-box">
-                <a routerLink="/features-1" class="default-btn">View More</a>
-            </div>
-        </div> -->
     </div>
 </div>
