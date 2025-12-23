@@ -127,7 +127,7 @@
 
 .single-features-box {
     transition: var(--transition);
-    background-color: #F4F8FC;
+    background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
     margin-bottom: 25px;
     text-align: center;
     padding: 30px 20px;
@@ -646,7 +646,7 @@
                     ;
 
                     background: {
-                                position: center center;
+                        position: center center;
                         repeat: no-repeat;
                         size: cover;
                     }
@@ -672,7 +672,7 @@
                     ;
 
                     background: {
-                                position: center center;
+                        position: center center;
                         repeat: no-repeat;
                         size: cover;
                     }
