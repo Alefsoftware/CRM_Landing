@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http'; // <-- import HttpClientModule
-import { RouterLink } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router, RouterModule } from '@angular/router';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { DownloadAppStyleOneComponent } from '../../common/download-app-style-one/download-app-style-one.component';
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
@@ -12,28 +12,40 @@ import { BackToTopComponent } from '../../common/back-to-top/back-to-top.compone
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule, // <-- add HttpClientModule here
-        RouterLink,
+        HttpClientModule,
+        RouterModule,
         NavbarStyleTwoComponent,
         DownloadAppStyleOneComponent,
         FooterStyleFourComponent,
         BackToTopComponent
     ],
     templateUrl: './how-it-works-page.component.html',
-    styleUrls: ['./how-it-works-page.component.scss'],
+    styleUrls: ['./how-it-works-page.component.scss']
 })
 export class HowItWorksPageComponent implements OnInit {
     howWorks: any[] = [];
+    currentLang: 'en' | 'ar' = 'en';
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) {
+        const lang = this.router.url.split('/')[1];
+        this.currentLang = lang === 'ar' ? 'ar' : 'en';
+    }
 
     ngOnInit(): void {
         this.http
             .get<any>('https://admin.realstatecrm-development.dev.alefsoftware.com/site/howWorks')
-            .subscribe((response) => {
-                if (response.status && response.data?.howWorks) {
-                    this.howWorks = response.data.howWorks;
+            .subscribe(res => {
+                if (res?.status && res.data?.howWorks) {
+                    this.howWorks = res.data.howWorks;
                 }
             });
+    }
+
+    getTitle(step: any): string {
+        return this.currentLang === 'ar' ? step.title_ar : step.title_en;
+    }
+
+    getDescription(step: any): string {
+        return this.currentLang === 'ar' ? step.description_ar : step.description_en;
     }
 }
