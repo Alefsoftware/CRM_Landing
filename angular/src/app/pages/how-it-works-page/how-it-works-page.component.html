@@ -28,14 +28,14 @@
             <div class="row m-0">
                 <div class="col-lg-3 col-md-12 p-0">
                     <div class="box">
-                        <h3>Step {{ i + 1 }}</h3>
-                        <span>{{ step.title_en }}</span>
+                        <h3>{{ currentLang === 'en' ? 'Step ' + (i + 1) : 'الخطوة ' + (i + 1) }}</h3>
+                        <span>{{ getTitle(step) }}</span>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-12 p-0">
-                    <div class="content">
-                        <p>{{ step.description_en }}</p>
-                        <img *ngIf="step.image" [src]="step.image" [alt]="step.title_en">
+                    <div class="content" [style.text-align]="currentLang==='ar' ? 'right' : 'left'">
+                        <p>{{ getDescription(step) }}</p>
+                        <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
                     </div>
                 </div>
             </div>
