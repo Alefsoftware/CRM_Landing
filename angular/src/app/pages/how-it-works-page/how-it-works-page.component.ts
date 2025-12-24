@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http'; // <-- import HttpClientModule
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { DownloadAppStyleOneComponent } from '../../common/download-app-style-one/download-app-style-one.component';
@@ -12,7 +12,7 @@ import { BackToTopComponent } from '../../common/back-to-top/back-to-top.compone
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule, // <-- add HttpClientModule here
+        HttpClientModule,
         RouterLink,
         NavbarStyleTwoComponent,
         DownloadAppStyleOneComponent,
@@ -24,6 +24,7 @@ import { BackToTopComponent } from '../../common/back-to-top/back-to-top.compone
 })
 export class HowItWorksPageComponent implements OnInit {
     howWorks: any[] = [];
+    lang: 'en' | 'ar' = 'en'; // default language
 
     constructor(private http: HttpClient) { }
 
@@ -35,5 +36,9 @@ export class HowItWorksPageComponent implements OnInit {
                     this.howWorks = response.data.howWorks;
                 }
             });
+    }
+
+    switchLanguage(language: 'en' | 'ar') {
+        this.lang = language;
     }
 }

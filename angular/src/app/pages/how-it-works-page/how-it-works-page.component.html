@@ -1,24 +1,23 @@
-<app-navbar-style-two />
+<app-navbar-style-two></app-navbar-style-two>
 
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h2>How It Works</h2>
+            <h2>{{ lang === 'en' ? 'How It Works' : 'كيف يعمل' }}</h2>
             <ul>
-                <li><a routerLink="/">Home</a></li>
-                <li>How It Works</li>
+                <li><a routerLink="/">{{ lang === 'en' ? 'Home' : 'الرئيسية' }}</a></li>
+                <li>{{ lang === 'en' ? 'How It Works' : 'كيف يعمل' }}</li>
             </ul>
         </div>
     </div>
-    <div class="divider"></div>
-    <div class="lines">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+
+    <!-- Language switcher -->
+    <div class="language-switcher" style="text-align: right; margin: 10px;">
+        <button (click)="switchLanguage('en')" [disabled]="lang==='en'">EN</button>
+        <button (click)="switchLanguage('ar')" [disabled]="lang==='ar'">AR</button>
     </div>
-    <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
+
+    <div class="divider"></div>
 </div>
 
 <div class="how-it-works-area ptb-100">
@@ -28,14 +27,15 @@
             <div class="row m-0">
                 <div class="col-lg-3 col-md-12 p-0">
                     <div class="box">
-                        <h3>Step {{ i + 1 }}</h3>
-                        <span>{{ step.title_en }}</span>
+                        <h3>{{ lang === 'en' ? 'Step ' + (i + 1) : 'الخطوة ' + (i + 1) }}</h3>
+                        <span>{{ lang === 'en' ? step.title_en : step.title_ar }}</span>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-12 p-0">
-                    <div class="content">
-                        <p>{{ step.description_en }}</p>
-                        <img *ngIf="step.image" [src]="step.image" [alt]="step.title_en">
+                    <div class="content" [style.text-align]="lang==='ar' ? 'right' : 'left'">
+                        <p>{{ lang === 'en' ? step.description_en : step.description_ar }}</p>
+                        <img *ngIf="step.image" [src]="step.image"
+                            [alt]="lang === 'en' ? step.title_en : step.title_ar">
                     </div>
                 </div>
             </div>
@@ -43,11 +43,9 @@
     </div>
 </div>
 
-
 <div class="app-download-area pb-100">
-    <app-download-app-style-one />
+    <app-download-app-style-one></app-download-app-style-one>
 </div>
 
-<app-footer-style-four />
-
-<app-back-to-top />
+<app-footer-style-four></app-footer-style-four>
+<app-back-to-top></app-back-to-top>
