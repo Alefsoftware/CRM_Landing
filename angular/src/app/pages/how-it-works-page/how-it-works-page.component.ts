@@ -6,19 +6,21 @@ import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-st
 import { DownloadAppStyleOneComponent } from '../../common/download-app-style-one/download-app-style-one.component';
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
 import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
+import { DownloadAppStyleTwoComponent } from "../../common/download-app-style-two/download-app-style-two.component";
 
 @Component({
     selector: 'app-how-it-works-page',
     standalone: true,
     imports: [
-        CommonModule,
-        HttpClientModule,
-        RouterModule,
-        NavbarStyleTwoComponent,
-        DownloadAppStyleOneComponent,
-        FooterStyleFourComponent,
-        BackToTopComponent
-    ],
+    CommonModule,
+    HttpClientModule,
+    RouterModule,
+    NavbarStyleTwoComponent,
+    DownloadAppStyleOneComponent,
+    FooterStyleFourComponent,
+    BackToTopComponent,
+    DownloadAppStyleTwoComponent
+],
     templateUrl: './how-it-works-page.component.html',
     styleUrls: ['./how-it-works-page.component.scss']
 })
