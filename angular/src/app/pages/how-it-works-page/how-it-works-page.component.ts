@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common'; // <-- import this
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http'; // <-- import HttpClientModule
 import { RouterLink } from '@angular/router';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { DownloadAppStyleOneComponent } from '../../common/download-app-style-one/download-app-style-one.component';
@@ -11,7 +11,8 @@ import { BackToTopComponent } from '../../common/back-to-top/back-to-top.compone
     selector: 'app-how-it-works-page',
     standalone: true,
     imports: [
-        CommonModule, // <-- add CommonModule here
+        CommonModule,
+        HttpClientModule, // <-- add HttpClientModule here
         RouterLink,
         NavbarStyleTwoComponent,
         DownloadAppStyleOneComponent,
