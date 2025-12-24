@@ -7,6 +7,7 @@ import { DownloadAppStyleOneComponent } from '../../common/download-app-style-on
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
 import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
 import { DownloadAppStyleTwoComponent } from "../../common/download-app-style-two/download-app-style-two.component";
+import { DownloadAppStyleThreeComponent } from "../../common/download-app-style-three/download-app-style-three.component";
 
 @Component({
     selector: 'app-how-it-works-page',
@@ -19,7 +20,8 @@ import { DownloadAppStyleTwoComponent } from "../../common/download-app-style-tw
     DownloadAppStyleOneComponent,
     FooterStyleFourComponent,
     BackToTopComponent,
-    DownloadAppStyleTwoComponent
+    DownloadAppStyleTwoComponent,
+    DownloadAppStyleThreeComponent
 ],
     templateUrl: './how-it-works-page.component.html',
     styleUrls: ['./how-it-works-page.component.scss']
