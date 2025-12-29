@@ -1,47 +1,31 @@
+/* ================= HOW IT WORKS CONTENT ================= */
 .how-it-works-content {
     border-left: 1px solid var(--mainColor);
-    padding-bottom: 40px;
     padding-left: 50px;
+    padding-bottom: 40px;
     position: relative;
     max-width: 900px;
-
-    margin: {
-        left: auto;
-        right: auto;
-    }
-
-    ;
+    margin: 0 auto;
 
     .number {
+        position: absolute;
         top: 0;
         left: -29px;
         width: 58px;
         height: 58px;
         border-radius: 15%;
         text-align: center;
-        position: absolute;
         color: var(--whiteColor);
         background-color: var(--mainColor);
         border: 1px solid var(--whiteColor);
-
-        font: {
-            size: 20px;
-            weight: 700;
-        }
-
-        ;
+        font-size: 20px;
+        font-weight: 700;
     }
 
     .box {
         h3 {
             font-size: 20px;
-
-            margin: {
-                bottom: 8px;
-                top: 3px;
-            }
-
-            ;
+            margin: 3px 0 8px;
         }
 
         span {
@@ -90,19 +74,13 @@
     }
 }
 
-/* Max width 767px */
+/* ================= RESPONSIVE ================= */
 @media only screen and (max-width: 767px) {
-
     .how-it-works-content {
         max-width: 100%;
         margin-left: 15px;
-
-        padding: {
-            left: 35px;
-            bottom: 30px;
-        }
-
-        ;
+        padding-left: 35px;
+        padding-bottom: 30px;
 
         .number {
             left: -17px;
@@ -137,15 +115,9 @@
             }
         }
     }
-
 }
 
-/* Min width 576px to Max width 767px */
-@media only screen and (min-width: 576px) and (max-width: 767px) {}
-
-/* Min width 768px to Max width 991px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
     .how-it-works-content {
         max-width: 640px;
 
@@ -161,36 +133,21 @@
 
         .content {
             padding-bottom: 40px;
-
-            margin: {
-                left: 0;
-                top: 15px;
-            }
-
-            ;
+            margin-left: 0;
+            margin-top: 15px;
 
             p {
                 font-size: 15px;
             }
         }
     }
-
 }
 
-/* Min width 992px to Max width 1199px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
     .how-it-works-content {
         max-width: 830px;
     }
-
 }
-
-/* Min width 1200px to Max width 1399px */
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
-
-/* Min width 1550px */
-@media only screen and (min-width: 1550px) {}
 
 /* ================= TIMELINE WRAPPER ================= */
 .timeline-wrapper {
@@ -210,7 +167,7 @@
     background: #1e2a5a;
 }
 
-/* ================= ROW ================= */
+/* ================= TIMELINE ITEM ================= */
 .timeline-item {
     display: flex;
     align-items: flex-start;
@@ -242,14 +199,10 @@
     padding: 10px 14px;
     border-radius: 6px;
     position: absolute;
-
-    /* 🔥 MAGIC PART */
     left: 160px;
-    /* same X position as line */
+    /* align with line */
     top: 50%;
-    /* vertical center */
     transform: translateY(-50%);
-
     z-index: 2;
     white-space: nowrap;
 }
@@ -257,7 +210,6 @@
 .timeline-step.light {
     background: #4fc3f7;
 }
-
 
 /* ================= CONTENT ================= */
 .timeline-content {
@@ -276,7 +228,19 @@
     line-height: 1.7;
 }
 
-/* ================= MOBILE ================= */
+/* ================= TIMELINE CENTER (STEP + LINE) ================= */
+.timeline-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-line {
+    margin-top: 10px;
+    /* pushes below step */
+}
+
+/* ================= MOBILE TIMELINE ================= */
 @media (max-width: 767px) {
     .timeline-main-line {
         left: 150px;
@@ -295,16 +259,4 @@
     .timeline-content {
         margin-left: 60px;
     }
-}
-
-.timeline-center {
-    display: flex;
-    flex-direction: column;
-    /* Ensure this is column, not column-reverse */
-    align-items: center;
-}
-
-.timeline-line {
-    margin-top: 10px;
-    /* Push it below the step */
-}
+}/* ================= TABLET TIMELINE ================= */
