@@ -24,30 +24,42 @@
 <div class="how-it-works-area ptb-100">
     <div class="container">
         <div *ngFor="let step of howWorks; let i = index" class="how-it-works-content">
-            <div class="number">
-                {{ currentLang === 'en'
-                ? 'STEP ' + (i + 1).toString().padStart(2, '0')
-                : 'الخطوة ' + (i + 1).toString().padStart(2, '0')
-                }}
-            </div>
-            <div class="row m-0">
-                <div class="col-lg-2 col-md-2 p-0">
-                    <div class="box">
-                        <img src="img/lightline.png" alt="line image" />
-                    </div>
-                </div>
-                <div class="col-lg-10 col-md-10 p-0">
-                    <div class="content" [style.text-align]="currentLang==='ar' ? 'right' : 'left'">
+            <div class="row align-items-center">
+                <!-- Content Column (Left for English, Right for Arabic) -->
+                <div class="col-lg-7 col-md-6" [class.order-lg-1]="currentLang === 'ar'"
+                    [class.order-md-1]="currentLang === 'ar'">
+                    <div class="content" [class.text-end]="currentLang === 'ar'">
                         <h3>{{ getTitle(step) }}</h3>
                         <p>{{ getDescription(step) }}</p>
-                        <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
+                        <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)" class="mt-4">
+                    </div>
+                </div>
+
+                <!-- Step Number and Line Column -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="step-number-wrapper d-flex align-items-center justify-content-center">
+                        <!-- Line on left for English, right for Arabic -->
+                        <div class="line-connector" [class.order-1]="currentLang === 'ar'"
+                            [class.ms-auto]="currentLang === 'ar'">
+                            <img src="img/lightline.png" alt="line image" class="connector-line" />
+                        </div>
+
+                        <!-- Step Number Circle -->
+                        <div class="step-number-circle" [class.ms-3]="currentLang === 'en'"
+                            [class.me-3]="currentLang === 'ar'">
+                            <span class="step-number">
+                                {{ currentLang === 'en'
+                                ? 'STEP ' + (i + 1).toString().padStart(2, '0')
+                                : 'الخطوة ' + (i + 1).toString().padStart(2, '0')
+                                }}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="app-download-area pb-100">
     <app-download-app-style-four />

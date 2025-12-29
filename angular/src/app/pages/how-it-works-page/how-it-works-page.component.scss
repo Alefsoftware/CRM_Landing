@@ -191,3 +191,147 @@
 
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
+
+/* How It Works Section */
+.how-it-works-area {
+    background-color: #f8f9fa;
+}
+
+.how-it-works-content {
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.how-it-works-content:last-child {
+    margin-bottom: 0;
+}
+
+/* Step Number Wrapper */
+.step-number-wrapper {
+    position: relative;
+    height: 100%;
+    min-height: 200px;
+}
+
+/* Step Number Circle */
+.step-number-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101.01%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Connector Line */
+.line-connector {
+    flex: 1;
+    position: relative;
+    height: 2px;
+}
+
+.connector-line {
+    width: 100%;
+    height: 2px;
+    object-fit: cover;
+}
+
+/* Content Styling */
+.content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #020E3C;
+    line-height: 1.3;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .how-it-works-content {
+        margin-bottom: 60px;
+    }
+
+    .step-number-wrapper {
+        min-height: 150px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .step-number-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .content h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .how-it-works-content {
+        margin-bottom: 50px;
+    }
+
+    .step-number-wrapper {
+        min-height: 120px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .step-number-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .step-number {
+        font-size: 14px;
+    }
+
+    .content h3 {
+        font-size: 22px;
+    }
+
+    .content p {
+        font-size: 15px;
+    }
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .step-number-wrapper {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .step-number-circle {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+[dir="rtl"] .content {
+    text-align: right;
+}
