@@ -192,7 +192,10 @@
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
 
-/* Keep your existing timeline styles but add these for Bootstrap compatibility */
+.how-it-works-area {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
 
 .timeline-wrapper {
     position: relative;
@@ -203,14 +206,16 @@
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    background-color: #ddd;
-    height: 100%;
-    z-index: -1;
+    background: linear-gradient(to bottom, #3498db, #9b59b6);
+    height: 90%;
+    top: 5%;
+    z-index: 1;
 }
 
 .timeline-item {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     position: relative;
+    z-index: 2;
 }
 
 .timeline-icon {
@@ -219,26 +224,62 @@
 }
 
 .timeline-icon img {
-    max-width: 60px;
-    height: auto;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.timeline-icon img:hover {
+    transform: scale(1.1);
 }
 
 .timeline-step {
-    font-weight: bold;
-    font-size: 18px;
-    padding: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 8px 15px;
+    background: #2c3e50;
+    color: white;
+    border-radius: 20px;
+    display: inline-block;
+    min-width: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-step.light {
-    color: #fff;
-    background-color: #333;
+    background: #3498db;
 }
 
 .timeline-content {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #3498db;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-content.text-md-end {
+    border-left: none;
+    border-right: 4px solid #9b59b6;
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 .timeline-line img {
@@ -246,7 +287,28 @@
     height: auto;
 }
 
-/* Responsive adjustments */
+.payment-methods {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.payment-methods li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #555;
+}
+
+.payment-methods li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .timeline-main-line {
         left: 30px;
@@ -257,6 +319,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        margin-bottom: 20px;
     }
 
     .timeline-icon {
@@ -265,11 +328,28 @@
     }
 
     .timeline-step {
-        padding: 5px 10px;
+        min-width: 70px;
+        font-size: 14px;
     }
 
     .timeline-content {
         margin-top: 15px;
-        text-align: center !important;
+        text-align: left !important;
+        border-left: 4px solid #3498db !important;
+        border-right: none !important;
+    }
+
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-left: 20px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-right: 20px;
     }
 }

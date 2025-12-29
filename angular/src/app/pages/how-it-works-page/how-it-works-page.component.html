@@ -25,84 +25,193 @@
 
 <div class="how-it-works-area ptb-100">
     <div class="container timeline-wrapper">
-
-        <!-- ONE Vertical Line -->
+        <!-- Vertical Line for Timeline -->
         <div class="timeline-main-line"></div>
 
-        <!-- Bootstrap Row for Timeline Items -->
+        <!-- Timeline Row -->
         <div class="row justify-content-center">
-            <!-- Timeline Items will be in columns -->
-            <div *ngFor="let step of howWorks; let i = index" class="timeline-item col-12 col-lg-10 offset-lg-1">
 
-                <!-- Bootstrap Row for individual timeline item -->
+            <!-- Step 1 -->
+            <div class="timeline-item col-12 col-lg-10 offset-lg-1">
                 <div class="row align-items-center">
-
-                    <!-- Left column for icon and step (on even items) -->
-                    <div *ngIf="i % 2 === 0" class="col-4 col-md-3 col-lg-2">
+                    <!-- Left: Icon and Step Number -->
+                    <div class="col-4 col-md-3 col-lg-2">
                         <div class="timeline-item-left">
-                            <!-- Icon -->
                             <div class="timeline-icon">
-                                <img [src]="step.icon" alt="icon">
+                                <img src="img/step1-icon.png" alt="Create Account">
                             </div>
-
-                            <!-- Step -->
                             <div class="timeline-step text-center">
-                                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
+                                STEP <br>01
                             </div>
                         </div>
                     </div>
 
-                    <!-- Center column for line -->
+                    <!-- Center: Line -->
                     <div class="col-4 col-md-2 text-center d-none d-md-block">
                         <div class="timeline-line">
-                            <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
-                            <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
+                            <img src="img/darkline.png" alt="line image" />
                         </div>
                     </div>
 
-                    <!-- Right column for content (on even items) -->
-                    <div *ngIf="i % 2 === 0" class="col-12 col-md-7 col-lg-8">
+                    <!-- Right: Content -->
+                    <div class="col-12 col-md-7 col-lg-8">
                         <div class="timeline-content">
-                            <h3>{{ getTitle(step) }}</h3>
-                            <p>{{ getDescription(step) }}</p>
+                            <h3>CREATE A SOUOLOADER ACCOUNT</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco consectetur adipiscing.</p>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Alternate layout for odd items -->
-                    <!-- Content first on left for odd items -->
-                    <div *ngIf="i % 2 !== 0" class="col-12 col-md-7 col-lg-8 order-md-1">
+            <!-- Step 2 -->
+            <div class="timeline-item col-12 col-lg-10 offset-lg-1">
+                <div class="row align-items-center">
+                    <!-- Left: Content -->
+                    <div class="col-12 col-md-7 col-lg-8 order-md-1">
                         <div class="timeline-content text-md-end">
-                            <h3>{{ getTitle(step) }}</h3>
-                            <p>{{ getDescription(step) }}</p>
+                            <h3>SELECT A COIN, APZEL</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco.</p>
                         </div>
                     </div>
 
-                    <!-- Center column for line (odd items) -->
+                    <!-- Center: Line -->
                     <div class="col-4 col-md-2 text-center d-none d-md-block order-md-2">
                         <div class="timeline-line">
-                            <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
-                            <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
+                            <img src="img/lightline.png" alt="line image" />
                         </div>
                     </div>
 
-                    <!-- Icon and step on right for odd items -->
-                    <div *ngIf="i % 2 !== 0" class="col-4 col-md-3 col-lg-2 order-md-3">
+                    <!-- Right: Icon and Step Number -->
+                    <div class="col-4 col-md-3 col-lg-2 order-md-3">
                         <div class="timeline-item-right">
-                            <!-- Icon -->
                             <div class="timeline-icon">
-                                <img [src]="step.icon" alt="icon">
+                                <img src="img/step2-icon.png" alt="Select Coin">
                             </div>
+                            <div class="timeline-step text-center light">
+                                STEP <br>02
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                            <!-- Step -->
-                            <div class="timeline-step text-center" [class.light]="i % 2 !== 0">
-                                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
+            <!-- Step 3 -->
+            <div class="timeline-item col-12 col-lg-10 offset-lg-1">
+                <div class="row align-items-center">
+                    <!-- Left: Icon and Step Number -->
+                    <div class="col-4 col-md-3 col-lg-2">
+                        <div class="timeline-item-left">
+                            <div class="timeline-icon">
+                                <img src="img/step3-icon.png" alt="Bank Account">
+                            </div>
+                            <div class="timeline-step text-center">
+                                STEP <br>03
                             </div>
                         </div>
                     </div>
 
-                </div> <!-- End inner row -->
-            </div> <!-- End timeline item -->
-        </div> <!-- End main row -->
+                    <!-- Center: Line -->
+                    <div class="col-4 col-md-2 text-center d-none d-md-block">
+                        <div class="timeline-line">
+                            <img src="img/darkline.png" alt="line image" />
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="col-12 col-md-7 col-lg-8">
+                        <div class="timeline-content">
+                            <h3>SELECT YOUR BANK ACCOUNT OR CREDIT CARD</h3>
+                            <p>Apael accepts the following payment methods:</p>
+                            <ul class="payment-methods">
+                                <li><strong>Credit Card:</strong> Visa, MasterCard, Discover, American Express, JCB,
+                                    Visa Electron. The total will be charged to your card when the order is shipped.
+                                </li>
+                                <li><strong>Apzel Fast Checkout:</strong> Allows you to securely save your credit card
+                                    details so that you don't have to re-enter them for future purchases.</li>
+                                <li><strong>PayPal:</strong> Shop easily online without having to enter your credit card
+                                    details on the website. Your account will be charged once the order is completed. To
+                                    register for a PayPal account, visit the website paypal.com.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="timeline-item col-12 col-lg-10 offset-lg-1">
+                <div class="row align-items-center">
+                    <!-- Left: Content -->
+                    <div class="col-12 col-md-7 col-lg-8 order-md-1">
+                        <div class="timeline-content text-md-end">
+                            <h3>SELECT YOUR PREFERRED PAYMENT METHOD</h3>
+                            <p>Items returned within 14 days of their original shipment date in same as new condition
+                                will be eligible for a full refund or store credit.</p>
+                            <p>Refunds will be charged back to the form of payment used for purchase. Customer is
+                                responsible for shipping charges when making returns and shipping/handling fees of
+                                original purchase is non-refundable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Center: Line -->
+                    <div class="col-4 col-md-2 text-center d-none d-md-block order-md-2">
+                        <div class="timeline-line">
+                            <img src="img/lightline.png" alt="line image" />
+                        </div>
+                    </div>
+
+                    <!-- Right: Icon and Step Number -->
+                    <div class="col-4 col-md-3 col-lg-2 order-md-3">
+                        <div class="timeline-item-right">
+                            <div class="timeline-icon">
+                                <img src="img/step4-icon.png" alt="Payment Method">
+                            </div>
+                            <div class="timeline-step text-center light">
+                                STEP <br>04
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="timeline-item col-12 col-lg-10 offset-lg-1">
+                <div class="row align-items-center">
+                    <!-- Left: Icon and Step Number -->
+                    <div class="col-4 col-md-3 col-lg-2">
+                        <div class="timeline-item-left">
+                            <div class="timeline-icon">
+                                <img src="img/step5-icon.png" alt="Confirm Order">
+                            </div>
+                            <div class="timeline-step text-center">
+                                STEP <br>05
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center: Line -->
+                    <div class="col-4 col-md-2 text-center d-none d-md-block">
+                        <div class="timeline-line">
+                            <img src="img/darkline.png" alt="line image" />
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="col-12 col-md-7 col-lg-8">
+                        <div class="timeline-content">
+                            <h3>CONFIRM AND CHECK YOUR ORDER</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
