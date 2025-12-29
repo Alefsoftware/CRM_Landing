@@ -1,5 +1,5 @@
 .how-it-works-content {
-    border-left: 1px dashed var(--mainColor);
+    border-left: 1px solid var(--mainColor);
     padding-bottom: 40px;
     padding-left: 50px;
     position: relative;
@@ -23,7 +23,7 @@
         position: absolute;
         color: var(--whiteColor);
         background-color: var(--mainColor);
-        border: 1px dashed var(--whiteColor);
+        border: 1px solid var(--whiteColor);
 
         font: {
             size: 20px;
