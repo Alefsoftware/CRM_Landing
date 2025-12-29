@@ -24,24 +24,28 @@
 </div>
 
 <div class="how-it-works-area ptb-100">
-    <div class="container">
-        <div class="how-it-works-timeline">
+    <div class="container timeline-wrapper">
 
-            <!-- Dynamic Timeline Steps -->
-            <div *ngFor="let step of howWorks; let i = index" class="timeline-step-item"
-                [class.last-step]="i === howWorks.length - 1">
+        <!-- ONE Vertical Line -->
+        <div class="timeline-main-line"></div>
 
-                <!-- Step Number -->
-                <div class="step-number" [class.alternate]="i % 2 !== 0">
-                    {{ (i + 1).toString().padStart(2, '0') }}
-                </div>
+        <div *ngFor="let step of howWorks; let i = index" class="timeline-item">
 
-                <!-- Step Content -->
-                <div class="step-content" [class.alternate]="i % 2 !== 0">
-                    <h3>{{ getTitle(step) }}</h3>
-                    <div [innerHTML]="getDescription(step)"></div>
-                </div>
+            <!-- Icon -->
+            <div class="timeline-icon">
+                <img [src]="step.icon" alt="icon">
+            </div>
 
+            <!-- Step -->
+            <div class="timeline-step" [class.light]="i % 2 !== 0">
+                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
+            </div>
+            <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" /> <img *ngIf="i % 2 !== 0"
+                src="img/lightline.png" alt="line image" />
+            <!-- Content -->
+            <div class="timeline-content">
+                <h3>{{ getTitle(step) }}</h3>
+                <p>{{ getDescription(step) }}</p>
             </div>
 
         </div>
