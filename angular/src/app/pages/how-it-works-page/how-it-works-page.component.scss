@@ -192,68 +192,75 @@
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
 
-.timeline-row {
+.timeline-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* MAIN vertical line */
+.timeline-main-line {
+    position: absolute;
+    left: 160px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #1e2a5a;
+}
+
+/* Row */
+.timeline-item {
     display: flex;
     align-items: flex-start;
+    margin-bottom: 80px;
     position: relative;
-    margin-bottom: 70px;
 }
 
 /* Icon */
 .timeline-icon {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     background: #f4f6fc;
-    border-radius: 15px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .timeline-icon img {
-    width: 40px;
+    width: 45px;
 }
 
-/* Step box */
+/* STEP box */
 .timeline-step {
-    margin-left: 20px;
+    margin-left: 30px;
     background: #1e2a5a;
     color: #fff;
-    padding: 10px 14px;
     font-weight: 700;
-    border-radius: 8px;
     font-size: 14px;
-    white-space: nowrap;
+    padding: 10px 14px;
+    border-radius: 6px;
+    position: relative;
+    left: 18px;
+    /* attaches to line */
 }
 
 .timeline-step.light {
     background: #4fc3f7;
 }
 
-/* Vertical Line – CENTERED */
-.timeline-line {
-    width: 2px;
-    background: #1e2a5a;
-    margin: 0 35px;
-    align-self: stretch;
-}
-
 /* Content */
 .timeline-content {
-    max-width: 800px;
+    margin-left: 60px;
+    max-width: 700px;
 }
 
 .timeline-content h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    margin-bottom: 6px;
 }
 
 .timeline-content p {
     color: #666;
     line-height: 1.7;
-}
-
-/* RTL */
-.timeline-content.rtl {
-    text-align: right;
 }

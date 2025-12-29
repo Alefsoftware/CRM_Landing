@@ -22,8 +22,12 @@
 </div>
 
 <div class="how-it-works-area ptb-100">
-    <div class="container">
-        <div *ngFor="let step of howWorks; let i = index" class="timeline-row">
+    <div class="container timeline-wrapper">
+
+        <!-- Vertical Line (ONE TIME ONLY) -->
+        <div class="timeline-main-line"></div>
+
+        <div *ngFor="let step of howWorks; let i = index" class="timeline-item">
 
             <!-- Icon -->
             <div class="timeline-icon">
@@ -32,17 +36,11 @@
 
             <!-- Step -->
             <div class="timeline-step" [class.light]="i % 2 !== 0">
-                {{ currentLang === 'en'
-                ? 'STEP ' + (i + 1).toString().padStart(2, '0')
-                : 'الخطوة ' + (i + 1).toString().padStart(2, '0')
-                }}
+                STEP {{ (i + 1).toString().padStart(2, '0') }}
             </div>
 
-            <!-- Vertical Line -->
-            <div class="timeline-line"></div>
-
             <!-- Content -->
-            <div class="timeline-content" [class.rtl]="currentLang === 'ar'">
+            <div class="timeline-content">
                 <h3>{{ getTitle(step) }}</h3>
                 <p>{{ getDescription(step) }}</p>
             </div>
