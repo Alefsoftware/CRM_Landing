@@ -1,166 +1,298 @@
-/* How It Works Timeline */
-.how-it-works-area {
-    position: relative;
-}
-
-.how-it-works-timeline {
+.how-it-works-content {
+    border-left: 1px solid var(--mainColor);
+    padding-bottom: 40px;
+    padding-left: 50px;
     position: relative;
     max-width: 900px;
-    margin: 0 auto;
-    padding-left: 100px;
+
+    margin: {
+        left: auto;
+        right: auto;
+    }
+
+    ;
+
+    .number {
+        top: 0;
+        left: -29px;
+        width: 58px;
+        height: 58px;
+        border-radius: 15%;
+        text-align: center;
+        position: absolute;
+        color: var(--whiteColor);
+        background-color: var(--mainColor);
+        border: 1px solid var(--whiteColor);
+
+        font: {
+            size: 20px;
+            weight: 700;
+        }
+
+        ;
+    }
+
+    .box {
+        h3 {
+            font-size: 20px;
+
+            margin: {
+                bottom: 8px;
+                top: 3px;
+            }
+
+            ;
+        }
+
+        span {
+            font-size: 16px;
+            color: var(--mainColor);
+            display: block;
+        }
+    }
+
+    .content {
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 50px;
+        margin-left: 15px;
+
+        img {
+            margin-top: 15px;
+        }
+
+        ul {
+            li {
+                color: var(--paragraphColor);
+                margin-bottom: 12px;
+
+                a {
+                    color: var(--mainColor);
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+
+        .content {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
 }
 
-.how-it-works-timeline::before {
-    content: '';
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .how-it-works-content {
+        max-width: 100%;
+        margin-left: 15px;
+
+        padding: {
+            left: 35px;
+            bottom: 30px;
+        }
+
+        ;
+
+        .number {
+            left: -17px;
+            width: 34px;
+            height: 34px;
+            font-size: 15px;
+            line-height: 33px;
+        }
+
+        .box {
+            margin-bottom: 15px;
+
+            h3 {
+                font-size: 16px;
+            }
+
+            span {
+                font-size: 13px;
+            }
+        }
+
+        .content {
+            padding-bottom: 30px;
+            margin-left: 0;
+
+            img {
+                margin-top: 0;
+            }
+
+            ul {
+                margin-left: -15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .how-it-works-content {
+        max-width: 640px;
+
+        .box {
+            h3 {
+                font-size: 18px;
+            }
+
+            span {
+                font-size: 14px;
+            }
+        }
+
+        .content {
+            padding-bottom: 40px;
+
+            margin: {
+                left: 0;
+                top: 15px;
+            }
+
+            ;
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .how-it-works-content {
+        max-width: 830px;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {}
+
+/* ================= TIMELINE WRAPPER ================= */
+.timeline-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ================= MAIN VERTICAL LINE ================= */
+.timeline-main-line {
     position: absolute;
-    left: 40px;
+    left: 210px;
+    /* between step & content */
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, #1e2a5a, #4fc3f7);
-}
-
-.timeline-step-item {
-    position: relative;
-    margin-bottom: 60px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.timeline-step-item.last-step {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.step-number {
-    position: absolute;
-    left: -100px;
-    top: 0;
-    width: 80px;
-    height: 80px;
     background: #1e2a5a;
-    color: #ffffff;
-    border-radius: 10px;
+}
+
+/* ================= ROW ================= */
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+/* ================= ICON ================= */
+.timeline-icon {
+    width: 90px;
+    height: 90px;
+    background: #f4f6fc;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    font-weight: 700;
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(30, 42, 90, 0.1);
 }
 
-.step-number.alternate {
+.timeline-icon img {
+    width: 45px;
+}
+
+/* ================= STEP BADGE ================= */
+.timeline-step {
+    background: #1e2a5a;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    position: absolute;
+
+    /* 🔥 MAGIC PART */
+    left: 160px;
+    /* same X position as line */
+    top: 50%;
+    /* vertical center */
+    transform: translateY(-50%);
+
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.timeline-step.light {
     background: #4fc3f7;
 }
 
-.step-content {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid #1e2a5a;
+
+/* ================= CONTENT ================= */
+.timeline-content {
+    margin-left: 200px;
+    /* starts after line */
+    max-width: 700px;
 }
 
-.step-content.alternate {
-    border-left-color: #4fc3f7;
+.timeline-content h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
 }
 
-.step-content h3 {
-    color: #1e2a5a;
-    font-size: 22px;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.step-content p {
+.timeline-content p {
     color: #666;
     line-height: 1.7;
-    margin-bottom: 15px;
-    font-size: 16px;
 }
 
-.step-content ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.step-content ul li {
-    color: #666;
-    line-height: 1.7;
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-.step-content ul li strong {
-    color: #1e2a5a;
-}
-
-/* Responsive Design */
-@media only screen and (max-width: 767px) {
-    .how-it-works-timeline {
-        padding-left: 70px;
+/* ================= MOBILE ================= */
+@media (max-width: 767px) {
+    .timeline-main-line {
+        left: 150px;
     }
 
-    .how-it-works-timeline::before {
+    .timeline-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .timeline-step {
+        font-size: 12px;
         left: 30px;
     }
 
-    .step-number {
-        width: 60px;
-        height: 60px;
-        left: -70px;
-        font-size: 18px;
-    }
-
-    .step-content {
-        padding: 20px;
-    }
-
-    .step-content h3 {
-        font-size: 18px;
-    }
-
-    .step-content p,
-    .step-content ul li {
-        font-size: 14px;
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .how-it-works-timeline {
-        max-width: 750px;
-        padding-left: 90px;
-    }
-
-    .step-number {
-        width: 70px;
-        height: 70px;
-        left: -90px;
-    }
-
-    .step-content h3 {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .how-it-works-timeline {
-        max-width: 850px;
-    }
-}
-
-/* Animation for steps */
-.timeline-step-item {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.6s forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .timeline-content {
+        margin-left: 60px;
     }
 }
