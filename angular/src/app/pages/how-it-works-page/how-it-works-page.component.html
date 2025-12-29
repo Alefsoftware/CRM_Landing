@@ -31,26 +31,46 @@
 
         <div *ngFor="let step of howWorks; let i = index" class="timeline-item">
 
-            <!-- Icon -->
-            <div class="timeline-icon">
-                <img [src]="step.icon" alt="icon">
+            <!-- Left Side Content -->
+            <div class="timeline-left" *ngIf="i % 2 === 0">
+                <!-- Icon -->
+                <div class="timeline-icon">
+                    <img [src]="step.icon" alt="icon">
+                </div>
+
+                <!-- Content -->
+                <div class="timeline-content">
+                    <h3>{{ getTitle(step) }}</h3>
+                    <p>{{ getDescription(step) }}</p>
+                </div>
             </div>
 
-            <!-- Step -->
-            <div class="timeline-step" [class.light]="i % 2 !== 0">
-                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
+            <!-- Center Timeline Elements -->
+            <div class="timeline-center">
+                <!-- Step Number -->
+                <div class="timeline-step" [class.light]="i % 2 !== 0">
+                    STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
+                </div>
+
+                <!-- Connecting Line -->
+                <div class="timeline-line">
+                    <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
+                    <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
+                </div>
             </div>
 
-            <!-- Line after Step -->
-            <div class="timeline-line">
-                <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
-                <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
-            </div>
+            <!-- Right Side Content -->
+            <div class="timeline-right" *ngIf="i % 2 !== 0">
+                <!-- Icon -->
+                <div class="timeline-icon">
+                    <img [src]="step.icon" alt="icon">
+                </div>
 
-            <!-- Content -->
-            <div class="timeline-content">
-                <h3>{{ getTitle(step) }}</h3>
-                <p>{{ getDescription(step) }}</p>
+                <!-- Content -->
+                <div class="timeline-content">
+                    <h3>{{ getTitle(step) }}</h3>
+                    <p>{{ getDescription(step) }}</p>
+                </div>
             </div>
 
         </div>
