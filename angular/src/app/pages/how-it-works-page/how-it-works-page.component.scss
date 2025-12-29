@@ -1,4 +1,3 @@
-// If you want to keep the old styles as well, include this:
 .how-it-works-content {
     border-left: 1px solid var(--mainColor);
     padding-bottom: 40px;
@@ -10,6 +9,8 @@
         left: auto;
         right: auto;
     }
+
+    ;
 
     .number {
         top: 0;
@@ -27,6 +28,8 @@
             size: 20px;
             weight: 700;
         }
+
+        ;
     }
 
     .box {
@@ -37,6 +40,8 @@
                 bottom: 8px;
                 top: 3px;
             }
+
+            ;
         }
 
         span {
@@ -85,92 +90,9 @@
     }
 }
 
-/* ================= TIMELINE STYLES ================= */
-.timeline-wrapper {
-    position: relative;
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.timeline-main-line {
-    position: absolute;
-    left: 210px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #1e2a5a;
-}
-
-.timeline-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 80px;
-    position: relative;
-}
-
-.timeline-icon {
-    width: 90px;
-    height: 90px;
-    background: #f4f6fc;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-.timeline-icon img {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-}
-
-.timeline-step {
-    background: #1e2a5a;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 10px 14px;
-    border-radius: 6px;
-    position: absolute;
-    left: 160px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    white-space: nowrap;
-}
-
-.timeline-step.light {
-    background: #4fc3f7;
-}
-
-.timeline-content {
-    margin-left: 90px;
-    max-width: 700px;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-    border-left: 3px solid #1e2a5a;
-}
-
-.timeline-content h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-    color: #1e2a5a;
-}
-
-.timeline-content p {
-    color: #666;
-    line-height: 1.7;
-    font-size: 16px;
-}
-
-/* ================= RESPONSIVE STYLES ================= */
-
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
+
     .how-it-works-content {
         max-width: 100%;
         margin-left: 15px;
@@ -179,6 +101,8 @@
             left: 35px;
             bottom: 30px;
         }
+
+        ;
 
         .number {
             left: -17px;
@@ -214,56 +138,14 @@
         }
     }
 
-    .timeline-wrapper {
-        padding: 20px 15px;
-    }
-
-    .timeline-main-line {
-        left: 35px;
-    }
-
-    .timeline-item {
-        margin-bottom: 60px;
-    }
-
-    .timeline-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .timeline-icon img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .timeline-step {
-        font-size: 12px;
-        padding: 6px 10px;
-        left: 30px;
-    }
-
-    .timeline-content {
-        margin-left: 45px;
-        padding: 20px;
-    }
-
-    .timeline-content h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .timeline-content p {
-        font-size: 14px;
-    }
 }
 
 /* Min width 576px to Max width 767px */
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    /* Additional styles for medium mobile if needed */
-}
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
 
 /* Min width 768px to Max width 991px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
     .how-it-works-content {
         max-width: 640px;
 
@@ -285,51 +167,132 @@
                 top: 15px;
             }
 
+            ;
+
             p {
                 font-size: 15px;
             }
         }
     }
 
-    .timeline-main-line {
-        left: 180px;
-    }
-
-    .timeline-icon {
-        width: 70px;
-        height: 70px;
-    }
-
-    .timeline-icon img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .timeline-step {
-        left: 140px;
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-
-    .timeline-content {
-        margin-left: 70px;
-        max-width: 500px;
-    }
 }
 
 /* Min width 992px to Max width 1199px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
     .how-it-works-content {
         max-width: 830px;
     }
+
 }
 
 /* Min width 1200px to Max width 1399px */
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
-    /* Styles for large desktops */
-}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
 
 /* Min width 1550px */
-@media only screen and (min-width: 1550px) {
-    /* Styles for extra large screens */
+@media only screen and (min-width: 1550px) {}
+
+/* ================= TIMELINE WRAPPER ================= */
+.timeline-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ================= MAIN VERTICAL LINE ================= */
+.timeline-main-line {
+    position: absolute;
+    left: 210px;
+    /* between step & content */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #1e2a5a;
+}
+
+/* ================= ROW ================= */
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+/* ================= ICON ================= */
+.timeline-icon {
+    width: 90px;
+    height: 90px;
+    background: #f4f6fc;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-icon img {
+    width: 45px;
+}
+
+/* ================= STEP BADGE ================= */
+.timeline-step {
+    background: #1e2a5a;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    position: absolute;
+
+    /* 🔥 MAGIC PART */
+    left: 160px;
+    /* same X position as line */
+    top: 50%;
+    /* vertical center */
+    transform: translateY(-50%);
+
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.timeline-step.light {
+    background: #4fc3f7;
+}
+
+
+/* ================= CONTENT ================= */
+.timeline-content {
+    margin-left: 90px;
+    /* starts after line */
+    max-width: 700px;
+}
+
+.timeline-content h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 767px) {
+    .timeline-main-line {
+        left: 150px;
+    }
+
+    .timeline-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .timeline-step {
+        font-size: 12px;
+        left: 30px;
+    }
+
+    .timeline-content {
+        margin-left: 60px;
+    }
 }
