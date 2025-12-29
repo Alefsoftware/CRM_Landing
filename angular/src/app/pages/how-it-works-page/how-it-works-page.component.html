@@ -33,11 +33,12 @@
             <div class="row m-0">
                 <div class="col-lg-3 col-md-12 p-0">
                     <div class="box">
-                        <h3>{{ getTitle(step) }}</h3>
+                        <img src="img/lightline.png" alt="line image" />
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-12 p-0">
                     <div class="content" [style.text-align]="currentLang==='ar' ? 'right' : 'left'">
+                        <h3>{{ getTitle(step) }}</h3>
                         <p>{{ getDescription(step) }}</p>
                         <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
                     </div>
