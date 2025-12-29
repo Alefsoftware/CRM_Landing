@@ -31,39 +31,26 @@
 
         <div *ngFor="let step of howWorks; let i = index" class="timeline-item">
 
-            <!-- Left Side Content (for even steps) -->
-            <div class="timeline-content-left" *ngIf="i % 2 === 0">
-                <div class="timeline-content">
-                    <div class="timeline-icon">
-                        <img [src]="step.icon" alt="icon">
-                    </div>
-                    <h3>{{ getTitle(step) }}</h3>
-                    <p>{{ getDescription(step) }}</p>
-                </div>
+            <!-- Icon -->
+            <div class="timeline-icon">
+                <img [src]="step.icon" alt="icon">
             </div>
 
-            <!-- Center Timeline with Step and Line -->
-            <div class="timeline-center">
-                <div class="timeline-step" [class.light]="i % 2 !== 0">
-                    STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
-                </div>
-
-                <!-- This line should come AFTER the step -->
-                <div class="timeline-line">
-                    <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
-                    <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
-                </div>
+            <!-- Step -->
+            <div class="timeline-step text-center" [class.light]="i % 2 !== 0">
+                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
             </div>
 
-            <!-- Right Side Content (for odd steps) -->
-            <div class="timeline-content-right" *ngIf="i % 2 !== 0">
-                <div class="timeline-content">
-                    <div class="timeline-icon">
-                        <img [src]="step.icon" alt="icon">
-                    </div>
-                    <h3>{{ getTitle(step) }}</h3>
-                    <p>{{ getDescription(step) }}</p>
-                </div>
+            <!-- Line after Step -->
+            <div class="timeline-line">
+                <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
+                <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
+            </div>
+
+            <!-- Content -->
+            <div class="timeline-content">
+                <h3>{{ getTitle(step) }}</h3>
+                <p>{{ getDescription(step) }}</p>
             </div>
 
         </div>
