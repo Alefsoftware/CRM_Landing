@@ -235,16 +235,21 @@
 
 /* ================= STEP BADGE ================= */
 .timeline-step {
-    margin-left: 30px;
     background: #1e2a5a;
     color: #ffffff;
     font-weight: 700;
     font-size: 14px;
     padding: 10px 14px;
     border-radius: 6px;
-    position: relative;
-    left: 40px;
-    /* pushes into the line */
+    position: absolute;
+
+    /* 🔥 MAGIC PART */
+    left: 160px;
+    /* same X position as line */
+    top: 50%;
+    /* vertical center */
+    transform: translateY(-50%);
+
     z-index: 2;
     white-space: nowrap;
 }
@@ -252,6 +257,7 @@
 .timeline-step.light {
     background: #4fc3f7;
 }
+
 
 /* ================= CONTENT ================= */
 .timeline-content {
