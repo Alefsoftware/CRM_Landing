@@ -191,3 +191,47 @@
 
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
+
+.how-it-works-content {
+    display: flex;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    /* spacing between steps */
+}
+
+.how-it-works-content .number {
+    position: absolute;
+    left: -29px;
+    /* adjust if needed */
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* this centers the text vertically */
+    font-weight: bold;
+    top: 50%;
+    /* start at middle of content */
+    transform: translateY(-50%);
+    /* shift upwards by half its height */
+}
+
+.how-it-works-content .row {
+    display: flex;
+    align-items: center;
+    /* centers the right content vertically with the number */
+}
+
+.how-it-works-content .box {
+    display: flex;
+    justify-content: center;
+}
+
+.how-it-works-content .content {
+    padding-left: 30px;
+    /* space from the line */
+}
