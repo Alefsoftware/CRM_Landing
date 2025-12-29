@@ -44,13 +44,7 @@
                         <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
                     </div>
                 </div>
-                <div class="col-lg-11 col-md-11 p-0">
-                    <div class="content" [style.text-align]="currentLang==='ar' ? 'right' : 'left'">
-                        <h3>{{ getTitle(step) }}</h3>
-                        <p>{{ getDescription(step) }}</p>
-                        <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>
