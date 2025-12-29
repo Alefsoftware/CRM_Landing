@@ -18,13 +18,15 @@
         <div class="line"></div>
         <div class="line"></div>
     </div>
-    <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
+    <div class="banner-shape1">
+        <img src="img/shape/shape9.png" alt="image">
+    </div>
 </div>
 
 <div class="how-it-works-area ptb-100">
     <div class="container timeline-wrapper">
 
-        <!-- Vertical Line (ONE TIME ONLY) -->
+        <!-- ONE Vertical Line -->
         <div class="timeline-main-line"></div>
 
         <div *ngFor="let step of howWorks; let i = index" class="timeline-item">
@@ -38,8 +40,7 @@
             <div class="timeline-step" [class.light]="i % 2 !== 0">
                 STEP {{ (i + 1).toString().padStart(2, '0') }}
             </div>
-            <div class="box"> <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" /> <img
-                    *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" /> </div>
+
             <!-- Content -->
             <div class="timeline-content">
                 <h3>{{ getTitle(step) }}</h3>
@@ -50,13 +51,9 @@
     </div>
 </div>
 
-
-
-
 <div class="app-download-area pb-100">
     <app-download-app-style-four />
 </div>
 
 <app-footer-style-four />
-
 <app-back-to-top />

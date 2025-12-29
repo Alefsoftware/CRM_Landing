@@ -192,23 +192,25 @@
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
 
+/* ================= TIMELINE WRAPPER ================= */
 .timeline-wrapper {
     position: relative;
     max-width: 1100px;
     margin: auto;
 }
 
-/* MAIN vertical line */
+/* ================= MAIN VERTICAL LINE ================= */
 .timeline-main-line {
     position: absolute;
-    left: 160px;
+    left: 210px;
+    /* between step & content */
     top: 0;
     bottom: 0;
     width: 2px;
     background: #1e2a5a;
 }
 
-/* Row */
+/* ================= ROW ================= */
 .timeline-item {
     display: flex;
     align-items: flex-start;
@@ -216,7 +218,7 @@
     position: relative;
 }
 
-/* Icon */
+/* ================= ICON ================= */
 .timeline-icon {
     width: 90px;
     height: 90px;
@@ -231,27 +233,30 @@
     width: 45px;
 }
 
-/* STEP box */
+/* ================= STEP BADGE ================= */
 .timeline-step {
     margin-left: 30px;
     background: #1e2a5a;
-    color: #fff;
+    color: #ffffff;
     font-weight: 700;
     font-size: 14px;
     padding: 10px 14px;
     border-radius: 6px;
     position: relative;
-    left: 18px;
-    /* attaches to line */
+    left: 40px;
+    /* pushes into the line */
+    z-index: 2;
+    white-space: nowrap;
 }
 
 .timeline-step.light {
     background: #4fc3f7;
 }
 
-/* Content */
+/* ================= CONTENT ================= */
 .timeline-content {
-    margin-left: 60px;
+    margin-left: 90px;
+    /* starts after line */
     max-width: 700px;
 }
 
@@ -263,4 +268,25 @@
 .timeline-content p {
     color: #666;
     line-height: 1.7;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 767px) {
+    .timeline-main-line {
+        left: 150px;
+    }
+
+    .timeline-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .timeline-step {
+        font-size: 12px;
+        left: 30px;
+    }
+
+    .timeline-content {
+        margin-left: 60px;
+    }
 }
