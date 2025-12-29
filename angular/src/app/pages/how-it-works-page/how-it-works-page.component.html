@@ -23,31 +23,34 @@
 
 <div class="how-it-works-area ptb-100">
     <div class="container">
-        <div *ngFor="let step of howWorks; let i = index" class="how-it-works-content">
-            <div class="number">
+        <div *ngFor="let step of howWorks; let i = index" class="timeline-item">
+
+            <!-- Icon -->
+            <div class="timeline-icon">
+                <img [src]="step.icon" alt="icon">
+            </div>
+
+            <!-- Vertical Line -->
+            <span class="timeline-line"></span>
+
+            <!-- Step Number -->
+            <div class="timeline-step" [class.light]="i % 2 !== 0">
                 {{ currentLang === 'en'
                 ? 'STEP ' + (i + 1).toString().padStart(2, '0')
                 : 'الخطوة ' + (i + 1).toString().padStart(2, '0')
                 }}
             </div>
-            <div class="row m-0">
-                <div class="col-lg-1 col-md-1 p-0">
-                    <div class="box">
-                        <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
-                        <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
-                    </div>
-                </div>
-                <div class="col-lg-11 col-md-11 p-0">
-                    <div class="content" [style.text-align]="currentLang==='ar' ? 'right' : 'left'">
-                        <h3>{{ getTitle(step) }}</h3>
-                        <p>{{ getDescription(step) }}</p>
-                        <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
-                    </div>
-                </div>
+
+            <!-- Content -->
+            <div class="timeline-content" [class.rtl]="currentLang === 'ar'">
+                <h3>{{ getTitle(step) }}</h3>
+                <p>{{ getDescription(step) }}</p>
             </div>
+
         </div>
     </div>
 </div>
+
 
 
 <div class="app-download-area pb-100">
