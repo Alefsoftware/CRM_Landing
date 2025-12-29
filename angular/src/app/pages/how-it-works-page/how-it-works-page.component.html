@@ -24,7 +24,7 @@
 <div class="how-it-works-area ptb-100">
     <div class="container">
         <div *ngFor="let step of howWorks; let i = index" class="how-it-works-content">
-            <div class="number">
+            <div class="number" [ngStyle]="{'background-color': i % 2 === 0 ? '#59bae9' : '#020F3C'}">
                 {{ currentLang === 'en'
                 ? 'STEP ' + (i + 1).toString().padStart(2, '0')
                 : 'الخطوة ' + (i + 1).toString().padStart(2, '0')
@@ -44,7 +44,7 @@
                         <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
                     </div>
                 </div>
-               
+
             </div>
         </div>
     </div>
