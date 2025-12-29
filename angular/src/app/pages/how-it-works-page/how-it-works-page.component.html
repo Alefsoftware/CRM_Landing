@@ -20,18 +20,21 @@
     </div>
     <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
 </div>
-
 <div class="how-it-works-area ptb-100">
     <div class="container">
         <div *ngFor="let step of howWorks; let i = index" class="how-it-works-content">
-            <img *ngIf="i % 2 === 0" src="img/darkfram.png" alt="line image" />
-            <img *ngIf="i % 2 !== 0" src="img/lightfram.png" alt="line image" />
-            <div class="number" [ngStyle]="{'background-color': i % 2 === 0 ? '#020F3C' : '#59bae9'}">
-                {{ currentLang === 'en'
-                ? 'STEP ' + (i + 1).toString().padStart(2, '0')
-                : 'الخطوة ' + (i + 1).toString().padStart(2, '0')
-                }}
+
+            <!-- Step number with frame behind -->
+            <div class="number-wrapper">
+                <img [src]="i % 2 === 0 ? 'img/darkfram.png' : 'img/lightfram.png'" alt="frame" class="frame">
+                <div class="number" [ngStyle]="{'background-color': i % 2 === 0 ? '#020F3C' : '#59bae9'}">
+                    {{ currentLang === 'en'
+                    ? 'STEP ' + (i + 1).toString().padStart(2, '0')
+                    : 'الخطوة ' + (i + 1).toString().padStart(2, '0')
+                    }}
+                </div>
             </div>
+
             <div class="row m-0">
                 <div class="col-lg-1 col-md-1 p-0">
                     <div class="box">
@@ -46,8 +49,8 @@
                         <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
 </div>
