@@ -1,13 +1,17 @@
 .how-it-works-content {
-    border-left: 1px dashed var(--mainColor);
+    border-left: 1px var(--mainColor);
     padding-bottom: 40px;
     padding-left: 50px;
     position: relative;
     max-width: 900px;
+
     margin: {
         left: auto;
         right: auto;
-    };
+    }
+
+    ;
+
     .number {
         top: 0;
         left: -29px;
@@ -19,26 +23,35 @@
         position: absolute;
         color: var(--whiteColor);
         background-color: var(--mainColor);
-        border: 1px dashed var(--whiteColor);
+        border: 1px var(--whiteColor);
+
         font: {
             size: 20px;
             weight: 700;
-        };
+        }
+
+        ;
     }
+
     .box {
         h3 {
             font-size: 20px;
+
             margin: {
                 bottom: 8px;
                 top: 3px;
-            };
+            }
+
+            ;
         }
+
         span {
             font-size: 16px;
             color: var(--mainColor);
             display: block;
         }
     }
+
     .content {
         border-bottom: 1px solid #eeeeee;
         padding-bottom: 50px;
@@ -47,24 +60,27 @@
         img {
             margin-top: 15px;
         }
+
         ul {
             li {
                 color: var(--paragraphColor);
                 margin-bottom: 12px;
-    
+
                 a {
                     color: var(--mainColor);
-        
+
                     &:hover {
                         text-decoration: underline;
                     }
                 }
+
                 &:last-child {
                     margin-bottom: 0;
                 }
             }
         }
     }
+
     &:last-child {
         padding-bottom: 0;
 
@@ -81,10 +97,14 @@
     .how-it-works-content {
         max-width: 100%;
         margin-left: 15px;
+
         padding: {
             left: 35px;
             bottom: 30px;
-        };
+        }
+
+        ;
+
         .number {
             left: -17px;
             width: 34px;
@@ -92,16 +112,19 @@
             font-size: 15px;
             line-height: 33px;
         }
+
         .box {
             margin-bottom: 15px;
 
             h3 {
                 font-size: 16px;
             }
+
             span {
                 font-size: 13px;
             }
         }
+
         .content {
             padding-bottom: 30px;
             margin-left: 0;
@@ -109,6 +132,7 @@
             img {
                 margin-top: 0;
             }
+
             ul {
                 margin-left: -15px;
             }
@@ -130,16 +154,22 @@
             h3 {
                 font-size: 18px;
             }
+
             span {
                 font-size: 14px;
             }
         }
+
         .content {
             padding-bottom: 40px;
+
             margin: {
                 left: 0;
                 top: 15px;
-            };
+            }
+
+            ;
+
             p {
                 font-size: 15px;
             }
