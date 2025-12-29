@@ -29,31 +29,80 @@
         <!-- ONE Vertical Line -->
         <div class="timeline-main-line"></div>
 
-        <div *ngFor="let step of howWorks; let i = index" class="timeline-item">
+        <!-- Bootstrap Row for Timeline Items -->
+        <div class="row justify-content-center">
+            <!-- Timeline Items will be in columns -->
+            <div *ngFor="let step of howWorks; let i = index" class="timeline-item col-12 col-lg-10 offset-lg-1">
 
-            <!-- Icon -->
-            <div class="timeline-icon">
-                <img [src]="step.icon" alt="icon">
-            </div>
+                <!-- Bootstrap Row for individual timeline item -->
+                <div class="row align-items-center">
 
-            <!-- Step -->
-            <div class="timeline-step text-center" [class.light]="i % 2 !== 0">
-                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
-            </div>
+                    <!-- Left column for icon and step (on even items) -->
+                    <div *ngIf="i % 2 === 0" class="col-4 col-md-3 col-lg-2">
+                        <div class="timeline-item-left">
+                            <!-- Icon -->
+                            <div class="timeline-icon">
+                                <img [src]="step.icon" alt="icon">
+                            </div>
 
-            <!-- Line after Step -->
-            <div class="timeline-line">
-                <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
-                <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
-            </div>
+                            <!-- Step -->
+                            <div class="timeline-step text-center">
+                                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Content -->
-            <div class="timeline-content">
-                <h3>{{ getTitle(step) }}</h3>
-                <p>{{ getDescription(step) }}</p>
-            </div>
+                    <!-- Center column for line -->
+                    <div class="col-4 col-md-2 text-center d-none d-md-block">
+                        <div class="timeline-line">
+                            <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
+                            <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
+                        </div>
+                    </div>
 
-        </div>
+                    <!-- Right column for content (on even items) -->
+                    <div *ngIf="i % 2 === 0" class="col-12 col-md-7 col-lg-8">
+                        <div class="timeline-content">
+                            <h3>{{ getTitle(step) }}</h3>
+                            <p>{{ getDescription(step) }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Alternate layout for odd items -->
+                    <!-- Content first on left for odd items -->
+                    <div *ngIf="i % 2 !== 0" class="col-12 col-md-7 col-lg-8 order-md-1">
+                        <div class="timeline-content text-md-end">
+                            <h3>{{ getTitle(step) }}</h3>
+                            <p>{{ getDescription(step) }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Center column for line (odd items) -->
+                    <div class="col-4 col-md-2 text-center d-none d-md-block order-md-2">
+                        <div class="timeline-line">
+                            <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
+                            <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
+                        </div>
+                    </div>
+
+                    <!-- Icon and step on right for odd items -->
+                    <div *ngIf="i % 2 !== 0" class="col-4 col-md-3 col-lg-2 order-md-3">
+                        <div class="timeline-item-right">
+                            <!-- Icon -->
+                            <div class="timeline-icon">
+                                <img [src]="step.icon" alt="icon">
+                            </div>
+
+                            <!-- Step -->
+                            <div class="timeline-step text-center" [class.light]="i % 2 !== 0">
+                                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End inner row -->
+            </div> <!-- End timeline item -->
+        </div> <!-- End main row -->
     </div>
 </div>
 
