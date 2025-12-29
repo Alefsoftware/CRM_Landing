@@ -24,51 +24,38 @@
 </div>
 
 <div class="how-it-works-area ptb-100">
-    <div class="container">
-        <div class="row position-relative timeline-wrapper">
+    <div class="container timeline-wrapper">
 
-            <!-- Main Vertical Line -->
-            <div class="timeline-main-line position-absolute top-0 start-50 translate-middle-x"></div>
+        <!-- ONE Vertical Line -->
+        <div class="timeline-main-line"></div>
 
-            <div *ngFor="let step of howWorks; let i = index" class="row timeline-item align-items-start mb-5">
+        <div *ngFor="let step of howWorks; let i = index" class="timeline-item">
 
-                <!-- Left Side Content (even steps) -->
-                <div class="col-md-5 d-flex justify-content-end" *ngIf="i % 2 === 0">
-                    <div class="timeline-content text-end">
-                        <h3>{{ getTitle(step) }}</h3>
-                        <p>{{ getDescription(step) }}</p>
-                    </div>
-                </div>
-
-                <!-- Center: Icon + Step + Line -->
-                <div class="col-md-2 d-flex flex-column align-items-center position-relative">
-                    <div class="timeline-icon mb-2">
-                        <img [src]="step.icon" alt="icon">
-                    </div>
-
-                    <div class="timeline-step text-center mb-2" [class.light]="i % 2 !== 0">
-                        STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
-                    </div>
-
-                    <div class="timeline-line">
-                        <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
-                        <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
-                    </div>
-                </div>
-
-                <!-- Right Side Content (odd steps) -->
-                <div class="col-md-5 d-flex" *ngIf="i % 2 !== 0">
-                    <div class="timeline-content text-start">
-                        <h3>{{ getTitle(step) }}</h3>
-                        <p>{{ getDescription(step) }}</p>
-                    </div>
-                </div>
-
+            <!-- Icon -->
+            <div class="timeline-icon">
+                <img [src]="step.icon" alt="icon">
             </div>
+
+            <!-- Step -->
+            <div class="timeline-step text-center" [class.light]="i % 2 !== 0">
+                STEP <br>{{ (i + 1).toString().padStart(2, '0') }}
+            </div>
+
+            <!-- Line after Step -->
+            <div class="timeline-line">
+                <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
+                <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
+            </div>
+
+            <!-- Content -->
+            <div class="timeline-content">
+                <h3>{{ getTitle(step) }}</h3>
+                <p>{{ getDescription(step) }}</p>
+            </div>
+
         </div>
     </div>
 </div>
-
 
 <div class="app-download-area pb-100">
     <app-download-app-style-four />
