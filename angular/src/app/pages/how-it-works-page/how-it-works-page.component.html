@@ -24,6 +24,7 @@
 <div class="how-it-works-area ptb-100">
     <div class="container">
         <div *ngFor="let step of howWorks; let i = index" class="how-it-works-content">
+            <img src="img/darkfram.png">
             <div class="number" [ngStyle]="{'background-color': i % 2 === 0 ? '#020F3C' : '#59bae9'}">
                 {{ currentLang === 'en'
                 ? 'STEP ' + (i + 1).toString().padStart(2, '0')
