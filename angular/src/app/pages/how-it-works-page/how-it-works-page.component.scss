@@ -296,3 +296,15 @@
         margin-left: 60px;
     }
 }
+
+.timeline-center {
+    display: flex;
+    flex-direction: column;
+    /* Ensure this is column, not column-reverse */
+    align-items: center;
+}
+
+.timeline-line {
+    margin-top: 10px;
+    /* Push it below the step */
+}
