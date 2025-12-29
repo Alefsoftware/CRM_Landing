@@ -192,18 +192,15 @@
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
 
-.timeline-item {
-    position: relative;
+.timeline-row {
     display: flex;
     align-items: flex-start;
-    padding-left: 120px;
+    position: relative;
     margin-bottom: 70px;
 }
 
 /* Icon */
 .timeline-icon {
-    position: absolute;
-    left: 0;
     width: 70px;
     height: 70px;
     background: #f4f6fc;
@@ -217,36 +214,32 @@
     width: 40px;
 }
 
-/* Vertical Line */
-.timeline-line {
-    position: absolute;
-    left: 85px;
-    top: 0;
-    bottom: -70px;
-    width: 2px;
-    background: #1e2a5a;
-}
-
-/* Step Box */
+/* Step box */
 .timeline-step {
-    position: absolute;
-    left: 60px;
-    top: 0;
+    margin-left: 20px;
     background: #1e2a5a;
     color: #fff;
     padding: 10px 14px;
     font-weight: 700;
     border-radius: 8px;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 .timeline-step.light {
     background: #4fc3f7;
 }
 
+/* Vertical Line – CENTERED */
+.timeline-line {
+    width: 2px;
+    background: #1e2a5a;
+    margin: 0 35px;
+    align-self: stretch;
+}
+
 /* Content */
 .timeline-content {
-    padding-left: 40px;
     max-width: 800px;
 }
 
