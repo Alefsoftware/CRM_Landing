@@ -1,40 +1,45 @@
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-3 col-sm-6 col-md-6">
-            <div class="funfacts-box">
-                <div class="icon">
-                    <i class="ri-download-2-line"></i>
+    <div class="row align-items-center">
+
+        <!-- LEFT SIDE -->
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-lg-6 col-sm-6 col-md-6 mb-4">
+                    <div class="funfacts-box">
+                        <p>Total Downloads</p>
+                        <h3><span [countUp]="10">00</span>M</h3>
+                    </div>
                 </div>
-                <p>Total Downloads</p>
-                <h3><span [countUp]="10">00</span>M</h3>
+
+                <div class="col-lg-6 col-sm-6 col-md-6 mb-4">
+                    <div class="funfacts-box">
+                        <p>Total Reviews</p>
+                        <h3><span [countUp]="10">799</span>K</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-6 col-md-6 mb-4">
+                    <div class="funfacts-box">
+                        <p>Worldwide Countries</p>
+                        <h3><span [countUp]="150">00</span>+</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-6 col-md-6 mb-4">
+                    <div class="funfacts-box">
+                        <p>Active Users</p>
+                        <h3><span [countUp]="5">00</span>M</h3>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6 col-md-6">
-            <div class="funfacts-box bg1">
-                <div class="icon">
-                    <i class="ri-star-fill"></i>
-                </div>
-                <p>Total Reviews</p>
-                <h3><span [countUp]="10">799</span>K</h3>
-            </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-md-6 text-center">
+            <img src="img/funfacts-img.png" alt="image" class="img-fluid">
         </div>
-        <div class="col-lg-3 col-sm-6 col-md-6">
-            <div class="funfacts-box bg2">
-                <div class="icon">
-                    <i class="ri-global-line"></i>
-                </div>
-                <p>Worldwide Countries</p>
-                <h3><span [countUp]="150">00</span>+</h3>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-md-6">
-            <div class="funfacts-box bg3">
-                <div class="icon">
-                    <i class="ri-map-pin-user-line"></i>
-                </div>
-                <p>Active Users</p>
-                <h3><span [countUp]="5">00</span>M</h3>
-            </div>
-        </div>
+
     </div>
 </div>
