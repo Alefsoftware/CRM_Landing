@@ -1,5 +1,5 @@
 .how-it-works-content {
-    border-left: 1px var(--mainColor);
+    border-left: 1px solid var(--mainColor);
     padding-bottom: 40px;
     padding-left: 50px;
     position: relative;
@@ -17,13 +17,12 @@
         left: -29px;
         width: 58px;
         height: 58px;
-        line-height: 58px;
-        border-radius: 50%;
+        border-radius: 15%;
         text-align: center;
         position: absolute;
         color: var(--whiteColor);
         background-color: var(--mainColor);
-        border: 1px var(--whiteColor);
+        border: 1px solid var(--whiteColor);
 
         font: {
             size: 20px;
@@ -192,3 +191,46 @@
 
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {}
+
+.how-it-works-content {
+    display: flex;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    /* spacing between steps */
+}
+
+.how-it-works-content .number {
+    position: absolute;
+    left: -29px;
+    /* adjust if needed */
+    width: 58px;
+    height: 58px;
+    background-color: var(--mainColor);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* this centers the text vertically */
+    font-weight: bold;
+    top: 50%;
+    /* start at middle of content */
+    transform: translateY(-50%);
+    /* shift upwards by half its height */
+}
+
+.how-it-works-content .row {
+    display: flex;
+    align-items: center;
+    /* centers the right content vertically with the number */
+}
+
+.how-it-works-content .box {
+    display: flex;
+    justify-content: center;
+}
+
+.how-it-works-content .content {
+    padding-left: 30px;
+    /* space from the line */
+}

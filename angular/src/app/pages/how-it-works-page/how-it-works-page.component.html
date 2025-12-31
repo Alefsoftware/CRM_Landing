@@ -24,20 +24,27 @@
 <div class="how-it-works-area ptb-100">
     <div class="container">
         <div *ngFor="let step of howWorks; let i = index" class="how-it-works-content">
-            <div class="number">{{ i + 1 }}</div>
+            <div class="number" [ngStyle]="{'background-color': i % 2 === 0 ? '#020F3C' : '#59bae9'}">
+                {{ currentLang === 'en'
+                ? 'STEP ' + (i + 1).toString().padStart(2, '0')
+                : 'الخطوة ' + (i + 1).toString().padStart(2, '0')
+                }}
+            </div>
             <div class="row m-0">
-                <div class="col-lg-3 col-md-12 p-0">
+                <div class="col-lg-1 col-md-1 p-0">
                     <div class="box">
-                        <h3>{{ currentLang === 'en' ? 'Step ' + (i + 1) : 'الخطوة ' + (i + 1) }}</h3>
-                        <span>{{ getTitle(step) }}</span>
+                        <img *ngIf="i % 2 === 0" src="img/darkline.png" alt="line image" />
+                        <img *ngIf="i % 2 !== 0" src="img/lightline.png" alt="line image" />
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-12 p-0">
+                <div class="col-lg-11 col-md-11 p-0">
                     <div class="content" [style.text-align]="currentLang==='ar' ? 'right' : 'left'">
+                        <h3>{{ getTitle(step) }}</h3>
                         <p>{{ getDescription(step) }}</p>
                         <img *ngIf="step.image" [src]="step.image" [alt]="getTitle(step)">
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
