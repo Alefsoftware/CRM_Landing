@@ -20,7 +20,8 @@
         color: var(--whiteColor);
         transition: var(--transition);
         box-shadow: 5px 15px 35px rgba(38, 42, 55, 0.12);
-        background: var(--gradientColor);;
+        background: var(--gradientColor);
+        ;
 
         i {
             left: 0;
@@ -142,7 +143,7 @@
         color: var(--whiteColor);
         transition: var(--transition);
         border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
-        background: linear-gradient(45.24deg, #9F5FF1 5.99%, #FF54B0 91.87%);
+        background: var(--gradientColor);
 
         margin: {
             left: auto;
@@ -207,7 +208,7 @@
         color: var(--whiteColor);
         transition: var(--transition);
         box-shadow: 15px 20px 35px rgba(38, 42, 55, 0.08);
-        background: linear-gradient(45.24deg, #9F5FF1 5.99%, #FF54B0 91.87%);
+        background: var(--gradientColor);
 
         margin: {
             left: auto;
@@ -351,7 +352,7 @@
                 margin-bottom: 20px;
                 color: var(--whiteColor);
                 transition: var(--transition);
-                background: linear-gradient(45.24deg, #9F5FF1 5.99%, #FF54B0 91.87%);
+                background: var(--gradientColor);
 
                 i {
                     left: 0;
@@ -430,7 +431,7 @@
                 width: 55px;
                 height: 55px;
                 border-radius: 50%;
-                background: linear-gradient(45.24deg, #9F5FF1 5.99%, #FF54B0 91.87%);
+                background: var(--gradientColor);
                 position: absolute;
                 text-align: center;
                 color: var(--whiteColor);
@@ -519,7 +520,7 @@
         border-radius: 50%;
         color: var(--whiteColor);
         transition: var(--transition);
-        background: linear-gradient(45.24deg, #9F5FF1 5.99%, #FF54B0 91.87%);
+        background: var(--gradientColor);
 
         margin: {
             left: auto;
@@ -606,7 +607,7 @@
                 border-radius: 50%;
                 color: var(--whiteColor);
                 transition: var(--transition);
-                background: linear-gradient(45.24deg, #9F5FF1 5.99%, #FF54B0 91.87%);
+                background: var(--gradientColor);
 
                 margin: {
                     left: auto;
