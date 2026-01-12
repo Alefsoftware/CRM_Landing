@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { HomeoneFeaturesComponent } from '../home-demo-one/homeone-features/homeone-features.component';
 import { FeaturesStyleOneComponent } from '../../common/features-style-one/features-style-one.component';
@@ -23,4 +23,29 @@ import { DownloadAppStyleFourComponent } from "../../common/download-app-style-f
     templateUrl: './features-two-page.component.html',
     styleUrls: ['./features-two-page.component.scss']
 })
-export class FeaturesTwoPageComponent { }
+export class FeaturesTwoPageComponent implements OnInit {
+    currentLang: 'en' | 'ar' = 'en';
+
+    constructor(
+        private router: Router,
+        private activatedRoute: ActivatedRoute
+    ) {
+        this.detectLanguage();
+    }
+
+    ngOnInit(): void {
+        // Optional: Listen for URL changes
+        this.router.events.subscribe(() => {
+            this.detectLanguage();
+        });
+    }
+
+    private detectLanguage(): void {
+        // Method 1: From URL path
+        const urlSegments = this.router.url.split('/').filter(segment => segment);
+        if (urlSegments.length > 0 && (urlSegments[0] === 'ar' || urlSegments[0] === 'en')) {
+            this.currentLang = urlSegments[0] as 'en' | 'ar';
+        }
+
+    }
+}

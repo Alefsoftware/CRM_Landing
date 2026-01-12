@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common'; // Import CommonModule here
 import { FunfactsStyleOneComponent } from '../../common/funfacts-style-one/funfacts-style-one.component';
 import { ProgressStyleTwoComponent } from '../../common/progress-style-two/progress-style-two.component';
 import { UserStatsComponent } from '../../common/user-stats/user-stats.component';
@@ -13,8 +14,33 @@ import { BackToTopComponent } from '../../common/back-to-top/back-to-top.compone
 
 @Component({
     selector: 'app-about-simple-page',
-    imports: [RouterLink, NavbarStyleTwoComponent, FooterStyleFourComponent, FunfactsStyleOneComponent, ProgressStyleTwoComponent, UserStatsComponent, HometwoSoftwareIntegrationsComponent, TeamStyleOneComponent, FeedbackStyleOneComponent, PartnerComponent, BackToTopComponent],
+    imports: [
+        RouterLink,
+        NavbarStyleTwoComponent,
+        FooterStyleFourComponent,
+        FunfactsStyleOneComponent,
+        ProgressStyleTwoComponent,
+        UserStatsComponent,
+        HometwoSoftwareIntegrationsComponent,
+        TeamStyleOneComponent,
+        FeedbackStyleOneComponent,
+        PartnerComponent,
+        BackToTopComponent,
+        CommonModule // Add CommonModule instead of NgIf
+    ],
     templateUrl: './about-simple-page.component.html',
     styleUrls: ['./about-simple-page.component.scss']
 })
-export class AboutSimplePageComponent { }
+export class AboutSimplePageComponent implements OnInit {
+    currentLang: 'en' | 'ar' = 'en';
+
+    constructor(private router: Router) {
+        // Extract language from URL (e.g., /ar/about or /en/about)
+        const lang = this.router.url.split('/')[1];
+        this.currentLang = lang === 'ar' ? 'ar' : 'en';
+    }
+
+    ngOnInit(): void {
+        // Additional initialization if needed
+    }
+}

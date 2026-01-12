@@ -3,10 +3,12 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h2>How It Works</h2>
+            <h2>{{ currentLang === 'ar' ? 'ﻛﯾف ﺗﺑدأ ﻣﻊ ﺳوق ﻟﯾدر CRM؟' : 'How It Works' }}</h2>
             <ul>
-                <li><a routerLink="/">Home</a></li>
-                <li>How It Works</li>
+                <li><a routerLink="/">{{ currentLang === 'ar' ? 'الرئيسية' : 'Home' }}</a></li>
+                <li>{{ currentLang === 'ar' ? 'اﺑدأ ﻣﻊ ﻧظﺎم ﺳوق ﻟﯾدر CRM ﻓﻲ ﺧطوات واﺿﺣﺔ ﻣن طﻠب اﻟﻌرض اﻟﺗﺟرﯾﺑﻲ ﺣﺗﻰ ﺗﻔﻌﯾل
+                    اﻟﻧظﺎم وﺗدرﯾب ﻓرﯾق اﻟﻣﺑﯾﻌﺎت ﻟدﯾك.' : 'Start with a demo and move to full CRM activation in five
+                    guided steps with Souq Leader.' }}</li>
             </ul>
         </div>
     </div>

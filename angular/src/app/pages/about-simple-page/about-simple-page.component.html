@@ -2,10 +2,14 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h2>About Us</h2>
+            <h2>{{ currentLang === 'ar' ? 'ﻋن ﺳوق ﻟﯾدر' : 'About Souq Leader' }}</h2>
             <ul>
-                <li><a routerLink="/">Home</a></li>
-                <li>About Us</li>
+                <li><a routerLink="/">{{ currentLang === 'ar' ? ' الرئيسية' : 'Home' }}</a></li>
+                <li>{{ currentLang === 'ar'?'ﻣﻧﺻﺔ CRM ﻣﺻﻣﻣﺔ ﺧﺻﯾﺻًﺎ ﻟﻘطﺎع اﻟﻌﻘﺎرات، ﺗﺳﮭل إدارة وﻣﺗﺎﺑﻌﺔ اﻟﻣﺑﯾﻌﺎت وﺗﻣﻛن
+                    ﺷرﻛﺎت اﻟﻌﻘﺎرات ﻣن إدارة
+                    ﻋﻣﻠﯾﺎﺗﮭﺎ ﺑوﺿوح ودﻗﺔ ودﻋم ﻓرﯾق اﻟﻌﻣل ﻓﻲ ﺟﻣﯾﻊ اﻟﻣراﺣل.' :
+                    'A smart, dedicated real estate CRM platform designed to streamline sales, automate follow-ups, and
+                    support agencies and developers across the region.'}}</li>
             </ul>
         </div>
     </div>
@@ -25,27 +29,75 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
                 <div class="about-content">
-                    <span class="sub-title">ABOUT SOUQLEADER</span>
-                    <h2>Our System</h2>
-                    <p>An integrated CRM system, specifically designed for real estate companies and brokers.
-                        It organizes every step of your workflow and brings all the tools you need into one place
-                        to efficiently track operations, clients, and team performance,
-                        boost productivity, and drive more sales.</p>
+                    <span class="sub-title">{{ currentLang === 'ar' ? 'ﻋن ﺳوق ﻟﯾدر' : 'ABOUT SOUQLEADER' }}</span>
+                    <h2>{{currentLang ==='ar' ? 'من نحن' : "Who we are"}}</h2>
+                    <p>{{currentLang === 'ar'?'ﺗم ﺗطوﯾر ﺳوق ﻟﯾدر ﺑواﺳطﺔ أﻟف ﻟﻠﺑرﻣﺟﯾﺎت وھﻲ ﺷرﻛﺔ ﺗﻘﻧﯾﺔ ﻣوﺛوﻗﺔ ﺗﺗﻣﺗﻊ ﺑﺧﺑرة
+                        ﻗوﯾﺔ ﻓﻲ ﺑﻧﺎء اﻷﻧظﻣﺔ واﻟﺣﻠول اﻟرﻗﻣﯾﺔ اﻟﺧﺎﺻﺔ ﺑﺈدارة اﻷﻋﻣﺎل واﻟـCRM' : 'Developed by Alef
+                        Software, a trusted technology company recognized for delivering reliable
+                        business and CRM solutions, Souq Leader was designed to address the primary challenges faced by
+                        the real estate industry, including disorganized data, missed follow-ups, and inconsistent
+                        communication'}}.</p>
+                    <p>{{ currentLang === 'ar' ? 'انطلقت منصة "سوق ليدر" CRM لمعالجة التحديات التي يواجهها قطاع
+                        العقارات، مثل تشتت بيانات العملاء، ضعف المتابعة، وتعدد قنوات التواصل بشكل غير منظم.' : 'We
+                        provide an integrated CRM system solution that centralizes leads, automates workflows, and
+                        ensures every opportunity is managed with accuracy and transparency.' }}</p>
+
+                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
+                        a simple, effective, and powerful system that improves performance and accelerates business
+                        growth.</p>
+
+                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
+                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
+                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
+                        a simple, effective, and
+                        powerful system that improves performance and accelerates business growth.</p>
+                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
+                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
+                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
+                        a simple, effective, and powerful system that improves performance and accelerates business
+                        growth.</p>
+                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
+                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
+
+                    <p *ngIf="currentLang === 'ar'">ھدﻓﻧﺎ أن ﻧوﻓر ﻧظﺎﻣًﺎ ﺑﺳﯾطًﺎ ﻓﻲ اﻻﺳﺗﺧدام، ﻣﺗﻘدﻣًﺎ ﻓﻲ اﻷداء، ﯾﻣﻧﺢ ﻓرق
+                        اﻟﻣﺑﯾﻌﺎت اﻟﻘدرة ﻋﻠﻰ إدارة أﻋﻣﺎﻟﮭم ﺑﺛﻘﺔ وﻛﻔﺎءة.</p>
                     <div class="features-text">
-                        <h6>Our App</h6>
-                        <p>A simple and practical application, available on Android and iOS, with a streamlined, fast,
-                            and user-friendly interface.
-                            Easily access your data from any device by logging in with your registered email.</p>
+                        <h6>{{ currentLang === 'ar' ? 'مهمتنا' : 'Our mission' }}</h6>
+                        <p *ngIf="currentLang === 'en'">is to empower real estate teams with advanced CRM technology
+                            that automates every stage of
+                            the sales process. We are committed to providing agencies, brokers, and developers with a
+                            complete system that organizes leads, improves communication, and guides smarter, data-based
+                            decisions.</p>
+                        <p *ngIf="currentLang === 'en'">By reducing manual steps and improving daily operations,
+                            Souq Leader enables sales teams to
+                            focus on what matters most—building relationships and closing deals with confidence.
+                        </p>
+                        <p *ngIf="currentLang === 'ar'">ﺗزود ﻓرق اﻟﻣﺑﯾﻌﺎت اﻟﻌﻘﺎرﯾﺔ ﺑﻧظﺎم CRM واﺿﺢ وﺳﮭل اﻻﺳﺗﺧدام ﯾﻌﺗﻣدون
+                            ﻋﻠﯾﮫ ﻓﻌﻠﯾًﺎ ﻓﻲ ﻣﮭﺎم ﻋﻣﻠﮭم اﻟﯾوﻣﯾﺔ.
+                            وﺗطور أدوات ﻋﻣﻠﯾﺔ ﻣﺑﺗﻛرة ﺗﺳﮭل اﻟﻌﻣل ﺑدﻻً ﻣن ﺗﻌﻘﯾده، وﺗﺟﻣﻊ ﻛل ﺑﯾﺎﻧﺎت اﻟﻌﻣﻼء ﻓﻲ واﺟﮭﺔ واﺣدة
+                            ﺳﮭﻠﺔ اﻻﺳﺗﺧدام ،ﻣﻣﺎ ﯾﺟﻌل اﺗﺧﺎذ اﻟﻘرارات اﻟﺑﯾﻌﯾﺔ أدق وأﻛﺛر ﺳرﻋﺔ.
+                        </p>
+
                     </div>
                     <div class="features-text">
-                        <h6>Our Mission</h6>
-                        <p>To empower our partners (real estate marketing companies and brokers) by providing a
-                            practical, simple, organized, and flexible system that helps them achieve client
-                            satisfaction and grow their business.</p>
+                        <h6>{{ currentLang === 'ar' ? "ﺗطﺑﯾق ﺳوق ﻟﯾدر" : "Our App"}}</h6>
+                        <p *ngIf=" currentLang === 'en'">Souq leader provides its clients with an efficient, simple
+                            application available on both
+                            Android and iOS. Users can access sales funnels, tasks, notifications, and client details in
+                            real time, with a clean interface designed for fast and easy navigation.</p>
+                        <p *ngIf=" currentLang ==='ar'">ﯾوﻓرﺳوق ﻟﯾدر ﻟﻌﻣﻼﺋﮫ ﺗطﺑﯾﻘﺎ ﻓﻌﺎﻻً ﺳﮭل اﻻﺳﺗﺧدام، ﻣﺗوﻓر ﻋﻠﻰ أﺟﮭزة
+                            iOS وAndroid، ﯾﺗﯾﺢ ﻟﻠﻣﺳﺗﺧدﻣﯾن ﻣﺗﺎﺑﻌﺔ
+                            اﻟﻌﻣﻼء وإدارة اﻟﻣﮭﺎم وﻣﺳﺎر اﻟﻣﺑﯾﻌﺎت ﻟﺣظﺔ ﺑﻠﺣظﺔ ﻓﻲ أي وﻗت وﻣن أي ﻣﻛﺎن. اﻟﺗطﺑﯾق ﻣﺻﻣّم ﺑواﺟﮭﺔ
+                            واﺿﺣﺔ
+                            وﺳرﯾﻌﺔ، ﺗﺳﺎﻋد ﻓرق اﻟﻣﺑﯾﻌﺎت ﻋﻠﻰ إﻧﺟﺎز أﻋﻣﺎﻟﮭم ﻓورًا دون أي ﺗﻌﻘﯾد، ﺳواء ﻛﺎﻧوا داﺧل اﻟﻣﻛﺗب أو
+                            ﻓﻰ أي ﻣﻛﺎن.
+                        </p>
                     </div>
                     <div class="btn-box">
-                        <a routerLink="/contact" class="default-btn">Start Free Trial</a>
-                        <a routerLink="/features-1" class="link-btn">See All Features</a>
+                        <a routerLink="/sign-up" class="default-btn">{{ currentLang === 'ar' ? 'ابدأ التجربة المجانية' :
+                            'Start Free Trial' }}</a>
+                        <a routerLink="/features-2" class="link-btn">{{ currentLang === 'ar' ? 'عرض جميع الميزات' : 'See
+                            All Features' }}</a>
                     </div>
                 </div>
             </div>

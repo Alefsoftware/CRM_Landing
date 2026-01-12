@@ -9,16 +9,27 @@
             <div class="col-lg-6 col-md-12">
                 <div class="app-progress-content text-black">
                     <span class="sub-title">Track Your Progress</span>
-                    <h2>Work wherever and whenever you are</h2>
-                    <p>
-                        Log in from the Apple App Store or Google Play Store on
-                        any device, anytime, and access all your account data
-                        with complete, secure storage for everything inside.
+                    <h2>{{currentLang==='ar'?'ﻛن ﻣﺗﺻﻼً ﺑﺄﻋﻣﺎﻟك أﯾﻧﻣﺎ ﺗﻛون' : 'Stay Connected to Your Sales—Wherever You
+                        Are.'}}</h2>
+                    <p *ngIf="currentLang ==='en'">
+                        With the Souq Leader app, you can easily log in from any device—iOS or Android—and quickly
+                        access all your account data.
                     </p>
-                    <p>
-                        With cloud storage for all your account data, you can
-                        access it from any device and continue your work
-                        instantly.
+                    <p *ngIf="currentLang==='ar'">
+                        ﺗم ﺗﺻﻣﯾم ﺳوق ﻟﯾدر CRM ﻟﯾﻣﻧﺣك وﺻوﻻً داﺋﻣًﺎ وآﻣﻧًﺎ إﻟﻰ ﺑﯾﺎﻧﺎت ﻋﻣﻠك، ﺑﻐض اﻟﻧظر ﻋن اﻟﺟﮭﺎز اﻟذي
+                        ﺗﺳﺗﺧدﻣﮫ أو ﻣﻛﺎن
+                        ﺗواﺟدك.
+                    <p *ngIf="currentLang==='en'">
+                        With secure cloud storage, all of your leads' tasks, contact history, and sales funnel remain
+                        fully synchronized, allowing you to work without interruption.
+                        Whether you're following up with a client or reviewing your team's performance, Souq Leader
+                        ensures you stay connected and highly productive anytime, anywhere.
+
+                    </p>
+                    <p *ngIf="currentLang==='ar'">
+                        ﯾﺗم ﺣﻔظ ﺑﯾﺎﻧﺎت اﻟﻌﻣﻼء وﺳﺟل اﻟﻣﺗﺎﺑﻌﺎت واﻟﻣﮭﺎم ﻋﺑر ﺗﺧزﯾن ﺳﺣﺎﺑﻲ آﻣن، وﺗﺗم ﻣزاﻣﻧﺗﮭﺎ ﺗﻠﻘﺎﺋﯾًﺎ، ﺑﺣﯾث
+                        ﯾﺑﻘﻰ ﻋﻣﻠك ﻣﺳﺗﻣرًا ﺑدون اﻧﻘطﺎع أو ﻓﻘدان ﻟﻠﻣﻌﻠوﻣﺎت.ﺗﺳﺗطﯾﻊ إدارة اﻟﻌﻣﻼء، واﺳﺗﻌراض اﻟﻣراﺣل اﻟﺑﯾﻌﯾﺔ،
+                        وﻣﺗﺎﺑﻌﺔ اﻟﻣﮭﺎم ﻣن اﻟﮭﺎﺗف، أو اﻟﺣﺎﺳوب، ﻣﻊ ﺿﻣﺎن ﺑﻘﺎء ﺟﻣﯾﻊ اﻟﻣﻌﻠوﻣﺎت ﻣﺣدّﺛﺔ وﻣزاﻣﻧﺔ ﺑﯾن اﻷﺟﮭزة.
                     </p>
                 </div>
             </div>

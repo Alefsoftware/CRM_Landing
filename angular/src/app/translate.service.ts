@@ -26,6 +26,7 @@ export class TranslateService {
                 welcome: 'أهلاً',
                 'Home': "الرئيسية",
                 "About Us": "من نحن",
+                "About Souq Leader": "عن سوق ليدر",
                 "Pages": "الصفحات",
                 "How It Works": "كيف يعمل",
                 "Services": "خدمات",
