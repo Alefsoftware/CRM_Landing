@@ -37,10 +37,21 @@
                         business and CRM solutions, Souq Leader was designed to address the primary challenges faced by
                         the real estate industry, including disorganized data, missed follow-ups, and inconsistent
                         communication'}}.</p>
-                    <p>We provide an integrated CRM system solution that centralizes leads, automates workflows, and
-                        ensures every opportunity is managed with accuracy and transparency.
-                        Our system is designed specifically for real estate teams, providing a simple, effective, and
-                        powerful system that improves performance and accelerates business growth.
+                    <ng-container *ngIf="currentLang === 'en'; else arabicContent">
+                        <p>We provide an integrated CRM system solution that centralizes leads, automates workflows, and
+                            ensures every opportunity is managed with accuracy and transparency.</p>
+                        <p>Our system is designed specifically for real estate teams, providing a simple, effective, and
+                            powerful system that improves performance and accelerates business growth.</p>
+                    </ng-container>
+
+                    <ng-template #arabicContent>
+                        <p>ﻟﻣﻌﺎﻟﺟﺔ اﻟﺗﺣدﯾﺎت اﻟﺗﻲ ﯾواﺟﮭﮭﺎ ﻗطﺎع اﻟﻌﻘﺎرات، ﻣﺛل ﺗﺷﺗت ﺑﯾﺎﻧﺎت اﻟﻌﻣﻼء، ﺿﻌف اﻧطﻠﻘت ﻣﻧﺻﺔ ﺳوق
+                            ﻟﯾدرCRM اﻟﻣﺗﺎﺑﻌﺔ، وﺗﻌدد ﻗﻧوات اﻟﺗواﺻل ﺑﺷﻛل ﻏﯾر ﻣﻧظم.</p>
+                        <p>تم تصميم نظامنا خصيصًا لفرق العقارات، مما يوفر نظامًا بسيطًا وفعالًا وقويًا يحسن الأداء ويسرع
+                            نمو الأعمال.</p>
+                    </ng-template>
+                    <p>Our system is designed specifically for real estate teams, providing a simple, effective, and
+                        powerful system that improves performance and accelerates business growth.</p>
                     </p>
 
                     <div class="features-text">
