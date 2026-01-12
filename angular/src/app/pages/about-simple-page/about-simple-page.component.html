@@ -81,9 +81,17 @@
                     </div>
                     <div class="features-text">
                         <h6>{{ currentLang === 'ar' ? "ﺗطﺑﯾق ﺳوق ﻟﯾدر" : "Our App"}}</h6>
-                        <p>Souq leader provides its clients with an efficient, simple application available on both
+                        <p *ngIf=" currentLang === 'en'">Souq leader provides its clients with an efficient, simple
+                            application available on both
                             Android and iOS. Users can access sales funnels, tasks, notifications, and client details in
                             real time, with a clean interface designed for fast and easy navigation.</p>
+                        <p *ngIf=" currentLang ==='ar'">ﯾوﻓرﺳوق ﻟﯾدر ﻟﻌﻣﻼﺋﮫ ﺗطﺑﯾﻘﺎ ﻓﻌﺎﻻً ﺳﮭل اﻻﺳﺗﺧدام، ﻣﺗوﻓر ﻋﻠﻰ أﺟﮭزة
+                            iOS وAndroid، ﯾﺗﯾﺢ ﻟﻠﻣﺳﺗﺧدﻣﯾن ﻣﺗﺎﺑﻌﺔ
+                            اﻟﻌﻣﻼء وإدارة اﻟﻣﮭﺎم وﻣﺳﺎر اﻟﻣﺑﯾﻌﺎت ﻟﺣظﺔ ﺑﻠﺣظﺔ ﻓﻲ أي وﻗت وﻣن أي ﻣﻛﺎن. اﻟﺗطﺑﯾق ﻣﺻﻣّم ﺑواﺟﮭﺔ
+                            واﺿﺣﺔ
+                            وﺳرﯾﻌﺔ، ﺗﺳﺎﻋد ﻓرق اﻟﻣﺑﯾﻌﺎت ﻋﻠﻰ إﻧﺟﺎز أﻋﻣﺎﻟﮭم ﻓورًا دون أي ﺗﻌﻘﯾد، ﺳواء ﻛﺎﻧوا داﺧل اﻟﻣﻛﺗب أو
+                            ﻓﻰ أي ﻣﻛﺎن.
+                        </p>
                     </div>
                     <div class="btn-box">
                         <a routerLink="/contact" class="default-btn">Start Free Trial</a>
