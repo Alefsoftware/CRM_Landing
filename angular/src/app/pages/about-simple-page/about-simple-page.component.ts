@@ -10,10 +10,11 @@ import { PartnerComponent } from '../../common/partner/partner.component';
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
+import { NgIf } from "../../../../node_modules/@angular/common/common_module.d-NEF7UaHr";
 
 @Component({
     selector: 'app-about-simple-page',
-    imports: [RouterLink, NavbarStyleTwoComponent, FooterStyleFourComponent, FunfactsStyleOneComponent, ProgressStyleTwoComponent, UserStatsComponent, HometwoSoftwareIntegrationsComponent, TeamStyleOneComponent, FeedbackStyleOneComponent, PartnerComponent, BackToTopComponent],
+    imports: [RouterLink, NavbarStyleTwoComponent, FooterStyleFourComponent, FunfactsStyleOneComponent, ProgressStyleTwoComponent, UserStatsComponent, HometwoSoftwareIntegrationsComponent, TeamStyleOneComponent, FeedbackStyleOneComponent, PartnerComponent, BackToTopComponent, NgIf],
     templateUrl: './about-simple-page.component.html',
     styleUrls: ['./about-simple-page.component.scss']
 })
