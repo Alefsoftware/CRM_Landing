@@ -1,19 +1,25 @@
 <app-navbar-style-two />
+
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h2>{{ currentLang === 'ar' ? 'ﻋن ﺳوق ﻟﯾدر.' : 'About Souq Leader.' }}</h2>
+            <h2>{{ currentLang === 'ar' ? 'عن سوق ليدر' : 'About Souq Leader' }}</h2>
             <ul>
                 <li><a routerLink="/">{{ currentLang === 'ar' ? 'الصفحة الرئيسية' : 'Home' }}</a></li>
-                <li>{{ currentLang === 'ar'?'ﻣﻧﺻﺔ CRM ﻣﺻﻣﻣﺔ ﺧﺻﯾﺻًﺎ ﻟﻘطﺎع اﻟﻌﻘﺎرات، ﺗﺳﮭل إدارة وﻣﺗﺎﺑﻌﺔ اﻟﻣﺑﯾﻌﺎت وﺗﻣﻛن
-                    ﺷرﻛﺎت اﻟﻌﻘﺎرات ﻣن إدارة
-                    ﻋﻣﻠﯾﺎﺗﮭﺎ ﺑوﺿوح ودﻗﺔ ودﻋم ﻓرﯾق اﻟﻌﻣل ﻓﻲ ﺟﻣﯾﻊ اﻟﻣراﺣل.' :
-                    'A smart, dedicated real estate CRM platform designed to streamline sales, automate follow-ups, and
-                    support agencies and developers across the region.'}}</li>
+                <li>{{ currentLang === 'ar' ? 'معلومات عنا' : 'About Us' }}</li>
             </ul>
         </div>
     </div>
     <div class="divider"></div>
+    <!-- Banner description should be separate from the breadcrumb -->
+    <div class="page-description text-center mt-3">
+        <p class="lead">
+            {{ currentLang === 'ar' ? 'منصة CRM مصممة خصيصاً لقطاع العقارات، تسهل إدارة ومتابعة المبيعات وتمكن شركات
+            العقارات من إدارة عملياتها بوضوح ودقة ودعم فريق العمل في جميع المراحل.' : 'A smart, dedicated real estate
+            CRM platform designed to streamline sales, automate follow-ups, and support agencies and developers across
+            the region.' }}
+        </p>
+    </div>
     <div class="lines">
         <div class="line"></div>
         <div class="line"></div>
@@ -29,57 +35,87 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
                 <div class="about-content">
-                    <span class="sub-title">{{ currentLang === 'ar' ? 'ﻋن ﺳوق ﻟﯾدر' : 'ABOUT SOUQLEADER' }}</span>
-                    <h2>{{currentLang ==='ar' ? 'من نحن' : "Who we are"}}</h2>
-                    <p>{{currentLang === 'ar'?'ﺗم ﺗطوﯾر ﺳوق ﻟﯾدر ﺑواﺳطﺔ أﻟف ﻟﻠﺑرﻣﺟﯾﺎت وھﻲ ﺷرﻛﺔ ﺗﻘﻧﯾﺔ ﻣوﺛوﻗﺔ ﺗﺗﻣﺗﻊ ﺑﺧﺑرة
-                        ﻗوﯾﺔ ﻓﻲ ﺑﻧﺎء اﻷﻧظﻣﺔ واﻟﺣﻠول اﻟرﻗﻣﯾﺔ اﻟﺧﺎﺻﺔ ﺑﺈدارة اﻷﻋﻣﺎل واﻟـCRM' : 'Developed by Alef
-                        Software, a trusted technology company recognized for delivering reliable
+                    <span class="sub-title">{{ currentLang === 'ar' ? 'عن سوق ليدر' : 'ABOUT SOUQ LEADER' }}</span>
+                    <h2>{{ currentLang === 'ar' ? 'من نحن' : 'Who we are' }}</h2>
+
+                    <p *ngIf="currentLang === 'ar'">
+                        تم تطوير سوق ليدر بواسطة ألف للبرمجيات وهي شركة تقنية موثوقة تتمتع بخبرة قوية في بناء الأنظمة
+                        والحلول الرقمية الخاصة بإدارة الأعمال والـCRM.
+                    </p>
+                    <p *ngIf="currentLang === 'en'">
+                        Developed by Alef Software, a trusted technology company recognized for delivering reliable
                         business and CRM solutions, Souq Leader was designed to address the primary challenges faced by
                         the real estate industry, including disorganized data, missed follow-ups, and inconsistent
-                        communication'}}.</p>
-                    <p>{{ currentLang === 'ar' ? 'انطلقت منصة "سوق ليدر" CRM لمعالجة التحديات التي يواجهها قطاع
-                        العقارات، مثل تشتت بيانات العملاء، ضعف المتابعة، وتعدد قنوات التواصل بشكل غير منظم.' : 'We
-                        provide an integrated CRM system solution that centralizes leads, automates workflows, and
-                        ensures every opportunity is managed with accuracy and transparency.' }}</p>
+                        communication.
+                    </p>
 
-                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
-                        a simple, effective, and powerful system that improves performance and accelerates business
-                        growth.</p>
+                    <p *ngIf="currentLang === 'ar'">
+                        انطلقت منصة "سوق ليدر" CRM لمعالجة التحديات التي يواجهها قطاع العقارات، مثل تشتت بيانات العملاء،
+                        ضعف المتابعة، وتعدد قنوات التواصل بشكل غير منظم.
+                    </p>
+                    <p *ngIf="currentLang === 'en'">
+                        We provide an integrated CRM system solution that centralizes leads, automates workflows, and
+                        ensures every opportunity is managed with accuracy and transparency.
+                    </p>
 
-                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
-                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
-                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
-                        a simple, effective, and
-                        powerful system that improves performance and accelerates business growth.</p>
-                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
-                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
-                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
-                        a simple, effective, and powerful system that improves performance and accelerates business
-                        growth.</p>
-                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
-                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
+                    <p *ngIf="currentLang === 'ar'">
+                        تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا وقويًا يُحسِّن الأداء
+                        ويُسرِّع نمو الأعمال.
+                    </p>
+                    <p *ngIf="currentLang === 'en'">
+                        Our system is designed specifically for real estate teams, providing a simple, effective, and
+                        powerful system that improves performance and accelerates business growth.
+                    </p>
 
-                    <p *ngIf="currentLang ==='ar'">ھدﻓﻧﺎ أن ﻧوﻓر ﻧظﺎﻣًﺎ ﺑﺳﯾطًﺎ ﻓﻲ اﻻﺳﺗﺧدام، ﻣﺗﻘدﻣًﺎ ﻓﻲ اﻷداء، ﯾﻣﻧﺢ ﻓرق
-                        اﻟﻣﺑﯾﻌﺎت اﻟﻘدرة ﻋﻠﻰ إدارة أﻋﻣﺎﻟﮭم ﺑﺛﻘﺔ وﻛﻔﺎءة.</p>
+                    <p *ngIf="currentLang === 'ar'">
+                        هدفنا أن نوفر نظامًا بسيطًا في الاستخدام، متقدمًا في الأداء، يمنح فرق المبيعات القدرة على إدارة
+                        أعمالهم بثقة وكفاءة.
+                    </p>
+                    <p *ngIf="currentLang === 'en'">
+                        Our goal is to provide a system that is simple to use yet advanced in performance, giving sales
+                        teams the ability to manage their business with confidence and efficiency.
+                    </p>
+
                     <div class="features-text">
-                        <h6>Our mission</h6>
-                        <p>is to empower real estate teams with advanced CRM technology that automates every stage of
+                        <h6>{{ currentLang === 'ar' ? 'رسالتنا' : 'Our mission' }}</h6>
+                        <p *ngIf="currentLang === 'ar'">
+                            هي تمكين فرق العقارات من خلال تقنية CRM متقدمة تؤتمت كل مرحلة من مراحل عملية البيع. نحن
+                            ملتزمون بتزويد الوكالات والوسطاء والمطورين بنظام كامل ينظم العملاء المحتملين، ويحسن التواصل،
+                            ويرشد إلى قرارات أكثر ذكاءً تعتمد على البيانات. من خلال تقليل الخطوات اليدوية وتحسين
+                            العمليات اليومية، يمكن لسوق ليدر فرق المبيعات من التركيز على ما يهم أكثر - بناء العلاقات
+                            وإغلاق الصفقات بثقة.
+                        </p>
+                        <p *ngIf="currentLang === 'en'">
+                            is to empower real estate teams with advanced CRM technology that automates every stage of
                             the sales process. We are committed to providing agencies, brokers, and developers with a
                             complete system that organizes leads, improves communication, and guides smarter, data-based
-                            decisions.
-                            By reducing manual steps and improving daily operations, Souq Leader enables sales teams to
-                            focus on what matters most—building relationships and closing deals with confidence.
+                            decisions. By reducing manual steps and improving daily operations, Souq Leader enables
+                            sales teams to focus on what matters most—building relationships and closing deals with
+                            confidence.
                         </p>
                     </div>
+
                     <div class="features-text">
-                        <h6>Our App</h6>
-                        <p>Souq leader provides its clients with an efficient, simple application available on both
+                        <h6>{{ currentLang === 'ar' ? 'تطبيقنا' : 'Our App' }}</h6>
+                        <p *ngIf="currentLang === 'ar'">
+                            يوفر سوق ليدر لعملائه تطبيقًا فعالاً وبسيطًا متاحًا على كل من أندرويد و iOS. يمكن للمستخدمين
+                            الوصول إلى مسارات المبيعات والمهام والإشعارات وتفاصيل العملاء في الوقت الفعلي، مع واجهة
+                            نظيفة مصممة للتنقل السريع والسهل.
+                        </p>
+                        <p *ngIf="currentLang === 'en'">
+                            Souq Leader provides its clients with an efficient, simple application available on both
                             Android and iOS. Users can access sales funnels, tasks, notifications, and client details in
-                            real time, with a clean interface designed for fast and easy navigation.</p>
+                            real time, with a clean interface designed for fast and easy navigation.
+                        </p>
                     </div>
+
                     <div class="btn-box">
-                        <a routerLink="/contact" class="default-btn">Start Free Trial</a>
-                        <a routerLink="/features-1" class="link-btn">See All Features</a>
+                        <a routerLink="/{{currentLang}}/contact" class="default-btn">
+                            {{ currentLang === 'ar' ? 'ابدأ الإصدار التجريبي المجاني' : 'Start Free Trial' }}
+                        </a>
+                        <a routerLink="/{{currentLang}}/features" class="link-btn">
+                            {{ currentLang === 'ar' ? 'راجع جميع الميزات' : 'See All Features' }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -100,24 +136,9 @@
 
 <app-hometwo-software-integrations />
 
-
 <app-user-stats />
 
-
 <app-team-style-one />
-
-<!-- <div class="feedback-area pb-100">
-    <app-feedback-style-one />
-</div> -->
-
-<!-- <div class="partner-area bg-f9f9f9 ptb-100">
-    <div class="container">
-        <div class="partner-title">
-            Our Success Partners:
-        </div>
-        <app-partner />
-    </div>
-</div> -->
 
 <app-footer-style-four />
 
