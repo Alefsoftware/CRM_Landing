@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
@@ -28,6 +28,7 @@ import { FormsModule } from '@angular/forms';
 export class ContactPageComponent implements OnInit {
     contactData: any = null;
     safeMapHtml: SafeHtml | null = null;
+    currentLang: 'en' | 'ar' = 'en'; // Add currentLang property
 
     // Form model
     contactForm = {
@@ -43,7 +44,15 @@ export class ContactPageComponent implements OnInit {
     errorMessage: string = '';
     loading: boolean = false;
 
-    constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
+    constructor(
+        private http: HttpClient,
+        private sanitizer: DomSanitizer,
+        private router: Router // Add Router injection
+    ) {
+        // Extract language from URL
+        const lang = this.router.url.split('/')[1];
+        this.currentLang = lang === 'ar' ? 'ar' : 'en';
+    }
 
     ngOnInit(): void {
         this.http.get('https://admin.realstatecrm-development.dev.alefsoftware.com/site/contactus')
@@ -61,7 +70,9 @@ export class ContactPageComponent implements OnInit {
 
         // Check form validity
         if (!formRef.valid) {
-            this.errorMessage = 'Please fill in all required fields with valid data.';
+            this.errorMessage = this.currentLang === 'ar'
+                ? 'يرجى ملء جميع الحقول المطلوبة ببيانات صحيحة.'
+                : 'Please fill in all required fields with valid data.';
             return;
         }
 
@@ -79,13 +90,17 @@ export class ContactPageComponent implements OnInit {
             .subscribe({
                 next: (res: any) => {
                     this.loading = false;
-                    this.successMessage = 'Message sent successfully!';
+                    this.successMessage = this.currentLang === 'ar'
+                        ? 'تم إرسال الرسالة بنجاح!'
+                        : 'Message sent successfully!';
                     this.contactForm = { name: '', email: '', phone: '', subject: '', message: '' };
                     formRef.resetForm(); // reset Angular form state
                 },
                 error: (err) => {
                     this.loading = false;
-                    this.errorMessage = 'Failed to send message. Please try again.';
+                    this.errorMessage = this.currentLang === 'ar'
+                        ? 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.'
+                        : 'Failed to send message. Please try again.';
                 }
             });
     }
