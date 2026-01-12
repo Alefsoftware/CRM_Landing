@@ -65,14 +65,16 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="form-group">
                                     <input type="text" name="phone" [(ngModel)]="contactForm.phone"
-                                        class="form-control contact-input" placeholder="Enter your phone number"
+                                        class="form-control contact-input"
+                                        placeholder="{{ currentLang ==='ar' ? 'رقم هاتفك' : 'Your phone number' }}"
                                         required="required">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="form-group">
                                     <input type="text" name="subject" [(ngModel)]="contactForm.subject"
-                                        class="form-control contact-input" placeholder="Enter your subject"
+                                        class="form-control contact-input"
+                                        placeholder="{{ currentLang === 'ar' ? 'الموضوع' : 'Your subject' }}"
                                         required="required">
                                 </div>
                             </div>
@@ -80,7 +82,8 @@
                                 <div class="form-group">
                                     <textarea name="message" [(ngModel)]="contactForm.message"
                                         class="form-control contact-input" cols="30" rows="6"
-                                        placeholder="Enter message..." required="required"></textarea>
+                                        placeholder="{{ currentLang === 'ar' ? 'أدخل الرسالة...' : 'Enter message...' }}"
+                                        required="required"></textarea>
                                 </div>
                             </div>
                             <!-- <div class="col-lg-12 col-md-12 col-sm-12">
@@ -91,8 +94,8 @@
                     </div> -->
 
                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                <button type="submit" class="default-btn"><i class='bx bx-paper-plane'></i> Send
-                                    Message</button>
+                                <button type="submit" class="default-btn"><i class='bx bx-paper-plane'></i> {{
+                                    currentLang === 'ar' ? 'إرسال الرسالة' : 'Send Message' }}</button>
                             </div>
                         </div>
                     </form>
