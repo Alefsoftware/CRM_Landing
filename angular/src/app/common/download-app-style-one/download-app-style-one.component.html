@@ -189,20 +189,28 @@
             <div class="row">
                 <div class="col-lg-12">
                     <span class="download-label">{{ currentLang === 'ar' ? 'تحميل التطبيق' : 'DOWNLOAD APP' }}</span>
-                    <h2>Enjoy your Experience with Souq Leader for free</h2>
+                    <h2>{{ currentLang === 'ar' ? 'استمتع بتجربتك مع تطبيق Souq Leader في أي مكان وفي أي وقت.' : 'Enjoy
+                        your experience with the Souq Leader App anywhere, anytime.' }}</h2>
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>
-                                Log in from the Apple App Store or Google Play Store on any device,
-                                anytime, and access all your account data with complete, secure
-                                storage for everything inside.
+                            <p *ngIf="currentLang === 'en'">
+                                Stay connected to your real estate sales with a mobile app that keeps everything easily
+                                accessible.
+                                Whether you're following up with clients, checking team activity, or reviewing your
+                                tasks, the Souq Leader app keeps your workfl ow smooth wherever you are.
                             </p>
 
-                            <p>
-                                With cloud storage for all your account data, you can access it
-                                from any device and continue your work instantly.
+                            <p *ngIf="currentLang === 'en'">
+                                With secure cloud storage for all your account data, you can log in from any device and
+                                continue your work instantly—without interruptions.
                             </p>
+
+                            <p *ngIf="currentLang === 'ar'">
+                                ابقَ متصلاً بمبيعاتك العقارية من خلال تطبيق جوال يجعل كل شيء في متناول يدك بسهولة.
+                                سواء كنت تتابع مع العملاء، أو تتحقق من نشاط الفريق، أو تراجع مهامك، فإن تطبيق سوق
+                                ليدر يحافظ على سلاسة سير عملك أينما كنت.</p>
+                            <p *ngIf="currentLang === 'ar'"></p>
                         </div>
                     </div>
                 </div>
@@ -215,15 +223,15 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3>Download the app</h3>
+                    <h3>{{ currentLang === 'ar' ? 'تحميل التطبيق' : 'Download the app' }}</h3>
 
                     <div class="store-buttons">
                         <a href="https://play.google.com/store/apps/details?id=com.alef.souqleader&pcampaignid=web_share"
                             class="store-btn" target="_blank">
                             <img src="img/play-store.png" class="store-icon" alt="Google Play">
                             <div class="store-text">
-                                <small>Get it on</small>
-                                <strong>Google Play</strong>
+                                <small>{{ currentLang === 'ar' ? 'احصل عليه على' : 'Get it on' }}</small>
+                                <strong>{{ currentLang ==='ar' ? 'جوجل بلاي' : 'Google Play'}}</strong>
                             </div>
                         </a>
 
@@ -231,8 +239,8 @@
                             target="_blank">
                             <img src="img/apple-store.png" class="store-icon" alt="Apple Store">
                             <div class="store-text">
-                                <small>Download on the</small>
-                                <strong>App Store</strong>
+                                <small>{{ currentLang === 'ar' ? 'احصل عليه على' : 'Download on the' }}</small>
+                                <strong>{{ currentLang === 'ar' ? 'متجر آبل' : 'App Store' }}</strong>
                             </div>
                         </a>
                     </div>

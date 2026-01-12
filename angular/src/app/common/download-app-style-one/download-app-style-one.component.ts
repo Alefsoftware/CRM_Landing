@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { CountUpModule } from "ngx-countup";
 
 @Component({
     selector: 'app-download-app-style-one',
-    imports: [CommonModule],
+    imports: [CommonModule, CountUpModule],
     templateUrl: './download-app-style-one.component.html',
     styleUrls: ['./download-app-style-one.component.scss']
 })
