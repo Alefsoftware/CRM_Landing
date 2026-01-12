@@ -2,7 +2,7 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h2>{{ currentLang === 'ar' ? '' : 'About Souq Leader.' }}</h2>
+            <h2>{{ currentLang === 'ar' ? 'ﻋن ﺳوق ﻟﯾدر:' : 'About Souq Leader.' }}</h2>
             <ul>
                 <li><a routerLink="/">Home</a></li>
                 <li>{{ currentLang === 'ar'?'ﻣﻧﺻﺔ CRM ﻣﺻﻣﻣﺔ ﺧﺻﯾﺻًﺎ ﻟﻘطﺎع اﻟﻌﻘﺎرات، ﺗﺳﮭل إدارة وﻣﺗﺎﺑﻌﺔ اﻟﻣﺑﯾﻌﺎت وﺗﻣﻛن
@@ -29,12 +29,14 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
                 <div class="about-content">
-                    <span class="sub-title">ABOUT SOUQLEADER</span>
+                    <span class="sub-title">{{ currentLang === 'ar' ? 'ﻋن ﺳوق ﻟﯾدر' : 'ABOUT SOUQLEADER' }}</span>
                     <h2>{{currentLang ==='ar' ? 'من نحن' : "Who we are"}}</h2>
-                    <p>Developed by Alef Software, a trusted technology company recognized for delivering reliable
+                    <p>{{currentLang === 'ar'?'ﺗم ﺗطوﯾر ﺳوق ﻟﯾدر ﺑواﺳطﺔ أﻟف ﻟﻠﺑرﻣﺟﯾﺎت وھﻲ ﺷرﻛﺔ ﺗﻘﻧﯾﺔ ﻣوﺛوﻗﺔ ﺗﺗﻣﺗﻊ ﺑﺧﺑرة
+                        ﻗوﯾﺔ ﻓﻲ ﺑﻧﺎء اﻷﻧظﻣﺔ واﻟﺣﻠول اﻟرﻗﻣﯾﺔ اﻟﺧﺎﺻﺔ ﺑﺈدارة اﻷﻋﻣﺎل واﻟـ.CRM' : 'Developed by Alef
+                        Software, a trusted technology company recognized for delivering reliable
                         business and CRM solutions, Souq Leader was designed to address the primary challenges faced by
                         the real estate industry, including disorganized data, missed follow-ups, and inconsistent
-                        communication.</p>
+                        communication.'}}</p>
                     <p>We provide an integrated CRM system solution that centralizes leads, automates workflows, and
                         ensures every opportunity is managed with accuracy and transparency.
                         Our system is designed specifically for real estate teams, providing a simple, effective, and
