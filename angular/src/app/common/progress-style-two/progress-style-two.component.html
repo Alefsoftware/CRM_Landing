@@ -11,10 +11,13 @@
                     <span class="sub-title">Track Your Progress</span>
                     <h2>{{currentLang==='ar'?'ﻛن ﻣﺗﺻﻼً ﺑﺄﻋﻣﺎﻟك أﯾﻧﻣﺎ ﺗﻛون' : 'Stay Connected to Your Sales—Wherever You
                         Are.'}}</h2>
-                    <p>
+                    <p *ngIf "currentLang==='en'"">
                         With the Souq Leader app, you can easily log in from any device—iOS or Android—and quickly
                         access all your account data.
                     </p>
+                    <p *ngIf=" currentLang==='ar'">
+                       ﺗم ﺗﺻﻣﯾم ﺳوق ﻟﯾدر CRM ﻟﯾﻣﻧﺣك وﺻوﻻً داﺋﻣًﺎ وآﻣﻧًﺎ إﻟﻰ ﺑﯾﺎﻧﺎت ﻋﻣﻠك، ﺑﻐض اﻟﻧظر ﻋن اﻟﺟﮭﺎز اﻟذي ﺗﺳﺗﺧدﻣﮫ أو ﻣﻛﺎن
+ﺗواﺟدك. 
                     <p>
                         With secure cloud storage, all of your leads' tasks, contact history, and sales funnel remain
                         fully synchronized, allowing you to work without interruption.

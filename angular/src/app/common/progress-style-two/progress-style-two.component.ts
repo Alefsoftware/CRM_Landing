@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common'; // Import CommonModule for NgIf
 
 @Component({
     selector: 'app-progress-style-two',
-    imports: [RouterLink],
+    imports: [RouterLink, CommonModule], // Add CommonModule here
     templateUrl: './progress-style-two.component.html',
     styleUrls: ['./progress-style-two.component.scss']
 })
