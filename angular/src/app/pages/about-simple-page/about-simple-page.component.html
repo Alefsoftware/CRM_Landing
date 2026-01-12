@@ -62,14 +62,22 @@
                     <p *ngIf="currentLang === 'ar'">ھدﻓﻧﺎ أن ﻧوﻓر ﻧظﺎﻣًﺎ ﺑﺳﯾطًﺎ ﻓﻲ اﻻﺳﺗﺧدام، ﻣﺗﻘدﻣًﺎ ﻓﻲ اﻷداء، ﯾﻣﻧﺢ ﻓرق
                         اﻟﻣﺑﯾﻌﺎت اﻟﻘدرة ﻋﻠﻰ إدارة أﻋﻣﺎﻟﮭم ﺑﺛﻘﺔ وﻛﻔﺎءة.</p>
                     <div class="features-text">
-                        <h6>Our mission</h6>
-                        <p>is to empower real estate teams with advanced CRM technology that automates every stage of
+                        <h6>{{ currentLang === 'ar' ? 'مهمتنا' : 'Our mission' }}</h6>
+                        <p *ngIf="currentLang === 'en'">is to empower real estate teams with advanced CRM technology
+                            that automates every stage of
                             the sales process. We are committed to providing agencies, brokers, and developers with a
                             complete system that organizes leads, improves communication, and guides smarter, data-based
-                            decisions.
-                            By reducing manual steps and improving daily operations, Souq Leader enables sales teams to
+                            decisions.</p>
+                        <p *ngIf="currentLang === 'en'">By reducing manual steps and improving daily operations,
+                            Souq Leader enables sales teams to
                             focus on what matters most—building relationships and closing deals with confidence.
                         </p>
+                        <p *ngIf="currentLang === 'ar'">ﺗزود ﻓرق اﻟﻣﺑﯾﻌﺎت اﻟﻌﻘﺎرﯾﺔ ﺑﻧظﺎم CRM واﺿﺢ وﺳﮭل اﻻﺳﺗﺧدام ﯾﻌﺗﻣدون
+                            ﻋﻠﯾﮫ ﻓﻌﻠﯾًﺎ ﻓﻲ ﻣﮭﺎم ﻋﻣﻠﮭم اﻟﯾوﻣﯾﺔ.
+                            وﺗطور أدوات ﻋﻣﻠﯾﺔ ﻣﺑﺗﻛرة ﺗﺳﮭل اﻟﻌﻣل ﺑدﻻً ﻣن ﺗﻌﻘﯾده، وﺗﺟﻣﻊ ﻛل ﺑﯾﺎﻧﺎت اﻟﻌﻣﻼء ﻓﻲ واﺟﮭﺔ واﺣدة
+                            ﺳﮭﻠﺔ اﻻﺳﺗﺧدام ،ﻣﻣﺎ ﯾﺟﻌل اﺗﺧﺎذ اﻟﻘرارات اﻟﺑﯾﻌﯾﺔ أدق وأﻛﺛر ﺳرﻋﺔ.
+                        </p>
+
                     </div>
                     <div class="features-text">
                         <h6>Our App</h6>
