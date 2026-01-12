@@ -3,13 +3,19 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
                 <div class="software-integrations-content white-color">
-                    <span class="sub-title">SOFTWARE INTEGRATIONS</span>
-                    <h2>All Your Essential Real Estate Tools, Fully Integrated.</h2>
-                    <p>Souq Leader integrates all your communication channels and productivity tools into a single,
+                    <span class="sub-title">{{ currentLang ==='ar' ? 'تكامل البرامج' : 'SOFTWARE INTEGRATIONS' }}</span>
+                    <h2>{{ currentLang == 'ar' ? 'نظام واحد يجمع كل أدوات العمل اليومية' : 'All Your Essential Real
+                        Estate Tools, Fully Integrated' }}</h2>
+                    <p *ngIf="currentLang ==='en'">Souq Leader integrates all your communication channels and
+                        productivity tools into a single,
                         powerful platform. All WhatsApp messages, phone calls, emails, and SMS services are
                         automatically organized inside a single system, allowing for quick follow-ups, accurate
                         tracking, and smooth communication throughout your entire sales team.</p>
-                    <a routerLink="/contact" class="default-btn">Get Started</a>
+                    <p *ngIf="currentLang ==='ar'">ﯾﺟﻣﻊ ﺳوق ﻟﯾدر ﺑﯾن أھم أدوات اﻟﺗواﺻل اﻟﻣﺳﺗﺧدﻣﺔ ﻓﻲ اﻟﻣﺑﯾﻌﺎت اﻟﻌﻘﺎرﯾﺔ،
+                        ﯾرﺑط ﺑﯾن WhatsApp واﻟﻣﻛﺎﻟﻣﺎت واﻹﯾﻣﯾﻼت واﻟرﺳﺎﺋل اﻟﻧﺻﯾﺔ، وﯾﺧزﻧﮭﺎ ﺗﻠﻘﺎﺋﯾًﺎ داﺧل اﻟﻧظﺎم، ﻟﯾزودك ﺑﺳﺟل
+                        ﻛﺎﻣل ودﻗﯾق ﯾﺳﮭل ﻣﺗﺎﺑﻌﺔ اﻟﻌﻣل ﺑﺳرﻋﺔ وﻓﻌﺎﻟﯾﺔ دون ﻓﻘدان أي ﻣﻌﻠوﻣﺔ.</p>
+                    <a routerLink="/contact" class="default-btn">{{ currentLang ==='ar' ? 'ابدأ الآن' : 'Get Started'
+                        }}</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
@@ -27,5 +33,4 @@
             </div>
         </div>
     </div>
-    <div class="shape8"><img src="img/shape/shape7.png" alt="shape"></div>
 </div>
