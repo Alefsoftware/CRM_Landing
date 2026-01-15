@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, ActivatedRoute } from '@angular/router';
+import { RouterLink, ActivatedRoute, RouterModule } from '@angular/router';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
 import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
@@ -12,6 +12,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     imports: [
         CommonModule,
         HttpClientModule,
+        RouterModule, // ✅ IMPORTANT
         RouterLink,
         NavbarStyleTwoComponent,
         FooterStyleFourComponent,
