@@ -34,14 +34,23 @@
                         style="background: linear-gradient(221.69deg, #039BE5 0%, #020E3C 101%); display:flex; flex-direction:column; justify-content:center; text-align:center; min-height:100%;">
 
                         <!-- Display backend error -->
-                        <div *ngFor="let err of backendErrors" class="alert alert-danger mt-2">
-                            {{ err }}
+                        <div *ngIf="backendErrors.length > 0" class="alert alert-danger mt-2">
+                            <div *ngFor="let err of backendErrors">{{ err }}</div>
                         </div>
-
 
                         <!-- Display success message -->
                         <div *ngIf="successMessage" class="alert alert-success mt-3">
                             {{ successMessage }}
+                        </div>
+
+                        <!-- Display form validation errors -->
+                        <div *ngIf="showFormErrors && signupForm.invalid" class="alert alert-warning mt-2">
+                            <div *ngIf="signupForm.get('contact_name')?.hasError('required')">
+                                Contact Name is required
+                            </div>
+                            <div *ngIf="signupForm.get('phone')?.hasError('required')">
+                                Phone Number is required
+                            </div>
                         </div>
 
                         <h2 style="color: white; font-weight: bold;">{{ translate.t('Request A Demo') }}</h2>
@@ -49,27 +58,37 @@
                         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
                             <div class="form-group">
                                 <input type="text" class="form-control" style="font-weight:bold;"
-                                    placeholder="{{ translate.t('Company Name') }}" formControlName="company_name"
-                                    required>
+                                    placeholder="{{ translate.t('Company Name') }}" formControlName="company_name">
                             </div>
 
                             <div class="form-group">
                                 <input type="text" class="form-control" style="font-weight:bold;"
-                                    placeholder="{{ translate.t('Contact Name') }}" formControlName="contact_name"
-                                    required>
+                                    placeholder="{{ translate.t('Contact Name') }}" formControlName="contact_name">
+                                <div *ngIf="showFormErrors && signupForm.get('contact_name')?.hasError('required')"
+                                    class="text-danger small mt-1">
+                                    Contact Name is required
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <input type="email" class="form-control" style="font-weight:bold;"
-                                    placeholder="{{ translate.t('Email Address') }}" formControlName="email" required>
+                                    placeholder="{{ translate.t('Email Address') }}" formControlName="email">
+                                <div *ngIf="showFormErrors && signupForm.get('email')?.hasError('email')"
+                                    class="text-danger small mt-1">
+                                    Please enter a valid email address
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <input type="number" class="form-control" style="font-weight:bold;"
-                                    placeholder="{{ translate.t('Phone Number') }}" formControlName="phone" required>
+                                    placeholder="{{ translate.t('Phone Number') }}" formControlName="phone">
+                                <div *ngIf="showFormErrors && signupForm.get('phone')?.hasError('required')"
+                                    class="text-danger small mt-1">
+                                    Phone Number is required
+                                </div>
                             </div>
 
-                            <button type="submit" class="btn btn-light" style="font-weight:bold;" [disabled]="loading">
+                            <button type="submit" class="btn btn-light" style="font-weight:bold;">
                                 {{ loading ? 'Submitting...' : translate.t('Request a demo') }}
                             </button>
                         </form>

@@ -29,6 +29,7 @@ export class SignUpPageComponent implements OnInit {
     backendErrors: string[] = [];
     currentLang: 'en' | 'ar' = 'en';
     loading: boolean = false;
+    showFormErrors: boolean = false;
 
     constructor(
         private fb: FormBuilder,
@@ -46,22 +47,23 @@ export class SignUpPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.signupForm = this.fb.group({
-            company_name: ['', Validators.required],
-            contact_name: [''],
-            phone: ['', Validators.required],
-            email: ['', [Validators.email]],
+            company_name: [''],
+            contact_name: ['', Validators.required],  // Only required
+            phone: ['', Validators.required],         // Only required
+            email: ['']  // Not required
         });
     }
 
     onSubmit(): void {
+        this.showFormErrors = true;
+        this.backendErrors = [];
+        this.successMessage = null;
+
         if (this.signupForm.invalid) {
-            this.signupForm.markAllAsTouched();
             return;
         }
 
         this.loading = true;
-        this.backendErrors = [];
-        this.successMessage = null;
 
         this.http.post<any>(
             'https://admin.realstatecrm-development.dev.alefsoftware.com/site/request-demo',
@@ -72,6 +74,7 @@ export class SignUpPageComponent implements OnInit {
                 if (res.status === true) {
                     this.successMessage = '✅ Company registered successfully!';
                     this.signupForm.reset();
+                    this.showFormErrors = false;
                     setTimeout(() => this.successMessage = null, 5000);
                 } else if (res.message) {
                     // Split comma-separated message into array
