@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { RouterModule, ActivatedRoute } from '@angular/router';
+import { RouterLink, ActivatedRoute } from '@angular/router';
 import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
 import { DownloadAppStyleOneComponent } from '../../common/download-app-style-one/download-app-style-one.component';
 import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
@@ -11,7 +11,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     selector: 'app-blog-details-page',
     standalone: true,
     imports: [
-        RouterModule, // ✅ important
+        RouterLink,
         NavbarStyleTwoComponent,
         DownloadAppStyleOneComponent,
         BlogSidebarComponent,
@@ -22,45 +22,38 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     styleUrls: ['./blog-details-page.component.scss']
 })
 export class BlogDetailsPageComponent implements OnInit {
-
     blog: any = null;
-    slug = '';
-    currentLang: 'en' | 'ar' = 'en';
+    slug: string = '';
 
     safeDescription: SafeHtml | null = null;
 
-    private route = inject(ActivatedRoute);
     private sanitizer = inject(DomSanitizer);
 
+
+    private route = inject(ActivatedRoute); // ✅ inject route
+
     ngOnInit(): void {
+        this.slug = this.route.snapshot.paramMap.get('slug') || '';
+        const url = `https://admin.souqleader.com/site/blogs/${this.slug}`;
+        console.log('Requesting URL:', url);
 
-        this.route.paramMap.subscribe(params => {
+        fetch(url)
+            .then(response => {
+                console.log('Raw response:', response);
+                return response.json();
+            })
+            .then(data => {
+                this.blog = data.data.blog || null;
+                if (this.blog?.description_en) {
+                    this.safeDescription = this.sanitizer.bypassSecurityTrustHtml(this.blog.description_en);
+                }
 
-            this.currentLang = (params.get('lang') as 'en' | 'ar') || 'en';
-            this.slug = params.get('slug') || '';
 
-            const url = `https://admin.souqleader.com/site/blogs/${this.slug}`;
-            console.log('Requesting URL:', url);
+            })
+            .catch(error => {
+                console.error('Error loading blog:', error);
+            });
 
-            fetch(url)
-                .then(res => res.json())
-                .then(data => {
-                    this.blog = data.data.blog || null;
 
-                    const description =
-                        this.currentLang === 'ar'
-                            ? this.blog?.description_ar
-                            : this.blog?.description_en;
-
-                    if (description) {
-                        this.safeDescription =
-                            this.sanitizer.bypassSecurityTrustHtml(description);
-                    }
-                })
-                .catch(err => {
-                    console.error('Error loading blog:', err);
-                });
-
-        });
     }
 }
