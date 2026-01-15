@@ -29,8 +29,7 @@
             <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs">
                 <div class="single-blog-post">
                     <div class="image">
-                        <a [routerLink]=" ['/', currentLang, 'blog-details' , currentLang==='en' ?
-                            blog.slug_en : blog.slug_ar]" class="d-block">
+                        <a [routerLink]=" ['/', currentLang, 'blog-details' , blog.slug_en]" class="d-block">
                             <img [src]="blog.image ? 'https://admin.souqleader.com/' + blog.image : 'assets/img/default.jpg'"
                                 alt="blog">
                         </a>
