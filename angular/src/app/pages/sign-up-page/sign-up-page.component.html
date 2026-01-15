@@ -64,6 +64,11 @@
                                     placeholder="{{ translate.t('Email Address') }}" formControlName="email" required>
                             </div>
 
+                            <div class="form-group">
+                                <input type="number" class="form-control" style="font-weight:bold;"
+                                    placeholder="{{ translate.t('Phone Number') }}" formControlName="phone" required>
+                            </div>
+
                             <button type="submit" class="btn btn-light" style="font-weight:bold;" [disabled]="loading">
                                 {{ loading ? 'Submitting...' : translate.t('Request a demo') }}
                             </button>
