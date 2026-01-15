@@ -44,15 +44,7 @@ export const routes: Routes = [
         path: ':lang', // <-- language prefix
         children: [
             { path: '', component: HomeDemoSevenComponent }, // default homepage
-            // { path: 'index-2', component: HomeDemoTwoComponent },
-            // { path: 'index-3', component: HomeDemoThreeComponent },
-            // { path: 'index-4', component: HomeDemoFourComponent },
-            // { path: 'index-5', component: HomeDemoFiveComponent },
-            // { path: 'index-6', component: HomeDemoSixComponent },
-            // { path: 'index-7', component: HomeDemoSevenComponent },
-            // { path: 'index-8', component: HomeDemoEightComponent },
-            // { path: 'index-9', component: HomeDemoNineComponent },
-
+          
             { path: 'about-simple', component: AboutSimplePageComponent },
             { path: 'about-modern', component: AboutModernPageComponent },
             { path: 'features-1', component: FeaturesOnePageComponent },
