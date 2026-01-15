@@ -5,8 +5,8 @@
         <div class="page-title-content">
             <h2>Blog Grid</h2>
             <ul>
-                <li><a routerLink="/">Home</a></li>
-                <li>Blog Grid</li>
+                <li><a routerLink="/">{{ currentLang === 'ar' ? 'الرئيسية' : 'Home' }}</a></li>
+                <li>{{ currentLang === 'ar' ? 'مدونة' : 'Blog' }}</li>
             </ul>
         </div>
     </div>
@@ -34,7 +34,7 @@
                             <img [src]="blog.image ? 'https://admin.souqleader.com/' + blog.image : 'assets/img/default.jpg'"
                                 alt="blog">
                         </a>
-                        <a routerLink="/blog-grid" class="tag">Blog</a>
+                        <a routerLink="/blog-grid" class="tag">{{ currentLang === 'ar' ? 'مدونة' : 'Blog' }}</a>
                     </div>
                     <div class="content">
                         <ul class="meta">
@@ -46,12 +46,11 @@
                         </ul>
                         <h3><a
                                 [routerLink]="['/', currentLang, 'blog-details', currentLang === 'en' ? blog.slug_en : blog.slug_ar]">
-                                {{ blog.title_en }}</a></h3>
+                                {{ currentLang === 'ar' ? blog.title_ar : blog.title_en }}</a></h3>
                     </div>
                 </div>
             </div>
 
-            <!-- <div class="col-lg-12 col-md-12" *ngIf="paginationLinks.length > 1">
                 <div class="pagination-area">
                     <div class="nav-links">
                         <ng-container *ngFor="let link of paginationLinks">
