@@ -34,7 +34,7 @@ export class BlogGridPageComponent implements OnInit {
 
     fetchBlogs(page: number): void {
         console.log('Fetching blogs for page:', page); // ✅ Check console
-        this.http.get<any>(`https://admin.realstatecrm-development.dev.alefsoftware.com/site/blogs?page=${page}`)
+        this.http.get<any>(`https://admin.souqleader.com/site/blogs?page=${page}`)
             .subscribe(res => {
                 console.log('API Response:', res); // ✅ Check console
 
