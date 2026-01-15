@@ -39,10 +39,10 @@
                     <div class="content">
                         <ul class="meta">
                             <li><i class="ri-time-line"></i> {{ blog.created_at | date:'MMMM d, y' }}</li>
-                            <li><i class="ri-message-2-line"></i> <a
+                            <!-- <li><i class="ri-message-2-line"></i> <a
                                     [routerLink]="['/', currentLang, 'blog-details', currentLang === 'en' ? blog.slug_en : blog.slug_ar]">
                                     (0)
-                                    Comment</a></li>
+                                    Comment</a></li> -->
                         </ul>
                         <h3><a
                                 [routerLink]="['/', currentLang, 'blog-details', currentLang === 'en' ? blog.slug_en : blog.slug_ar]">
