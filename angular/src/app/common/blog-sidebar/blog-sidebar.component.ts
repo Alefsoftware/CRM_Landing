@@ -24,7 +24,7 @@ export class BlogSidebarComponent implements OnInit {
     }
 
     loadPopularPosts() {
-        const url = 'https://admin.realstatecrm-development.dev.alefsoftware.com/site/blogs/crm-real-estate-companies';
+        const url = 'https://admin.souqleader.com/site/blogs/crm-real-estate-companies';
         this.http.get<any>(url).subscribe({
             next: res => {
                 if (res.status && res.data?.other_blogs) {
