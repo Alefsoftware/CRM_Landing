@@ -62,33 +62,33 @@
                     </ng-container>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-12 col-md-12" *ngIf="paginationLinks.length > 1">
+            <div class="pagination-area">
+                <div class="nav-links">
+                    <ng-container *ngFor="let link of paginationLinks">
+                        <!-- Skip 'Previous' and 'Next' labels -->
+                        <ng-container *ngIf="!link.label.includes('Previous') && !link.label.includes('Next')">
 
-            <div class="col-lg-12 col-md-12" *ngIf="paginationLinks.length > 1">
-                <div class="pagination-area">
-                    <div class="nav-links">
-                        <ng-container *ngFor="let link of paginationLinks">
-                            <!-- Skip 'Previous' and 'Next' labels -->
-                            <ng-container *ngIf="!link.label.includes('Previous') && !link.label.includes('Next')">
+                            <!-- Current page -->
+                            <span *ngIf="link.active" class="page-numbers current" [innerHTML]="link.label">
+                            </span>
 
-                                <!-- Current page -->
-                                <span *ngIf="link.active" class="page-numbers current" [innerHTML]="link.label">
-                                </span>
+                            <!-- Other pages -->
+                            <a *ngIf="!link.active" href="javascript:void(0)" class="page-numbers"
+                                (click)="goToPage(link)" [innerHTML]="link.label">
+                            </a>
 
-                                <!-- Other pages -->
-                                <a *ngIf="!link.active" href="javascript:void(0)" class="page-numbers"
-                                    (click)="goToPage(link)" [innerHTML]="link.label">
-                                </a>
-
-                            </ng-container>
                         </ng-container>
-                    </div>
+                    </ng-container>
                 </div>
             </div>
-
-
-
         </div>
+
+
+
     </div>
+</div>
 </div>
 
 <app-footer-style-four />
