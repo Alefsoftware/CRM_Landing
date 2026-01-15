@@ -34,7 +34,7 @@ export class BlogDetailsPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.slug = this.route.snapshot.paramMap.get('slug') || '';
-        const url = `https://admin.realstatecrm-development.dev.alefsoftware.com/site/blogs/${this.slug}`;
+        const url = `https://admin.souqleader.com/site/blogs/${this.slug}`;
         console.log('Requesting URL:', url);
 
         fetch(url)
