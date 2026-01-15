@@ -1,7 +1,8 @@
 <div class="contact-info-area pb-100" *ngIf="contactData">
     <div class="container-fluid">
         <div class="contact-info-inner">
-            <h2>{{ currentLang ==='ar' ? contactData.contact_title_ar : contactData.contact_title_en }}</h2>
+            <!-- Use innerHTML for title to render HTML tags -->
+            <h2 [innerHTML]="currentLang ==='ar' ? contactData.contact_title_ar : contactData.contact_title_en"></h2>
 
             <div class="row justify-content-center">
                 <!-- Phone -->
@@ -20,7 +21,6 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-contact-info-box">
                         <div class="icon">
-                            <!-- <i class="ri-earth-line"></i> -->
                             <img src="img/contact-message.png" alt="email icon" />
                         </div>
                         <h3>
@@ -29,19 +29,23 @@
                     </div>
                 </div>
 
-                <!-- Address -->
+                <!-- Address - Add multilingual support -->
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-contact-info-box">
                         <div class="icon bg2">
                             <img src="img/contact-map.png" alt="location icon" />
                         </div>
-                        <h3>{{ contactData.contact_address_en }}</h3>
-                        <!-- <h3>{{ contactData.contact_address2_en }}</h3> -->
+                        <!-- Use innerHTML for address if it contains HTML -->
+                        <h3
+                            [innerHTML]="currentLang ==='ar' ? contactData.contact_address_ar : contactData.contact_address_en">
+                        </h3>
+                        <!-- Uncomment and update if you have second address line -->
+                        <!-- <h3 [innerHTML]="currentLang ==='ar' ? contactData.contact_address2_ar : contactData.contact_address2_en"></h3> -->
                     </div>
                 </div>
             </div>
 
-            <!-- Map -->
+            <!-- Map - Already using innerHTML correctly -->
             <div class="contact-map mt-4" [innerHTML]="contactData.contact_map"></div>
 
             <div class="lines mt-4">
