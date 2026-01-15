@@ -5,11 +5,8 @@
             <h2>{{ currentLang === 'ar' ? 'ﻋن ﺳوق ﻟﯾدر' : 'About Souq Leader' }}</h2>
             <ul>
                 <li><a routerLink="/">{{ currentLang === 'ar' ? ' الرئيسية' : 'Home' }}</a></li>
-                <li>{{ currentLang === 'ar'?'ﻣﻧﺻﺔ CRM ﻣﺻﻣﻣﺔ ﺧﺻﯾﺻًﺎ ﻟﻘطﺎع اﻟﻌﻘﺎرات، ﺗﺳﮭل إدارة وﻣﺗﺎﺑﻌﺔ اﻟﻣﺑﯾﻌﺎت وﺗﻣﻛن
-                    ﺷرﻛﺎت اﻟﻌﻘﺎرات ﻣن إدارة
-                    ﻋﻣﻠﯾﺎﺗﮭﺎ ﺑوﺿوح ودﻗﺔ ودﻋم ﻓرﯾق اﻟﻌﻣل ﻓﻲ ﺟﻣﯾﻊ اﻟﻣراﺣل.' :
-                    'A smart, dedicated real estate CRM platform designed to streamline sales, automate follow-ups, and
-                    support agencies and developers across the region.'}}</li>
+                <li>{{ currentLang === 'ar'?'ﻧظﺎم CRM ﻟﻠﻌﻘﺎرات ﯾﺳﮭل إدارة اﻟﻣﺑﯾﻌﺎت واﻟﻣﺗﺎﺑﻌﺔ.' :
+                    'A smart real estate CRM designed to simplify sales and follow-ups.'}}</li>
             </ul>
         </div>
     </div>
@@ -31,39 +28,46 @@
                 <div class="about-content">
                     <span class="sub-title">{{ currentLang === 'ar' ? 'ﻋن ﺳوق ﻟﯾدر' : 'ABOUT SOUQLEADER' }}</span>
                     <h2>{{currentLang ==='ar' ? 'من نحن' : "Who we are"}}</h2>
-                    <p>{{currentLang === 'ar'?'ﺗم ﺗطوﯾر ﺳوق ﻟﯾدر ﺑواﺳطﺔ أﻟف ﻟﻠﺑرﻣﺟﯾﺎت وھﻲ ﺷرﻛﺔ ﺗﻘﻧﯾﺔ ﻣوﺛوﻗﺔ ﺗﺗﻣﺗﻊ ﺑﺧﺑرة
-                        ﻗوﯾﺔ ﻓﻲ ﺑﻧﺎء اﻷﻧظﻣﺔ واﻟﺣﻠول اﻟرﻗﻣﯾﺔ اﻟﺧﺎﺻﺔ ﺑﺈدارة اﻷﻋﻣﺎل واﻟـCRM' : 'Developed by Alef
-                        Software, a trusted technology company recognized for delivering reliable
-                        business and CRM solutions, Souq Leader was designed to address the primary challenges faced by
-                        the real estate industry, including disorganized data, missed follow-ups, and inconsistent
-                        communication'}}.</p>
-                    <p>{{ currentLang === 'ar' ? 'انطلقت منصة "سوق ليدر" CRM لمعالجة التحديات التي يواجهها قطاع
-                        العقارات، مثل تشتت بيانات العملاء، ضعف المتابعة، وتعدد قنوات التواصل بشكل غير منظم.' : 'We
-                        provide an integrated CRM system solution that centralizes leads, automates workflows, and
-                        ensures every opportunity is managed with accuracy and transparency.' }}</p>
+                    <div class="contact-description">
+                        <!-- Paragraph 1 -->
+                        <p>{{ currentLang === 'ar' ?
+                            'تم تطوير سوق ليدر بواسطة ألف للبرمجيات، وهي شركة تقنية موثوقة تتمتع بخبرة قوية في بناء
+                            الأنظمة والحلول الرقمية الخاصة بإدارة الأعمال والـCRM.' :
+                            'Developed by Alef Software, a trusted technology company recognized for delivering reliable
+                            business and CRM solutions, Souq Leader was designed to address the primary challenges faced
+                            by the real estate industry, including disorganized data, missed follow-ups, and
+                            inconsistent communication.'
+                            }}</p>
 
-                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
-                        a simple, effective, and powerful system that improves performance and accelerates business
-                        growth.</p>
+                        <!-- Paragraph 2 -->
+                        <p>{{ currentLang === 'ar' ?
+                            'انطلقت منصة "سوق ليدر" CRM لمعالجة التحديات التي يواجهها قطاع العقارات، مثل تشتت بيانات
+                            العملاء، ضعف المتابعة، وتعدد قنوات التواصل بشكل غير منظم.' :
+                            'We provide an integrated CRM system solution that centralizes leads, automates workflows,
+                            and ensures every opportunity is managed with accuracy and transparency.'
+                            }}</p>
 
-                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
-                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
-                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
-                        a simple, effective, and
-                        powerful system that improves performance and accelerates business growth.</p>
-                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
-                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
-                    <p *ngIf="currentLang === 'en'">Our system is designed specifically for real estate teams, providing
-                        a simple, effective, and powerful system that improves performance and accelerates business
-                        growth.</p>
-                    <p *ngIf="currentLang === 'ar'">تم تصميم نظامنا خصيصًا لفرق العقارات، حيث يوفر نظامًا بسيطًا وفعالًا
-                        وقويًا يُحسِّن الأداء ويُسرِّع نمو الأعمال.</p>
+                        <!-- Paragraph 3 - Arabic version -->
+                        <p *ngIf="currentLang === 'ar'">
+                            تم تصميم النظام خصيصًا لفرق العقارات، حيث يجمع كل بيانات العملاء والمهام والتحركات البيعية
+                            في واجهة واحدة مبسطة، مما يمكن الفرق من العمل بوضوح وكفاءة.
+                        </p>
 
-                    <p *ngIf="currentLang === 'ar'">ھدﻓﻧﺎ أن ﻧوﻓر ﻧظﺎﻣًﺎ ﺑﺳﯾطًﺎ ﻓﻲ اﻻﺳﺗﺧدام، ﻣﺗﻘدﻣًﺎ ﻓﻲ اﻷداء، ﯾﻣﻧﺢ ﻓرق
-                        اﻟﻣﺑﯾﻌﺎت اﻟﻘدرة ﻋﻠﻰ إدارة أﻋﻣﺎﻟﮭم ﺑﺛﻘﺔ وﻛﻔﺎءة.</p>
+                        <!-- Paragraph 4 - Arabic version -->
+                        <p *ngIf="currentLang === 'ar'">
+                            هدفنا أن نوفر نظامًا بسيطًا في الاستخدام، متقدمًا في الأداء، يمنح فرق المبيعات القدرة على
+                            إدارة أعمالهم بثقة وكفاءة.
+                        </p>
+
+                        <!-- Paragraph 3 - English version -->
+                        <p *ngIf="currentLang === 'en'">
+                            Our system is designed specifically for real estate teams, providing a simple, effective,
+                            and powerful system that improves performance and accelerates business growth.
+                        </p>
+                    </div>
                     <div class="features-text">
                         <h6>{{ currentLang === 'ar' ? 'مهمتنا' : 'Our mission' }}</h6>
-                        <p *ngIf="currentLang === 'en'">is to empower real estate teams with advanced CRM technology
+                        <p *ngIf="currentLang === 'en'">Is to empower real estate teams with advanced CRM technology
                             that automates every stage of
                             the sales process. We are committed to providing agencies, brokers, and developers with a
                             complete system that organizes leads, improves communication, and guides smarter, data-based
