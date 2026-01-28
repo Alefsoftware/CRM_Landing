@@ -128,34 +128,33 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         }
     }
 
-    // === SOCIAL SHARING METHODS ===
+    // === PUBLIC METHODS FOR TEMPLATE ===
 
-    private getCurrentUrl(): string {
+    getCurrentUrl(): string {
         return window.location.href;
     }
 
-    private getFullBlogUrl(): string {
+    getFullBlogUrl(): string {
         return `${this.siteUrl}/${this.currentLang}/blog-details/${this.slug}`;
     }
 
-    private getBlogTitle(): string {
+    getBlogTitle(): string {
         if (!this.blog) return this.siteName;
         return this.currentLang === 'ar'
             ? (this.blog.title_ar || this.blog.title_en)
             : this.blog.title_en;
     }
 
-    private getAuthorName(): string {
+    getAuthorName(): string {
         if (!this.blog) return '';
         return this.currentLang === 'ar'
             ? (this.blog.author_name_ar || this.blog.author_name_en || '')
             : (this.blog.author_name_en || '');
     }
 
-    private getBlogDescription(): string {
+    getBlogDescription(): string {
         if (!this.blog) return '';
 
-        // Try to get short description, fall back to first 150 chars of description
         if (this.currentLang === 'ar') {
             return this.blog.short_description_ar ||
                 this.blog.description_ar?.replace(/<[^>]*>/g, '').substring(0, 150) + '...' ||
@@ -167,7 +166,7 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         }
     }
 
-    private getPlainDescription(): string {
+    getPlainDescription(): string {
         if (!this.blog) return '';
 
         let description = '';
@@ -177,14 +176,12 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
             description = this.blog.description_en || this.blog.short_description_en || '';
         }
 
-        // Remove HTML tags and limit length
         return description.replace(/<[^>]*>/g, '').substring(0, 200) + '...';
     }
 
-    private getBlogImageUrl(): string {
+    getBlogImageUrl(): string {
         if (!this.blog?.image) return `${this.siteUrl}/assets/img/logo.png`;
 
-        // Ensure proper URL format
         if (this.blog.image.startsWith('http')) {
             return this.blog.image;
         } else if (this.blog.image.startsWith('/')) {
@@ -194,14 +191,14 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         }
     }
 
-    // Facebook Share - Full OG tags support
+    // === SOCIAL SHARING METHODS ===
+
     getFacebookShareUrl(): string {
         const url = encodeURIComponent(this.getFullBlogUrl());
         const quote = encodeURIComponent(`${this.getBlogTitle()} - ${this.getAuthorName()}`);
         return `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${quote}`;
     }
 
-    // Twitter Share - Includes image via Twitter Card
     getTwitterShareUrl(): string {
         const url = encodeURIComponent(this.getFullBlogUrl());
         const text = encodeURIComponent(`${this.getBlogTitle()} by ${this.getAuthorName()}`);
@@ -211,7 +208,6 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         return `https://twitter.com/intent/tweet?url=${url}&text=${text}&hashtags=${hashtags}&via=${via}`;
     }
 
-    // LinkedIn Share - Professional sharing
     getLinkedInShareUrl(): string {
         const url = encodeURIComponent(this.getFullBlogUrl());
         const title = encodeURIComponent(this.getBlogTitle());
@@ -220,7 +216,6 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         return `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
     }
 
-    // WhatsApp Share - Full content
     getWhatsAppShareUrl(): string {
         const url = this.getFullBlogUrl();
         const title = this.getBlogTitle();
@@ -237,7 +232,6 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
             `https://web.whatsapp.com/send?text=${encodedText}`;
     }
 
-    // Email Share - Rich format
     getEmailShareUrl(): string {
         const subject = encodeURIComponent(`Check out: ${this.getBlogTitle()} - ${this.siteName}`);
         const body = encodeURIComponent(
@@ -259,7 +253,6 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
             url: this.getFullBlogUrl()
         };
 
-        // Try Web Share API first (mobile devices)
         if (navigator.share) {
             navigator.share(shareData)
                 .then(() => {
@@ -280,7 +273,6 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         navigator.clipboard.writeText(shareText).then(() => {
             this.showCopyFeedback(true);
         }).catch(() => {
-            // Fallback for older browsers
             const textArea = document.createElement('textarea');
             textArea.value = shareText;
             document.body.appendChild(textArea);
@@ -304,7 +296,6 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         if (!this.blog) return;
 
         const title = this.getBlogTitle();
-        const description = this.getBlogDescription();
         const plainDescription = this.getPlainDescription();
         const imageUrl = this.getBlogImageUrl();
         const currentUrl = this.getCurrentUrl();
@@ -312,13 +303,11 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         const publishedTime = this.blog.created_at;
         const modifiedTime = this.blog.updated_at || this.blog.created_at;
 
-        // Set page title
         document.title = `${title} | ${this.siteName}`;
 
-        // Basic meta
         this.meta.updateTag({ name: 'description', content: plainDescription });
 
-        // Open Graph meta (Facebook, LinkedIn, etc.)
+        // Open Graph meta
         this.meta.updateTag({ property: 'og:title', content: title });
         this.meta.updateTag({ property: 'og:description', content: plainDescription });
         this.meta.updateTag({ property: 'og:image', content: imageUrl });
@@ -354,7 +343,6 @@ export class BlogDetailsPageComponent implements OnInit, OnDestroy {
         this.meta.updateTag({ name: 'twitter:site', content: this.viaHandle });
         this.meta.updateTag({ name: 'twitter:creator', content: this.viaHandle });
 
-        // Additional meta for better sharing
         this.meta.updateTag({ name: 'keywords', content: this.getKeywords() });
         this.meta.updateTag({ property: 'og:see_also', content: this.siteUrl });
     }
