@@ -1,284 +1,136 @@
 <app-navbar-style-two />
-
-<div class="page-title-area">
+<div class="page-title-area" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
     <div class="container">
         <div class="page-title-content">
-            <h2>Blog Details</h2>
+            <h2>{{ currentLang === 'ar' ? 'تفاصيل المدونة' : 'Blog Details' }}</h2>
             <ul>
-                <li><a routerLink="/">Home</a></li>
-                <li>Blog Details</li>
+                <li>
+                    <a [routerLink]="['/', currentLang, 'home']">
+                        {{ currentLang === 'ar' ? 'الرئيسية' : 'Home' }}
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/', currentLang, 'blog-grid']">
+                        {{ currentLang === 'ar' ? 'المدونات' : 'Blogs' }}
+                    </a>
+                </li>
+                <li>{{ currentLang === 'ar' ? 'تفاصيل المدونة' : 'Blog Details' }}</li>
             </ul>
         </div>
     </div>
-    <div class="divider"></div>
-    <div class="lines">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-    <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
 </div>
 
-<div class="blog-details-area ptb-100">
+<div class="blog-details-area ptb-100" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-12">
-                <div class="blog-details-desc">
-                    <div class="article-image">
-                        <a routerLink="/blog-grid" class="tag">Branding</a>
-                        <img [src]="'https://admin.realstatecrm-development.dev.alefsoftware.com/' + blog?.image"
-                            alt="blog-details">
+            <div class="col-lg-12">
 
+                <!-- Loading -->
+                <div *ngIf="isLoading" class="text-center">
+                    <div class="spinner-border"></div>
+                </div>
+
+                <!-- Blog -->
+                <div *ngIf="blog && !isLoading" class="blog-details-desc">
+
+                    <div class="article-image">
+                        <img [src]="getBlogImageUrl()" [alt]="getBlogTitle()">
                     </div>
+
                     <div class="article-content">
+
                         <div class="entry-meta">
                             <ul>
-                                <li><i class="ri-calendar-2-line"></i>March 14, 2025</li>
-                                <li><i class="ri-message-2-line"></i><a routerLink="/blog-grid">(4) Comments</a></li>
+                                <li>
+                                    <i class="ri-calendar-2-line"></i>
+                                    {{ getLocalizedDate() }}
+                                </li>
+                                <li *ngIf="blog.category_en || blog.category_ar">
+                                    <i class="ri-folder-line"></i>
+                                    {{ currentLang === 'ar'
+                                    ? (blog.category_ar || blog.category_en)
+                                    : blog.category_en }}
+                                </li>
                             </ul>
                         </div>
-                        <h4>{{blog.title_en}}</h4>
+
+                        <h4>{{ getBlogTitle() }}</h4>
+
+                        <p *ngIf="blog.short_description_en || blog.short_description_ar">
+                            {{ currentLang === 'ar'
+                            ? (blog.short_description_ar || blog.short_description_en)
+                            : blog.short_description_en }}
+                        </p>
+
                         <div [innerHTML]="safeDescription"></div>
-                    </div>
-                    <div class="article-footer">
-                        <div class="post-author-meta">
-                            <div class="d-flex align-items-center">
-                                <img src="img/user/user6.jpg" alt="user">
-                                <div class="title">
-                                    <span class="name">By <a routerLink="/blog-grid">AlefSoftware</a></span>
-                                    <span class="date">March 17, 2025</span>
-                                </div>
-                            </div>
+
+                        <!-- TAGS -->
+                        <div *ngIf="blog.tags?.length" class="article-tags mt-4">
+                            <strong>{{ currentLang === 'ar' ? 'الكلمات المفتاحية:' : 'Tags:' }}</strong>
+                            <span *ngFor="let tag of blog.tags" class="badge bg-secondary mx-1">
+                                {{ tag }}
+                            </span>
                         </div>
+                    </div>
+
+                    <!-- SHARE -->
+                    <div class="article-footer mt-4">
                         <div class="article-share">
                             <ul class="social">
-                                <li><span>Share:</span></li>
-                                <li><a href="#" class="facebook" target="_blank"><i class="ri-facebook-fill"></i></a>
+
+                                <li>
+                                    <span>{{ currentLang === 'ar' ? 'مشاركة:' : 'Share:' }}</span>
                                 </li>
-                                <li><a href="#" class="twitter" target="_blank"><i class="ri-linkedin-fill"></i></a>
+
+                                <!-- FACEBOOK -->
+                                <li>
+                                    <a [href]="getFacebookShareUrl()" target="_blank" rel="noopener" class="facebook"
+                                        (click)="openSocialWindow($event, getFacebookShareUrl(), 'facebook')">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
                                 </li>
-                                <li><a href="#" class="linkedin" target="_blank"><i class="ri-twitter-fill"></i></a>
+
+                                <!-- TWITTER -->
+                                <li>
+                                    <a [href]="getTwitterShareUrl()" target="_blank" rel="noopener" class="twitter"
+                                        (click)="openSocialWindow($event, getTwitterShareUrl(), 'twitter')">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
                                 </li>
-                                <li><a href="#" class="instagram" target="_blank"><i class="ri-instagram-line"></i></a>
+
+                                <!-- LINKEDIN -->
+                                <li>
+                                    <a [href]="getLinkedInShareUrl()" target="_blank" rel="noopener" class="linkedin"
+                                        (click)="openSocialWindow($event, getLinkedInShareUrl(), 'linkedin')">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
                                 </li>
+
+                                <!-- WHATSAPP -->
+                                <li>
+                                    <a [href]="getWhatsAppShareUrl()" target="_blank" rel="noopener" class="whatsapp">
+                                        <i class="ri-whatsapp-fill"></i>
+                                    </a>
+                                </li>
+
                             </ul>
-                        </div>
-                    </div>
-                    <div class="related-post">
-                        <h3 class="title">Related Post</h3>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single-blog-post">
-                                    <div class="image">
-                                        <a routerLink="/blog-details" class="d-block">
-                                            <img src="img/blog/blog2.jpg" alt="blog">
-                                        </a>
-                                        <a routerLink="/blog-grid" class="tag">Branding</a>
-                                    </div>
-                                    <div class="content">
-                                        <ul class="meta">
-                                            <li><i class="ri-time-line"></i> April 14, 2025</li>
-                                            <li><i class="ri-message-2-line"></i> <a routerLink="/blog-details">(0)
-                                                    Comment</a></li>
-                                        </ul>
-                                        <h3><a routerLink="/blog-details">Branding involves developing strategy to
-                                                create a point of differentiation</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single-blog-post">
-                                    <div class="image">
-                                        <a routerLink="/blog-details" class="d-block">
-                                            <img src="img/blog/blog3.jpg" alt="blog">
-                                        </a>
-                                        <a routerLink="/blog-grid" class="tag">Agency</a>
-                                    </div>
-                                    <div class="content">
-                                        <ul class="meta">
-                                            <li><i class="ri-time-line"></i> April 13, 2025</li>
-                                            <li><i class="ri-message-2-line"></i> <a routerLink="/blog-details">(4)
-                                                    Comment</a></li>
-                                        </ul>
-                                        <h3><a routerLink="/blog-details">Design is a plan or specification for the
-                                                construction of an object</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comments-area">
-                        <h3 class="comments-title">2 Comments:</h3>
-                        <ol class="comment-list">
-                            <li class="comment">
-                                <div class="comment-body">
-                                    <footer class="comment-meta">
-                                        <div class="comment-author vcard">
-                                            <img src="img/user/user1.jpg" class="avatar" alt="user">
-                                            <b class="fn">John Jones</b>
-                                        </div>
-                                        <div class="comment-metadata">
-                                            <span>January 01, 2025 at 10:59 am</span>
-                                        </div>
-                                    </footer>
-                                    <div class="comment-content">
-                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen.</p>
-                                    </div>
-                                    <div class="reply">
-                                        <a routerLink="/blog-details" class="comment-reply-link">Reply</a>
-                                    </div>
-                                </div>
-                                <ol class="children">
-                                    <li class="comment">
-                                        <div class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img src="img/user/user2.jpg" class="avatar" alt="user">
-                                                    <b class="fn">Steven Smith</b>
-                                                </div>
-                                                <div class="comment-metadata">
-                                                    <span>January 02, 2025 at 21:59 am</span>
-                                                </div>
-                                            </footer>
-                                            <div class="comment-content">
-                                                <p>Lorem Ipsum has been the industry’s standard dummy text ever since
-                                                    the 1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen.</p>
-                                            </div>
-                                            <div class="reply">
-                                                <a routerLink="/blog-details" class="comment-reply-link">Reply</a>
-                                            </div>
-                                        </div>
-                                        <ol class="children">
-                                            <li class="comment">
-                                                <div class="comment-body">
-                                                    <footer class="comment-meta">
-                                                        <div class="comment-author vcard">
-                                                            <img src="img/user/user3.jpg" class="avatar" alt="user">
-                                                            <b class="fn">Sarah Taylor</b>
-                                                        </div>
-                                                        <div class="comment-metadata">
-                                                            <span>January 03, 2025 at 05:59 am</span>
-                                                        </div>
-                                                    </footer>
-                                                    <div class="comment-content">
-                                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever
-                                                            since the 1500s, when an unknown printer took a galley of
-                                                            type and scrambled it to make a type specimen.</p>
-                                                    </div>
-                                                    <div class="reply">
-                                                        <a routerLink="/blog-details"
-                                                            class="comment-reply-link">Reply</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li class="comment">
-                                <div class="comment-body">
-                                    <footer class="comment-meta">
-                                        <div class="comment-author vcard">
-                                            <img src="img/user/user4.jpg" class="avatar" alt="user">
-                                            <b class="fn">John Doe</b>
-                                        </div>
-                                        <div class="comment-metadata">
-                                            <span>January 04, 2025 at 05:59 am</span>
-                                        </div>
-                                    </footer>
-                                    <div class="comment-content">
-                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen.</p>
-                                    </div>
-                                    <div class="reply">
-                                        <a routerLink="/blog-details" class="comment-reply-link">Reply</a>
-                                    </div>
-                                </div>
-                                <ol class="children">
-                                    <li class="comment">
-                                        <div class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img src="img/user/user1.jpg" class="avatar" alt="user">
-                                                    <b class="fn">James Anderson</b>
-                                                </div>
-                                                <div class="comment-metadata">
-                                                    <span>January 05, 2025 at 04:59 am</span>
-                                                </div>
-                                            </footer>
-                                            <div class="comment-content">
-                                                <p>Lorem Ipsum has been the industry’s standard dummy text ever since
-                                                    the 1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen.</p>
-                                            </div>
-                                            <div class="reply">
-                                                <a routerLink="/blog-details" class="comment-reply-link">Reply</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </li>
-                        </ol>
-                        <div class="comment-respond">
-                            <h3 class="comment-reply-title">Leave A Reply</h3>
-                            <form class="comment-form">
-                                <p class="comment-notes">
-                                    <span id="email-notes">Your email address will not be published.</span>
-                                    Required fields are marked <span class="required">*</span>
-                                </p>
-                                <p class="comment-form-author">
-                                    <label>Name <span class="required">*</span></label>
-                                    <input type="text" id="author" placeholder="Your Name*" name="author"
-                                        required="required">
-                                </p>
-                                <p class="comment-form-email">
-                                    <label>Email <span class="required">*</span></label>
-                                    <input type="email" id="email" placeholder="Your Email*" name="email"
-                                        required="required">
-                                </p>
-                                <p class="comment-form-url">
-                                    <label>Website</label>
-                                    <input type="url" id="url" placeholder="Website" name="url">
-                                </p>
-                                <p class="comment-form-comment">
-                                    <label>Comment</label>
-                                    <textarea name="comment" id="comment" cols="45" placeholder="Your Comment..."
-                                        rows="5" maxlength="65525" required="required"></textarea>
-                                </p>
-                                <p class="comment-form-cookies-consent">
-                                    <input type="checkbox" value="yes" name="wp-comment-cookies-consent"
-                                        id="wp-comment-cookies-consent">
-                                    <label for="wp-comment-cookies-consent">Save my name, email, and website in this
-                                        browser for the next time I comment.</label>
-                                </p>
-                                <p class="form-submit">
-                                    <input type="submit" name="submit" id="submit" class="submit"
-                                        value="Post A Comment">
-                                </p>
-                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <aside class="widget-area">
-                    <app-blog-sidebar />
-                </aside>
+
+
+                <!-- ERROR -->
+                <div *ngIf="!blog && !isLoading" class="alert alert-warning text-center">
+                    {{ currentLang === 'ar'
+                    ? 'لم يتم العثور على المقالة المطلوبة.'
+                    : 'The requested article was not found.' }}
+                </div>
+
             </div>
         </div>
     </div>
 </div>
 
-<div class="app-download-area pb-100">
-    <app-download-app-style-one />
-</div>
-
+<app-download-app-style-one />
 <app-footer-style-four />
-
 <app-back-to-top />
