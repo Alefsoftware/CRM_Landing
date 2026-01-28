@@ -19,40 +19,27 @@
             </ul>
         </div>
     </div>
-    <div class="divider"></div>
-    <div class="lines">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-    <div class="banner-shape1"><img src="img/shape/shape9.png" alt="image"></div>
 </div>
 
 <div class="blog-details-area ptb-100" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <!-- Loading State -->
-                <div *ngIf="isLoading" class="loading-spinner text-center">
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">{{ currentLang === 'ar' ? 'جاري التحميل...' : 'Loading...'
-                            }}</span>
-                    </div>
+            <div class="col-lg-12">
+
+                <!-- Loading -->
+                <div *ngIf="isLoading" class="text-center">
+                    <div class="spinner-border"></div>
                 </div>
 
-                <!-- Blog Content -->
+                <!-- Blog -->
                 <div *ngIf="blog && !isLoading" class="blog-details-desc">
-                    <!-- Blog Image -->
+
                     <div class="article-image">
-                        <img [src]="'https://admin.souqleader.com/' + blog.image"
-                            [alt]="currentLang === 'ar' ? (blog.title_ar || blog.title_en) : blog.title_en">
+                        <img [src]="getBlogImageUrl()" [alt]="getBlogTitle()">
                     </div>
 
-                    <!-- Blog Content -->
                     <div class="article-content">
-                        <!-- Metadata -->
+
                         <div class="entry-meta">
                             <ul>
                                 <li>
@@ -61,27 +48,25 @@
                                 </li>
                                 <li *ngIf="blog.category_en || blog.category_ar">
                                     <i class="ri-folder-line"></i>
-                                    {{ currentLang === 'ar' ? (blog.category_ar || blog.category_en) : blog.category_en
-                                    }}
+                                    {{ currentLang === 'ar'
+                                    ? (blog.category_ar || blog.category_en)
+                                    : blog.category_en }}
                                 </li>
                             </ul>
                         </div>
 
-                        <!-- Title -->
-                        <h4>{{ currentLang === 'ar' ? (blog.title_ar || blog.title_en) : blog.title_en }}</h4>
+                        <h4>{{ getBlogTitle() }}</h4>
 
-                        <!-- Short Description (if available) -->
-                        <div *ngIf="blog.short_description_en || blog.short_description_ar"
-                            class="short-description mb-4">
-                            <p>{{ currentLang === 'ar' ? (blog.short_description_ar || blog.short_description_en) :
-                                blog.short_description_en }}</p>
-                        </div>
+                        <p *ngIf="blog.short_description_en || blog.short_description_ar">
+                            {{ currentLang === 'ar'
+                            ? (blog.short_description_ar || blog.short_description_en)
+                            : blog.short_description_en }}
+                        </p>
 
-                        <!-- Main Content -->
                         <div [innerHTML]="safeDescription"></div>
 
-                        <!-- Tags (if available) -->
-                        <div *ngIf="blog.tags && blog.tags.length" class="article-tags mt-4">
+                        <!-- TAGS -->
+                        <div *ngIf="blog.tags?.length" class="article-tags mt-4">
                             <strong>{{ currentLang === 'ar' ? 'الكلمات المفتاحية:' : 'Tags:' }}</strong>
                             <span *ngFor="let tag of blog.tags" class="badge bg-secondary mx-1">
                                 {{ tag }}
@@ -89,146 +74,61 @@
                         </div>
                     </div>
 
-                    <!-- Article Footer -->
-                    <!-- Article Footer Section -->
+                    <!-- SHARE -->
                     <div class="article-footer mt-4">
-                        <div class="article-share">
-                            <ul class="social">
-                                <li>
-                                    <span>{{ currentLang === 'ar' ? 'شارك المقال:' : 'Share Article:' }}</span>
-                                </li>
-                                <!-- Facebook -->
-                                <li>
-                                    <a [href]="getFacebookShareUrl()" class="facebook" target="_blank"
-                                        rel="noopener noreferrer"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'شارك على فيسبوك' : 'Share on Facebook'"
-                                        (click)="openSocialWindow($event, getFacebookShareUrl(), 'facebook')">
-                                        <i class="ri-facebook-fill"></i>
-                                        <span class="share-text">{{ currentLang === 'ar' ? 'فيسبوك' : 'Facebook'
-                                            }}</span>
-                                    </a>
-                                </li>
-                                <!-- Twitter -->
-                                <li>
-                                    <a [href]="getTwitterShareUrl()" class="twitter" target="_blank"
-                                        rel="noopener noreferrer"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'شارك على تويتر' : 'Share on Twitter'"
-                                        (click)="openSocialWindow($event, getTwitterShareUrl(), 'twitter')">
-                                        <i class="ri-twitter-fill"></i>
-                                        <span class="share-text">{{ currentLang === 'ar' ? 'تويتر' : 'Twitter' }}</span>
-                                    </a>
-                                </li>
-                                <!-- LinkedIn -->
-                                <li>
-                                    <a [href]="getLinkedInShareUrl()" class="linkedin" target="_blank"
-                                        rel="noopener noreferrer"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'شارك على لينكدإن' : 'Share on LinkedIn'"
-                                        (click)="openSocialWindow($event, getLinkedInShareUrl(), 'linkedin')">
-                                        <i class="ri-linkedin-fill"></i>
-                                        <span class="share-text">{{ currentLang === 'ar' ? 'لينكدإن' : 'LinkedIn'
-                                            }}</span>
-                                    </a>
-                                </li>
-                                <!-- WhatsApp -->
-                                <li>
-                                    <a [href]="getWhatsAppShareUrl()" class="whatsapp" target="_blank"
-                                        rel="noopener noreferrer"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'شارك على واتساب' : 'Share on WhatsApp'">
-                                        <i class="ri-whatsapp-fill"></i>
-                                        <span class="share-text">{{ currentLang === 'ar' ? 'واتساب' : 'WhatsApp'
-                                            }}</span>
-                                    </a>
-                                </li>
-                                <!-- Email -->
-                                <li>
-                                    <a [href]="getEmailShareUrl()" class="email"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'أرسل عبر البريد' : 'Send via Email'">
-                                        <i class="ri-mail-line"></i>
-                                        <span class="share-text">{{ currentLang === 'ar' ? 'بريد' : 'Email' }}</span>
-                                    </a>
-                                </li>
-                                <!-- Copy Link -->
-                                <li>
-                                    <a href="javascript:void(0)" class="copy-link" [class.copied]="linkCopied"
-                                        (click)="copyBlogLink()"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'نسخ رابط المقال' : 'Copy article link'">
-                                        <i class="ri-link" *ngIf="!linkCopied"></i>
-                                        <i class="ri-check-line" *ngIf="linkCopied"></i>
-                                        <span class="share-text">{{ linkCopied ? (currentLang === 'ar' ? 'تم النسخ' :
-                                            'Copied') : (currentLang === 'ar' ? 'نسخ' : 'Copy') }}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="social">
 
-                        <!-- Social Sharing Preview -->
-                        <div class="share-preview mt-3" *ngIf="blog">
-                            <small class="text-muted">
-                                <i class="ri-information-line"></i>
-                                {{ currentLang === 'ar' ? 'عند المشاركة سيتضمن المنشور:' : 'When sharing, the post will
-                                include:' }}
-                            </small>
-                            <div class="preview-content mt-2">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img [src]="getBlogImageUrl()" [alt]="getBlogTitle()"
-                                            class="preview-image rounded">
-                                    </div>
-                                    <div class="col">
-                                        <strong class="d-block">{{ getBlogTitle() }}</strong>
-                                        <small class="text-muted">{{ getPlainDescription() }}</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <li>
+                                <span>{{ currentLang === 'ar' ? 'مشاركة:' : 'Share:' }}</span>
+                            </li>
 
-                    <!-- Navigation Buttons -->
-                    <div class="blog-navigation mt-5">
-                        <div class="row">
-                            <div class="col-6 text-start">
-                                <button *ngIf="blog.prev_blog" class="btn btn-outline-primary"
-                                    [routerLink]="['/', currentLang, 'blog-details', blog.prev_blog.slug]">
-                                    <i class="ri-arrow-left-line" *ngIf="currentLang !== 'ar'"></i>
-                                    {{ currentLang === 'ar' ? 'المقالة السابقة' : 'Previous Post' }}
-                                    <i class="ri-arrow-right-line" *ngIf="currentLang === 'ar'"></i>
-                                </button>
-                            </div>
-                            <div class="col-6 text-end">
-                                <button *ngIf="blog.next_blog" class="btn btn-outline-primary"
-                                    [routerLink]="['/', currentLang, 'blog-details', blog.next_blog.slug]">
-                                    <i class="ri-arrow-left-line" *ngIf="currentLang === 'ar'"></i>
-                                    {{ currentLang === 'ar' ? 'المقالة التالية' : 'Next Post' }}
-                                    <i class="ri-arrow-right-line" *ngIf="currentLang !== 'ar'"></i>
-                                </button>
-                            </div>
-                        </div>
+                            <!-- FACEBOOK -->
+                            <li>
+                                <a [href]="getFacebookShareUrl()" target="_blank" rel="noopener"
+                                    (click)="openSocialWindow($event, getFacebookShareUrl(), 'facebook')">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                            </li>
+
+                            <!-- TWITTER -->
+                            <li>
+                                <a [href]="getTwitterShareUrl()" target="_blank" rel="noopener"
+                                    (click)="openSocialWindow($event, getTwitterShareUrl(), 'twitter')">
+                                    <i class="ri-twitter-fill"></i>
+                                </a>
+                            </li>
+
+                            <!-- LINKEDIN -->
+                            <li>
+                                <a [href]="getLinkedInShareUrl()" target="_blank" rel="noopener"
+                                    (click)="openSocialWindow($event, getLinkedInShareUrl(), 'linkedin')">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                            </li>
+
+                            <!-- WHATSAPP -->
+                            <li>
+                                <a [href]="getWhatsAppShareUrl()" target="_blank" rel="noopener">
+                                    <i class="ri-whatsapp-fill"></i>
+                                </a>
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Error State -->
-                <div *ngIf="!blog && !isLoading" class="text-center py-5">
-                    <div class="alert alert-warning" role="alert">
-                        <i class="ri-alert-line me-2"></i>
-                        {{ currentLang === 'ar' ? 'لم يتم العثور على المقالة المطلوبة.' : 'The requested article was not
-                        found.' }}
-                    </div>
-                    <a [routerLink]="['/', currentLang, 'blog-grid']" class="btn btn-primary mt-3">
-                        {{ currentLang === 'ar' ? 'العودة إلى المدونات' : 'Back to Blogs' }}
-                    </a>
+                <!-- ERROR -->
+                <div *ngIf="!blog && !isLoading" class="alert alert-warning text-center">
+                    {{ currentLang === 'ar'
+                    ? 'لم يتم العثور على المقالة المطلوبة.'
+                    : 'The requested article was not found.' }}
                 </div>
+
             </div>
         </div>
     </div>
 </div>
 
-<!-- Download App Section -->
-<div class="app-download-area pb-100">
-    <app-download-app-style-one />
-</div>
-
-<!-- Footer -->
+<app-download-app-style-one />
 <app-footer-style-four />
-
-<!-- Back to Top -->
 <app-back-to-top />
