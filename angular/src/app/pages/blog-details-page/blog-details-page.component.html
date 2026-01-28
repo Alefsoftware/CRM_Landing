@@ -162,25 +162,25 @@
                         </div>
 
                         <!-- Social Sharing Preview -->
-                      <!-- Remove this section from your template -->
-<!-- Social Sharing Preview -->
-<div class="share-preview mt-3" *ngIf="blog">
-    <small class="text-muted">
-        <i class="ri-information-line"></i>
-        {{ currentLang === 'ar' ? 'عند المشاركة سيتضمن المنشور:' : 'When sharing, the post will include:' }}
-    </small>
-    <div class="preview-content mt-2">
-        <div class="row align-items-center">
-            <div class="col-auto">
-                <img [src]="getBlogImageUrl()" [alt]="getBlogTitle()" class="preview-image rounded">
-            </div>
-            <div class="col">
-                <strong class="d-block">{{ getBlogTitle() }}</strong>
-                <small class="text-muted">{{ getPlainDescription() }}</small>
-            </div>
-        </div>
-    </div>
-</div>
+                        <div class="share-preview mt-3" *ngIf="blog">
+                            <small class="text-muted">
+                                <i class="ri-information-line"></i>
+                                {{ currentLang === 'ar' ? 'عند المشاركة سيتضمن المنشور:' : 'When sharing, the post will
+                                include:' }}
+                            </small>
+                            <div class="preview-content mt-2">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img [src]="getBlogImageUrl()" [alt]="getBlogTitle()"
+                                            class="preview-image rounded">
+                                    </div>
+                                    <div class="col">
+                                        <strong class="d-block">{{ getBlogTitle() }}</strong>
+                                        <small class="text-muted">{{ getPlainDescription() }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Navigation Buttons -->
