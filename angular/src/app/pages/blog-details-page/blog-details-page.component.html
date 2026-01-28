@@ -90,41 +90,96 @@
                     </div>
 
                     <!-- Article Footer -->
+                    <!-- Article Footer Section -->
                     <div class="article-footer mt-4">
                         <div class="article-share">
                             <ul class="social">
                                 <li>
-                                    <span>{{ currentLang === 'ar' ? 'مشاركة:' : 'Share:' }}</span>
+                                    <span>{{ currentLang === 'ar' ? 'شارك المقال:' : 'Share Article:' }}</span>
                                 </li>
+                                <!-- Facebook -->
                                 <li>
                                     <a [href]="getFacebookShareUrl()" class="facebook" target="_blank"
                                         rel="noopener noreferrer"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'مشاركة على فيسبوك' : 'Share on Facebook'">
+                                        [attr.aria-label]="currentLang === 'ar' ? 'شارك على فيسبوك' : 'Share on Facebook'"
+                                        (click)="openSocialWindow($event, getFacebookShareUrl(), 'facebook')">
                                         <i class="ri-facebook-fill"></i>
+                                        <span class="share-text">{{ currentLang === 'ar' ? 'فيسبوك' : 'Facebook'
+                                            }}</span>
                                     </a>
                                 </li>
+                                <!-- Twitter -->
                                 <li>
                                     <a [href]="getTwitterShareUrl()" class="twitter" target="_blank"
                                         rel="noopener noreferrer"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'مشاركة على تويتر' : 'Share on Twitter'">
+                                        [attr.aria-label]="currentLang === 'ar' ? 'شارك على تويتر' : 'Share on Twitter'"
+                                        (click)="openSocialWindow($event, getTwitterShareUrl(), 'twitter')">
                                         <i class="ri-twitter-fill"></i>
+                                        <span class="share-text">{{ currentLang === 'ar' ? 'تويتر' : 'Twitter' }}</span>
                                     </a>
                                 </li>
+                                <!-- LinkedIn -->
                                 <li>
                                     <a [href]="getLinkedInShareUrl()" class="linkedin" target="_blank"
                                         rel="noopener noreferrer"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'مشاركة على لينكدإن' : 'Share on LinkedIn'">
+                                        [attr.aria-label]="currentLang === 'ar' ? 'شارك على لينكدإن' : 'Share on LinkedIn'"
+                                        (click)="openSocialWindow($event, getLinkedInShareUrl(), 'linkedin')">
                                         <i class="ri-linkedin-fill"></i>
+                                        <span class="share-text">{{ currentLang === 'ar' ? 'لينكدإن' : 'LinkedIn'
+                                            }}</span>
                                     </a>
                                 </li>
+                                <!-- WhatsApp -->
                                 <li>
                                     <a [href]="getWhatsAppShareUrl()" class="whatsapp" target="_blank"
                                         rel="noopener noreferrer"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'مشاركة على واتساب' : 'Share on WhatsApp'">
+                                        [attr.aria-label]="currentLang === 'ar' ? 'شارك على واتساب' : 'Share on WhatsApp'">
                                         <i class="ri-whatsapp-fill"></i>
+                                        <span class="share-text">{{ currentLang === 'ar' ? 'واتساب' : 'WhatsApp'
+                                            }}</span>
+                                    </a>
+                                </li>
+                                <!-- Email -->
+                                <li>
+                                    <a [href]="getEmailShareUrl()" class="email"
+                                        [attr.aria-label]="currentLang === 'ar' ? 'أرسل عبر البريد' : 'Send via Email'">
+                                        <i class="ri-mail-line"></i>
+                                        <span class="share-text">{{ currentLang === 'ar' ? 'بريد' : 'Email' }}</span>
+                                    </a>
+                                </li>
+                                <!-- Copy Link -->
+                                <li>
+                                    <a href="javascript:void(0)" class="copy-link" [class.copied]="linkCopied"
+                                        (click)="copyBlogLink()"
+                                        [attr.aria-label]="currentLang === 'ar' ? 'نسخ رابط المقال' : 'Copy article link'">
+                                        <i class="ri-link" *ngIf="!linkCopied"></i>
+                                        <i class="ri-check-line" *ngIf="linkCopied"></i>
+                                        <span class="share-text">{{ linkCopied ? (currentLang === 'ar' ? 'تم النسخ' :
+                                            'Copied') : (currentLang === 'ar' ? 'نسخ' : 'Copy') }}</span>
                                     </a>
                                 </li>
                             </ul>
+                        </div>
+
+                        <!-- Social Sharing Preview -->
+                        <div class="share-preview mt-3" *ngIf="blog">
+                            <small class="text-muted">
+                                <i class="ri-information-line"></i>
+                                {{ currentLang === 'ar' ? 'عند المشاركة سيتضمن المنشور:' : 'When sharing, the post will
+                                include:' }}
+                            </small>
+                            <div class="preview-content mt-2">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img [src]="getBlogImageUrl()" [alt]="getBlogTitle()"
+                                            class="preview-image rounded">
+                                    </div>
+                                    <div class="col">
+                                        <strong class="d-block">{{ getBlogTitle() }}</strong>
+                                        <small class="text-muted">{{ getPlainDescription() }}</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
