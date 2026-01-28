@@ -162,6 +162,7 @@
                         </div>
 
                         <!-- Social Sharing Preview -->
+                        <!-- Social Sharing Preview - Alternative using blog properties directly -->
                         <div class="share-preview mt-3" *ngIf="blog">
                             <small class="text-muted">
                                 <i class="ri-information-line"></i>
@@ -171,12 +172,21 @@
                             <div class="preview-content mt-2">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
-                                        <img [src]="getBlogImageUrl()" [alt]="getBlogTitle()"
+                                        <img [src]="'https://admin.souqleader.com/' + blog.image"
+                                            [alt]="currentLang === 'ar' ? (blog.title_ar || blog.title_en) : blog.title_en"
                                             class="preview-image rounded">
                                     </div>
                                     <div class="col">
-                                        <strong class="d-block">{{ getBlogTitle() }}</strong>
-                                        <small class="text-muted">{{ getPlainDescription() }}</small>
+                                        <strong class="d-block">{{ currentLang === 'ar' ? (blog.title_ar ||
+                                            blog.title_en) : blog.title_en }}</strong>
+                                        <small class="text-muted">
+                                            {{ currentLang === 'ar' ?
+                                            ((blog.short_description_ar || blog.description_ar || '').replace(/<[^>
+                                                ]*>/g, '').substring(0, 200) + '...') :
+                                                ((blog.short_description_en || blog.description_en || '').replace(/<[^>
+                                                    ]*>/g, '').substring(0, 200) + '...')
+                                                    }}
+                                        </small>
                                     </div>
                                 </div>
                             </div>
