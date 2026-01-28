@@ -26,12 +26,12 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <!-- LOADING -->
+                <!-- Loading -->
                 <div *ngIf="isLoading" class="text-center">
                     <div class="spinner-border"></div>
                 </div>
 
-                <!-- BLOG DETAILS -->
+                <!-- Blog -->
                 <div *ngIf="blog && !isLoading" class="blog-details-desc">
 
                     <div class="article-image">
@@ -74,55 +74,51 @@
                         </div>
                     </div>
 
-                    <!-- 🔥 BLOG PREVIEW CARD (LinkedIn Style) -->
-                    <div class="blog-preview-card mt-5">
-                        <a [href]="getFullBlogUrl()" target="_blank" class="preview-link">
-
-                            <div class="preview-image">
-                                <img [src]="getBlogImageUrl()" [alt]="getBlogTitle()">
-                            </div>
-
-                            <div class="preview-content">
-                                <h5 class="preview-title">{{ getBlogTitle() }}</h5>
-                                <p class="preview-description">{{ getPlainDescription() }}</p>
-                                <span class="preview-url">{{ siteUrl }}</span>
-                            </div>
-
-                        </a>
-                    </div>
-
                     <!-- SHARE -->
                     <div class="article-footer mt-4">
-                        <ul class="social">
-                            <li><span>{{ currentLang === 'ar' ? 'مشاركة:' : 'Share:' }}</span></li>
+                        <div class="article-share">
+                            <ul class="social">
 
-                            <li>
-                                <a [href]="getFacebookShareUrl()" target="_blank">
-                                    <i class="ri-facebook-fill"></i>
-                                </a>
-                            </li>
+                                <li>
+                                    <span>{{ currentLang === 'ar' ? 'مشاركة:' : 'Share:' }}</span>
+                                </li>
 
-                            <li>
-                                <a [href]="getTwitterShareUrl()" target="_blank">
-                                    <i class="ri-twitter-fill"></i>
-                                </a>
-                            </li>
+                                <!-- FACEBOOK -->
+                                <li>
+                                    <a [href]="getFacebookShareUrl()" target="_blank" rel="noopener" class="facebook"
+                                        (click)="openSocialWindow($event, getFacebookShareUrl(), 'facebook')">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
 
-                            <li>
-                                <a [href]="getLinkedInShareUrl()" target="_blank">
-                                    <i class="ri-linkedin-fill"></i>
-                                </a>
-                            </li>
+                                <!-- TWITTER -->
+                                <li>
+                                    <a [href]="getTwitterShareUrl()" target="_blank" rel="noopener" class="twitter"
+                                        (click)="openSocialWindow($event, getTwitterShareUrl(), 'twitter')">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
 
-                            <li>
-                                <a [href]="getWhatsAppShareUrl()" target="_blank">
-                                    <i class="ri-whatsapp-fill"></i>
-                                </a>
-                            </li>
-                        </ul>
+                                <!-- LINKEDIN -->
+                                <li>
+                                    <a [href]="getLinkedInShareUrl()" target="_blank" rel="noopener" class="linkedin"
+                                        (click)="openSocialWindow($event, getLinkedInShareUrl(), 'linkedin')">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                </li>
+
+                                <!-- WHATSAPP -->
+                                <li>
+                                    <a [href]="getWhatsAppShareUrl()" target="_blank" rel="noopener" class="whatsapp">
+                                        <i class="ri-whatsapp-fill"></i>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
+
 
                 <!-- ERROR -->
                 <div *ngIf="!blog && !isLoading" class="alert alert-warning text-center">
