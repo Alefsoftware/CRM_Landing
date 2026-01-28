@@ -97,26 +97,30 @@
                                     <span>{{ currentLang === 'ar' ? 'مشاركة:' : 'Share:' }}</span>
                                 </li>
                                 <li>
-                                    <a href="#" class="facebook" target="_blank"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'فيسبوك' : 'Facebook'">
+                                    <a [href]="getFacebookShareUrl()" class="facebook" target="_blank"
+                                        rel="noopener noreferrer"
+                                        [attr.aria-label]="currentLang === 'ar' ? 'مشاركة على فيسبوك' : 'Share on Facebook'">
                                         <i class="ri-facebook-fill"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="twitter" target="_blank"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'تويتر' : 'Twitter'">
+                                    <a [href]="getTwitterShareUrl()" class="twitter" target="_blank"
+                                        rel="noopener noreferrer"
+                                        [attr.aria-label]="currentLang === 'ar' ? 'مشاركة على تويتر' : 'Share on Twitter'">
                                         <i class="ri-twitter-fill"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="linkedin" target="_blank"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'لينكدإن' : 'LinkedIn'">
+                                    <a [href]="getLinkedInShareUrl()" class="linkedin" target="_blank"
+                                        rel="noopener noreferrer"
+                                        [attr.aria-label]="currentLang === 'ar' ? 'مشاركة على لينكدإن' : 'Share on LinkedIn'">
                                         <i class="ri-linkedin-fill"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="whatsapp" target="_blank"
-                                        [attr.aria-label]="currentLang === 'ar' ? 'واتساب' : 'WhatsApp'">
+                                    <a [href]="getWhatsAppShareUrl()" class="whatsapp" target="_blank"
+                                        rel="noopener noreferrer"
+                                        [attr.aria-label]="currentLang === 'ar' ? 'مشاركة على واتساب' : 'Share on WhatsApp'">
                                         <i class="ri-whatsapp-fill"></i>
                                     </a>
                                 </li>
