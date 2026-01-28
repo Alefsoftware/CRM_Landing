@@ -1,13 +1,55 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { Component, OnInit, inject, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute, RouterModule } from '@angular/router';
-import { DomSanitizer, SafeHtml, Meta, Title } from '@angular/platform-browser';
+import { NavbarStyleTwoComponent } from '../../common/navbar-style-two/navbar-style-two.component';
+import { DownloadAppStyleOneComponent } from '../../common/download-app-style-one/download-app-style-one.component';
+import { FooterStyleFourComponent } from '../../common/footer-style-four/footer-style-four.component';
+import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
+import { BlogSidebarComponent } from '../../common/blog-sidebar/blog-sidebar.component';
 import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml, Meta, Title } from '@angular/platform-browser';
+
+export interface Blog {
+    id: number;
+    title_en: string;
+    title_ar: string;
+    description_en: string;
+    description_ar: string;
+    short_description_en?: string;
+    short_description_ar?: string;
+    image: string;
+    slug: string;
+    created_at: string;
+    updated_at?: string;
+    category_en?: string;
+    category_ar?: string;
+    tags?: string[];
+
+    author_name_en?: string;
+    author_name_ar?: string;
+    author_image?: string;
+    author_role?: string;
+    author_role_ar?: string;
+    author_bio_en?: string;
+    author_bio_ar?: string;
+
+    prev_blog?: { slug: string; title_en: string; title_ar: string; };
+    next_blog?: { slug: string; title_en: string; title_ar: string; };
+}
 
 @Component({
     selector: 'app-blog-details-page',
     standalone: true,
-    imports: [CommonModule, RouterLink, RouterModule],
+    imports: [
+        CommonModule,
+        RouterLink,
+        RouterModule,
+        NavbarStyleTwoComponent,
+        DownloadAppStyleOneComponent,
+        BlogSidebarComponent,
+        FooterStyleFourComponent,
+        BackToTopComponent
+    ],
     templateUrl: './blog-details-page.component.html',
     styleUrls: ['./blog-details-page.component.scss']
 })
